@@ -2,5 +2,5 @@
 Repositório para o trabalho de Orientação Objetos<br />
 Integrantes:<br />
 Kaio de Oliveira e Sousa(202165080AC)<br />
-Filipe<br />
+Filipe de Lima Namorato(202165035AB)<br />
 Gustavo<br />
