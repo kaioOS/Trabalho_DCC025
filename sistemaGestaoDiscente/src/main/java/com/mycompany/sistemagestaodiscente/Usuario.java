@@ -8,10 +8,10 @@ package com.mycompany.sistemagestaodiscente;
  * @author filipe
  */
 public class Usuario {
-    private int id;
     private String nome;
     private int CPF;
     private String telefone;
+    private int CEP;
     private String rua;
     private String bairro;
     private String numero;
@@ -19,15 +19,7 @@ public class Usuario {
     private String senha;
     private int tipoUsuario;
 
-    //ID
-    public int getId() {
-        return id;
-    }
-
-    private void setId(int id) {
-        this.id = id;
-    }
-    //------------------------
+    
     
     //Dados pessoais do usuário
     public String getNome() {
@@ -56,6 +48,12 @@ public class Usuario {
     //------------------------
     
     //Endereço
+    public int getCEP(){
+        return CEP;
+    }
+    public void setCEP(int CEP){
+        this.CEP = CEP;
+    }
     public String getRua() {
         return rua;
     }
@@ -110,10 +108,6 @@ public class Usuario {
     //Validações
     public void validarSenha(){
        
-    }
-    
-    public void validarMatricula(){
-        
     }
     
     public void validarEmail(){

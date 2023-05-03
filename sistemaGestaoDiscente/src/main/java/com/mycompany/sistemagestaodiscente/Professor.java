@@ -9,17 +9,17 @@ package com.mycompany.sistemagestaodiscente;
  * @author filipe
  */
 public class Professor extends Usuario{
-    private String siape;
+    private int siape;
      
     public Professor(){
         super();
     }
    
-    public String getSiape() {
+    public int getSiape() {
         return siape;
     }
     
-    private void setSiape(String siape) {
+    private void setSiape(int siape) {
         this.siape = siape;
     }
     
@@ -33,6 +33,9 @@ public class Professor extends Usuario{
         
     }
     public void consultaTurmas(){
+        
+    }
+    public void validaSiape(){
         
     }
     

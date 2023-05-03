@@ -9,25 +9,28 @@ package com.mycompany.sistemagestaodiscente;
  * @author filipe
  */
 public class Administrador extends Usuario{
- 
+    private int idAdm;
+    
     // Construtor da classe
     public Administrador() {
         super();
     }
+    public void cadastraDisciplina(){
+        
+    }
+    
     // Métodos da classe
-    public void cadastroProfessorPorAdm() {
-        // Código para cadastrar um professor na escola
+    public void cadastroProfessorPorAdm(){
     }
 
-    public void cadastroAlunoPorAdm() {
-        // Código para cadastrar um aluno na escola
+    public void cadastroAlunoPorAdm(){
     }
 
-    public void atribuiMateriaAluno() {
-        // Código para atribuir uma matéria a um aluno
+    public void atribuiMateriaAluno(){
+        
     }
 
     public void atribuiMateriaProfessor() {
-        // Código para atribuir uma matéria a um professor
+        
     }
 }
