@@ -7,7 +7,7 @@ package com.mycompany.sistemagestaodiscente;
  *
  * @author filipe
  */
-public class Usuario {
+abstract class Usuario {
     private String nome;
     private int CPF;
     private String telefone;
