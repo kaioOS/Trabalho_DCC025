@@ -19,19 +19,22 @@ public class Usuario {
     private String senha;
     private int tipoUsuario;
 
+    //ID
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    private void setId(int id) {
         this.id = id;
     }
-
+    //------------------------
+    
+    //Dados pessoais do usuário
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    private void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -39,10 +42,10 @@ public class Usuario {
         return CPF;
     }
 
-    public void setCPF(int CPF) {
+    private void setCPF(int CPF) {
         this.CPF = CPF;
     }
-
+    
     public String getTelefone() {
         return telefone;
     }
@@ -50,7 +53,9 @@ public class Usuario {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-
+    //------------------------
+    
+    //Endereço
     public String getRua() {
         return rua;
     }
@@ -70,33 +75,53 @@ public class Usuario {
     public String getNumero() {
         return numero;
     }
-
+    
     public void setNumero(String numero) {
         this.numero = numero;
     }
-
-    public String getLogin() {
+    //------------------------
+    
+    //Login
+    private String getLogin() {
         return login;
     }
 
-    public void setLogin(String login) {
+    private void setLogin(String login) {
         this.login = login;
     }
 
-    public String getSenha() {
+    private String getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
+    private void setSenha(String senha) {
         this.senha = senha;
     }
 
-    public int getTipoUsuario() {
+    private int getTipoUsuario() {
         return tipoUsuario;
     }
 
-    public void setTipoUsuario(int tipoUsuario) {
+    private void setTipoUsuario(int tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }    
+    //------------------------
+
+    //Validações
+    public void validarSenha(){
+       
+    }
     
+    public void validarMatricula(){
+        
+    }
+    
+    public void validarEmail(){
+        
+    }
+    
+    public void validarTelefone(){
+        
+    }
+    //------------------------
 }

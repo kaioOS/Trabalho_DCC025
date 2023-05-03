@@ -11,6 +11,9 @@ package com.mycompany.sistemagestaodiscente;
 public class Aluno extends Usuario {
     private String matricula;
     
+    public Aluno(){
+        super();
+    }
     public void consultaNotas(){
         
     }

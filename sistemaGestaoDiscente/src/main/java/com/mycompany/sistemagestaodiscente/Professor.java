@@ -12,7 +12,7 @@ public class Professor extends Usuario{
     private String siape;
      
     public Professor(){
-        
+        super();
     }
    
     public String getSiape() {
