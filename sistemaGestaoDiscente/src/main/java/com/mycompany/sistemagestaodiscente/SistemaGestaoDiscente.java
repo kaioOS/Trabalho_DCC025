@@ -25,8 +25,8 @@ public class SistemaGestaoDiscente {
         Administrador adm = new Administrador("Filipe",123,"123","filipe","123",0,1);
                
         int opcao;
-        String nome,telefone, rua, bairro, numero, login, senha;
-        int CPF, CEP, tipoUsuario=2;
+        String nome,telefone, login, senha;
+        int CPF;
         
         do{
             System.out.println("Bem vindo ao Sistema de Gestão Discente");
