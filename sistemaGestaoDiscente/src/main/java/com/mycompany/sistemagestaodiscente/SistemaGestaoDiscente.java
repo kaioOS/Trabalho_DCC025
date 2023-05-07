@@ -21,12 +21,16 @@ public class SistemaGestaoDiscente {
         Professor vetProfessores[] = new Professor[10];
         int contProfessor = 0;
         
+        Disciplina vetDisciplina[] = new Disciplina[5];
+        int contDisciplina = 0;
+        
         //aluno1.imprimeAluno();
         Administrador adm = new Administrador("Filipe",123,"123","filipe","123",0,1);
                
         int opcao;
         String nome,telefone, login, senha;
         int CPF;
+        String codigoDisciplina, nomeDisciplina;
         
         do{
             System.out.println("Bem vindo ao Sistema de Gestão Discente");
@@ -40,13 +44,14 @@ public class SistemaGestaoDiscente {
             System.out.println("4 para listar os alunos");
             
             
-            //System.out.println("5 para cadastrar Disciplina");
-            //System.out.println("6 para listar Disciplinas");
+            System.out.println("5 para cadastrar Disciplina");
+            System.out.println("6 para listar Disciplinas");
             
             opcao = sc.nextInt();
             
             if(opcao==1){
-                
+                System.out.println("--------Cadastro de professor--------");
+
                 sc.nextLine();
                 System.out.println("Digite o nome:");
                 nome = sc.nextLine();
@@ -79,7 +84,8 @@ public class SistemaGestaoDiscente {
                 }
                 
             }else if(opcao==3){
-                 System.out.println("Digite o nome:");
+                System.out.println("--------Cadastro de aluno--------");
+                System.out.println("Digite o nome:");
                 nome = sc.nextLine();
                 
                 System.out.println("Digite o CPF:");
@@ -101,7 +107,7 @@ public class SistemaGestaoDiscente {
             }else if(opcao==4){
                 
                 System.out.println("--------Listando alunos--------");
-                for (int i = 0; i < contAlunos; i++) {
+                for (int i = 0; i < contAlunos; i++){
                     if(vetAlunos[i]==null)
                         break;
                     System.out.println("Aluno"+i+": ");
@@ -109,6 +115,26 @@ public class SistemaGestaoDiscente {
                     System.out.println("------------------------");
                 }
                 
+            }else if(opcao == 5){
+                
+                System.out.println("--------Cadastrando disciplina--------");
+                sc.nextLine();
+                System.out.println("Digite o código da disciplina: ");
+                codigoDisciplina = sc.nextLine();
+                System.out.println("Digite o nome da disciplina: ");
+                nomeDisciplina = sc.nextLine();
+                vetDisciplina[contDisciplina]=adm.cadastraDisciplina(codigoDisciplina,nomeDisciplina);
+                contDisciplina++;
+                
+            }else if(opcao == 6){
+                 System.out.println("--------Listando disciplinas--------");
+                for (int i = 0; i < contDisciplina; i++) {
+                    if(vetDisciplina[i]==null)
+                        break;
+                    System.out.println("Disciplina "+i+": ");
+                    vetDisciplina[i].imprimeDisciplina();
+                    System.out.println("------------------------");
+                }
             }
         
         }while(opcao!=0);

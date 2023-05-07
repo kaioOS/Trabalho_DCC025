@@ -18,8 +18,9 @@ public class Administrador extends Usuario{
         super(nome,CPF,telefone,login,senha,tipoUsuario);
         this.idAdm = idAdmin;
     }
-    public void cadastraDisciplina(){
-        
+    public Disciplina cadastraDisciplina(String codigoDisciplina, String nomeDisciplina){
+        Disciplina disc = new Disciplina(codigoDisciplina, nomeDisciplina);
+        return disc;
     }
     
     // Métodos da classe

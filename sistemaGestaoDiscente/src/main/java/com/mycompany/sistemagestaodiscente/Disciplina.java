@@ -26,9 +26,11 @@ public class Disciplina{
     public String getNomeDisciplina() {
         return nomeDisciplina;
     }
+
+    public void imprimeDisciplina() {
+        System.out.println("Codigo disciplina: "+codigoDisciplina);
+        System.out.println("Nome disciplina: "+nomeDisciplina);
+    }
     
-    
-
-
-
+   
 }
