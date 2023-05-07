@@ -11,15 +11,19 @@ abstract class Usuario {
     private String nome;
     private int CPF;
     private String telefone;
-    private int CEP;
-    private String rua;
-    private String bairro;
-    private String numero;
     private String login;
     private String senha;
     private int tipoUsuario;
 
     
+    public Usuario(String nome,int CPF,String telefone,String login,String senha, int tipoUsuario){
+        this.nome = nome;
+        this.CPF = CPF;
+        this.telefone = telefone;
+        this.login = login;
+        this.senha = senha;
+        this.tipoUsuario = tipoUsuario;
+    }
     
     //Dados pessoais do usuário
     public String getNome() {
@@ -44,38 +48,6 @@ abstract class Usuario {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-    //------------------------
-    
-    //Endereço
-    public int getCEP(){
-        return CEP;
-    }
-    public void setCEP(int CEP){
-        this.CEP = CEP;
-    }
-    public String getRua() {
-        return rua;
-    }
-
-    public void setRua(String rua) {
-        this.rua = rua;
-    }
-
-    public String getBairro() {
-        return bairro;
-    }
-
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-    
-    public void setNumero(String numero) {
-        this.numero = numero;
     }
     //------------------------
     
@@ -118,4 +90,14 @@ abstract class Usuario {
         
     }
     //------------------------
+    
+    public void imprimeUsuario(){
+        System.out.println("Nome: "+nome);
+        System.out.println("CPF: "+CPF);
+        System.out.println("Telefone"+telefone);
+        System.out.println("Login: "+login);
+        System.out.println("Senha: "+senha);
+        System.out.println("TipoUsuario: "+tipoUsuario);
+
+    }
 }

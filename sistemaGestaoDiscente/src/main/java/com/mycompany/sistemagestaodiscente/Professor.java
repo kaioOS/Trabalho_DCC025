@@ -4,15 +4,19 @@
  */
 package com.mycompany.sistemagestaodiscente;
 
+import java.util.Random;
+
 /**
  *
  * @author filipe
  */
 public class Professor extends Usuario{
     private int siape;
-     
-    public Professor(){
-        super();
+    Random random = new Random();
+
+    public Professor(String nome,int CPF,String telefone,String login,String senha, int tipoUsuario, int siape){
+        super(nome,CPF,telefone,login,senha,tipoUsuario);
+        this.siape = random.nextInt(9999999);
     }
    
     public int getSiape() {
@@ -37,6 +41,10 @@ public class Professor extends Usuario{
     }
     public void validaSiape(){
         
+    }
+    public void imprimeProfessor(){
+        imprimeUsuario();
+        System.out.println("SIAPE:"+siape);
     }
     
 }

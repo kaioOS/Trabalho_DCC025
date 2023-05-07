@@ -11,8 +11,10 @@ package com.mycompany.sistemagestaodiscente;
 public class Aluno extends Usuario {
     private String matricula;
     
-    public Aluno(){
-        super();
+     
+    public Aluno(String nome,int CPF,String telefone,String login,String senha, int tipoUsuario, String matricula){
+        super(nome,CPF,telefone,login,senha,tipoUsuario);
+        this.matricula=matricula;
     }
     public void consultaNotas(){
         
@@ -21,6 +23,21 @@ public class Aluno extends Usuario {
         
     }
     public void validaMatricula(){
+        
+    }
+
+    
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+    
+    public void imprimeAluno(){
+        imprimeUsuario();
+        System.out.println("Matricula:"+matricula);
         
     }
 }
