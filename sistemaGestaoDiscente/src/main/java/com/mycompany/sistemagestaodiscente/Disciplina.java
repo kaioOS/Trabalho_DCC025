@@ -9,43 +9,26 @@ package com.mycompany.sistemagestaodiscente;
  * @author filipe
  */
 public class Disciplina{
-    private String codigoTurma;
-    private int siapeProfessor;
-    private float notaAlunos[];
+    private String codigoDisciplina;
+    private String nomeDisciplina;
+    
+    public Disciplina(String codigoDisciplina, String nomeDisciplina){
+        this.codigoDisciplina = codigoDisciplina;
+        this.nomeDisciplina = nomeDisciplina;
+    }
+
+
+    public String getCodigoDisciplina() {
+        return codigoDisciplina;
+    }
+
+
+    public String getNomeDisciplina() {
+        return nomeDisciplina;
+    }
     
     
-    
-    public float listaNotaAluno(){
-        return 0;
-    }
 
 
-    public String getCodigoTurma() {
-        return codigoTurma;
-    }
 
-
-    public void setCodigoTurma(String codigoTurma) {
-        this.codigoTurma = codigoTurma;
-    }
-
-
-    public int getSiapeProfessor() {
-        return siapeProfessor;
-    }
-
-  
-    public void setSiapeProfessor(int siapeProfessor) {
-        this.siapeProfessor = siapeProfessor;
-    }
-
- 
-    public float[] getNotaAlunos() {
-        return notaAlunos;
-    }
-
-
-    public void setNotaAlunos(float[] notaAlunos) {
-        this.notaAlunos = notaAlunos;
-    }
 }

@@ -17,6 +17,7 @@ public class SistemaGestaoDiscente {
         //Aluno aluno1 = new Aluno("Filipe",123,"123","filipe","123",2,"202165035AB");
         Aluno vetAlunos[] = new Aluno[100];
         int contAlunos = 0;
+        
         Professor vetProfessores[] = new Professor[10];
         int contProfessor = 0;
         
@@ -80,21 +81,21 @@ public class SistemaGestaoDiscente {
                 contAlunos++;
                 
             }else if(opcao==3){
+                System.out.println("--------Listando alunos--------");
                 for (int i = 0; i < contAlunos; i++) {
                     if(vetAlunos[i]==null)
                         break;
-                    System.out.println("--------Listando professores--------");
-                    System.out.println("Professor "+i+": ");
+                    System.out.println("Aluno"+i+": ");
                     vetAlunos[i].imprimeAluno();
                     System.out.println("------------------------");
                 }
 
                 
             }else if(opcao==4){
+                System.out.println("--------Listando professores--------");
                 for (int i = 0; i < contProfessor; i++) {
                     if(vetProfessores[i]==null)
                         break;
-                    System.out.println("--------Listando professores--------");
                     System.out.println("Professor "+i+": ");
                     vetProfessores[i].imprimeProfessor();
                     System.out.println("------------------------");

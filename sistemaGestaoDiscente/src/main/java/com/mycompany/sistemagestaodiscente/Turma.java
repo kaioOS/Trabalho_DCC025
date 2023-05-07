@@ -9,26 +9,34 @@ package com.mycompany.sistemagestaodiscente;
  * @author filipe
  */
 public class Turma extends Disciplina {
-    private String codigoDisciplina;
-    private String nomeDisciplina;
+    private int siapeProfessor;
+    private float notaAlunos[];
 
-
-    public String getCodigoDisciplina() {
-        return codigoDisciplina;
+    public Turma(String codigoDisciplina, String nomeDisciplina, int siapeProfessor, float notaAlunos[]) {
+        super(codigoDisciplina, nomeDisciplina);
+        this.siapeProfessor = siapeProfessor;
+        this.notaAlunos = notaAlunos;
     }
 
-  
-    public void setCodigoDisciplina(String codigoDisciplina) {
-        this.codigoDisciplina = codigoDisciplina;
+    /**
+     * @return the siapeProfessor
+     */
+    public int getSiapeProfessor() {
+        return siapeProfessor;
     }
 
-
-    public String getNomeDisciplina() {
-        return nomeDisciplina;
+    /**
+     * @return the notaAlunos
+     */
+    public float[] getNotaAlunos() {
+        return notaAlunos;
     }
 
-
-    public void setNomeDisciplina(String nomeDisciplina) {
-        this.nomeDisciplina = nomeDisciplina;
+    /**
+     * @param notaAlunos the notaAlunos to set
+     */
+    public void setNotaAlunos(float[] notaAlunos) {
+        this.notaAlunos = notaAlunos;
     }
+
 }
