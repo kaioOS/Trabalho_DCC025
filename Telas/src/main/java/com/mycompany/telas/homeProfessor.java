@@ -26,41 +26,41 @@ public class homeProfessor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        panelProfessor = new javax.swing.JPanel();
         imgLogoUFJF = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        menuProfessor = new javax.swing.JMenuBar();
+        menuAtribProfessor = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        menuTurmaProfessor = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        menuConsultProfessor = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        panelProfessor.setBackground(new java.awt.Color(255, 255, 255));
 
         imgLogoUFJF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logoUFJF.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelProfessorLayout = new javax.swing.GroupLayout(panelProfessor);
+        panelProfessor.setLayout(panelProfessorLayout);
+        panelProfessorLayout.setHorizontalGroup(
+            panelProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelProfessorLayout.createSequentialGroup()
                 .addGap(73, 73, 73)
                 .addComponent(imgLogoUFJF)
                 .addContainerGap(98, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        panelProfessorLayout.setVerticalGroup(
+            panelProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelProfessorLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addComponent(imgLogoUFJF)
                 .addContainerGap(77, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("Atribuir");
+        menuAtribProfessor.setText("Atribuir");
 
         jMenuItem1.setText("Atribuir Aluno a turma");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -68,14 +68,14 @@ public class homeProfessor extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        menuAtribProfessor.add(jMenuItem1);
 
-        jMenuBar1.add(jMenu1);
+        menuProfessor.add(menuAtribProfessor);
 
-        jMenu2.setText("Turma");
+        menuTurmaProfessor.setText("Turma");
 
         jMenuItem2.setText("Lançar frequência");
-        jMenu2.add(jMenuItem2);
+        menuTurmaProfessor.add(jMenuItem2);
 
         jMenuItem3.setText("Lançar notas");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -83,28 +83,28 @@ public class homeProfessor extends javax.swing.JFrame {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem3);
+        menuTurmaProfessor.add(jMenuItem3);
 
-        jMenuBar1.add(jMenu2);
+        menuProfessor.add(menuTurmaProfessor);
 
-        jMenu3.setText("Consultar");
+        menuConsultProfessor.setText("Consultar");
 
         jMenuItem4.setText("Consultar turmas");
-        jMenu3.add(jMenuItem4);
+        menuConsultProfessor.add(jMenuItem4);
 
-        jMenuBar1.add(jMenu3);
+        menuProfessor.add(menuConsultProfessor);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(menuProfessor);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelProfessor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -155,14 +155,14 @@ public class homeProfessor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel imgLogoUFJF;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu menuAtribProfessor;
+    private javax.swing.JMenu menuConsultProfessor;
+    private javax.swing.JMenuBar menuProfessor;
+    private javax.swing.JMenu menuTurmaProfessor;
+    private javax.swing.JPanel panelProfessor;
     // End of variables declaration//GEN-END:variables
 }

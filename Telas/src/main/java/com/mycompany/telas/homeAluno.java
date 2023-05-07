@@ -26,53 +26,53 @@ public class homeAluno extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        panelAluno = new javax.swing.JPanel();
         imgLogoUFJF = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
+        menuAluno = new javax.swing.JMenuBar();
+        menuConsultAluno = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        panelAluno.setBackground(new java.awt.Color(255, 255, 255));
 
         imgLogoUFJF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logoUFJF.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelAlunoLayout = new javax.swing.GroupLayout(panelAluno);
+        panelAluno.setLayout(panelAlunoLayout);
+        panelAlunoLayout.setHorizontalGroup(
+            panelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAlunoLayout.createSequentialGroup()
                 .addGap(73, 73, 73)
                 .addComponent(imgLogoUFJF)
                 .addContainerGap(98, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        panelAlunoLayout.setVerticalGroup(
+            panelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAlunoLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addComponent(imgLogoUFJF)
                 .addContainerGap(77, Short.MAX_VALUE))
         );
 
-        jMenu3.setText("Consultar");
+        menuConsultAluno.setText("Consultar");
 
         jMenuItem4.setText("Consultar notas e frequência");
-        jMenu3.add(jMenuItem4);
+        menuConsultAluno.add(jMenuItem4);
 
-        jMenuBar1.add(jMenu3);
+        menuAluno.add(menuConsultAluno);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(menuAluno);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelAluno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelAluno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -115,9 +115,9 @@ public class homeAluno extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel imgLogoUFJF;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuBar menuAluno;
+    private javax.swing.JMenu menuConsultAluno;
+    private javax.swing.JPanel panelAluno;
     // End of variables declaration//GEN-END:variables
 }

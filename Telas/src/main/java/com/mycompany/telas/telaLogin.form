@@ -75,8 +75,8 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelLogoSGD1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelLogoSGD2" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="35" max="32767" attributes="0"/>
                           <Component id="imgLogoUFJF" min="-2" max="-2" attributes="0"/>
@@ -91,9 +91,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="labelLogoSGD1" min="-2" pref="53" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelLogoSGD2" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="imgLogoUFJF" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -134,7 +134,7 @@
             <Property name="text" type="java.lang.String" value="Entrar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="labelLogoSGD1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="24" style="1"/>
@@ -142,7 +142,7 @@
             <Property name="text" type="java.lang.String" value="Sistema de Gest&#xe3;o"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="labelLogoSGD2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="24" style="1"/>

@@ -27,15 +27,15 @@ public class homeAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         jComboBox1 = new javax.swing.JComboBox<>();
-        jPanel1 = new javax.swing.JPanel();
+        panelAdmin = new javax.swing.JPanel();
         imgLogoUFJF = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        menuAdmin = new javax.swing.JMenuBar();
+        menuCadastAdmin = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        menuAtribAdmin = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
 
@@ -44,28 +44,28 @@ public class homeAdmin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        panelAdmin.setBackground(new java.awt.Color(255, 255, 255));
 
         imgLogoUFJF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logoUFJF.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelAdminLayout = new javax.swing.GroupLayout(panelAdmin);
+        panelAdmin.setLayout(panelAdminLayout);
+        panelAdminLayout.setHorizontalGroup(
+            panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAdminLayout.createSequentialGroup()
                 .addGap(73, 73, 73)
                 .addComponent(imgLogoUFJF)
                 .addContainerGap(121, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        panelAdminLayout.setVerticalGroup(
+            panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAdminLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addComponent(imgLogoUFJF)
                 .addContainerGap(110, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("Cadastrar");
+        menuCadastAdmin.setText("Cadastrar");
 
         jMenuItem1.setText("Cadastrar Professor");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -73,7 +73,7 @@ public class homeAdmin extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        menuCadastAdmin.add(jMenuItem1);
 
         jMenuItem2.setText("Cadastrar Aluno");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -81,10 +81,10 @@ public class homeAdmin extends javax.swing.JFrame {
                 jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        menuCadastAdmin.add(jMenuItem2);
 
         jMenuItem3.setText("Cadastrar Disciplina");
-        jMenu1.add(jMenuItem3);
+        menuCadastAdmin.add(jMenuItem3);
 
         jMenuItem6.setText("Cadastrar Turma");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
@@ -92,31 +92,31 @@ public class homeAdmin extends javax.swing.JFrame {
                 jMenuItem6ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem6);
+        menuCadastAdmin.add(jMenuItem6);
 
-        jMenuBar1.add(jMenu1);
+        menuAdmin.add(menuCadastAdmin);
 
-        jMenu2.setText("Atribuir");
+        menuAtribAdmin.setText("Atribuir");
 
         jMenuItem4.setText("Atribuir Aluno a turma");
-        jMenu2.add(jMenuItem4);
+        menuAtribAdmin.add(jMenuItem4);
 
         jMenuItem5.setText("Atribuir turma a Professor");
-        jMenu2.add(jMenuItem5);
+        menuAtribAdmin.add(jMenuItem5);
 
-        jMenuBar1.add(jMenu2);
+        menuAdmin.add(menuAtribAdmin);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(menuAdmin);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelAdmin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -172,15 +172,15 @@ public class homeAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel imgLogoUFJF;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuBar menuAdmin;
+    private javax.swing.JMenu menuAtribAdmin;
+    private javax.swing.JMenu menuCadastAdmin;
+    private javax.swing.JPanel panelAdmin;
     // End of variables declaration//GEN-END:variables
 }

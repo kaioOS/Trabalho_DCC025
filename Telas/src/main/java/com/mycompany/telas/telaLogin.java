@@ -32,8 +32,8 @@ public class telaLogin extends javax.swing.JFrame {
         labelPassword = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
         buttonLogin = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        labelLogoSGD1 = new javax.swing.JLabel();
+        labelLogoSGD2 = new javax.swing.JLabel();
         imgLogoUFJF = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,11 +47,11 @@ public class telaLogin extends javax.swing.JFrame {
 
         buttonLogin.setText("Entrar");
 
-        jLabel1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        jLabel1.setText("Sistema de Gestão");
+        labelLogoSGD1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        labelLogoSGD1.setText("Sistema de Gestão");
 
-        jLabel2.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        jLabel2.setText("Discente");
+        labelLogoSGD2.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        labelLogoSGD2.setText("Discente");
 
         imgLogoUFJF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logoUFJF.png"))); // NOI18N
 
@@ -79,8 +79,8 @@ public class telaLogin extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(panelLoginLayout.createSequentialGroup()
                         .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
+                            .addComponent(labelLogoSGD1)
+                            .addComponent(labelLogoSGD2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                         .addComponent(imgLogoUFJF))))
         );
@@ -90,9 +90,9 @@ public class telaLogin extends javax.swing.JFrame {
                 .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelLoginLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelLogoSGD1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2))
+                        .addComponent(labelLogoSGD2))
                     .addComponent(imgLogoUFJF))
                 .addGap(55, 55, 55)
                 .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -161,8 +161,8 @@ public class telaLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonLogin;
     private javax.swing.JLabel imgLogoUFJF;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel labelLogoSGD1;
+    private javax.swing.JLabel labelLogoSGD2;
     private javax.swing.JLabel labelPassword;
     private javax.swing.JLabel labelUser;
     private javax.swing.JPanel panelLogin;
