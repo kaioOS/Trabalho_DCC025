@@ -4,12 +4,16 @@
  */
 package com.mycompany.sistemagestaodiscente;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author filipe
  */
 public class Turma extends Disciplina {
-    private int siapeProfessor;
+    private int siapeProfessor;    
+    private String matriculaAlunos[];
     private float notaAlunos[];
 
     public Turma(String codigoDisciplina, String nomeDisciplina, int siapeProfessor, float notaAlunos[]) {
@@ -18,23 +22,17 @@ public class Turma extends Disciplina {
         this.notaAlunos = notaAlunos;
     }
 
-    /**
-     * @return the siapeProfessor
-     */
+
     public int getSiapeProfessor() {
         return siapeProfessor;
     }
 
-    /**
-     * @return the notaAlunos
-     */
+
     public float[] getNotaAlunos() {
         return notaAlunos;
     }
 
-    /**
-     * @param notaAlunos the notaAlunos to set
-     */
+
     public void setNotaAlunos(float[] notaAlunos) {
         this.notaAlunos = notaAlunos;
     }

@@ -32,10 +32,17 @@ public class SistemaGestaoDiscente {
             System.out.println("Bem vindo ao Sistema de Gestão Discente");
             System.out.println("Digite: ");
             System.out.println("0 para sair");
+            
             System.out.println("1 para cadastrar professor");
-            System.out.println("2 para cadastrar aluno");
-            System.out.println("3 para listar os alunos");
-            System.out.println("4 para listar os professores");
+            System.out.println("2 para listar os professores");
+            
+            System.out.println("3 para cadastrar aluno");
+            System.out.println("4 para listar os alunos");
+            
+            
+            //System.out.println("5 para cadastrar Disciplina");
+            //System.out.println("6 para listar Disciplinas");
+            
             opcao = sc.nextInt();
             
             if(opcao==1){
@@ -62,7 +69,17 @@ public class SistemaGestaoDiscente {
                 
             }else if(opcao==2){
                 
-                System.out.println("Digite o nome:");
+                System.out.println("--------Listando professores--------");
+                for (int i = 0; i < contProfessor; i++) {
+                    if(vetProfessores[i]==null)
+                        break;
+                    System.out.println("Professor "+i+": ");
+                    vetProfessores[i].imprimeProfessor();
+                    System.out.println("------------------------");
+                }
+                
+            }else if(opcao==3){
+                 System.out.println("Digite o nome:");
                 nome = sc.nextLine();
                 
                 System.out.println("Digite o CPF:");
@@ -79,25 +96,16 @@ public class SistemaGestaoDiscente {
                 
                 vetAlunos[contAlunos] = adm.cadastroAlunoPorAdm(nome, CPF, telefone, login, senha, 2);
                 contAlunos++;
+
                 
-            }else if(opcao==3){
+            }else if(opcao==4){
+                
                 System.out.println("--------Listando alunos--------");
                 for (int i = 0; i < contAlunos; i++) {
                     if(vetAlunos[i]==null)
                         break;
                     System.out.println("Aluno"+i+": ");
                     vetAlunos[i].imprimeAluno();
-                    System.out.println("------------------------");
-                }
-
-                
-            }else if(opcao==4){
-                System.out.println("--------Listando professores--------");
-                for (int i = 0; i < contProfessor; i++) {
-                    if(vetProfessores[i]==null)
-                        break;
-                    System.out.println("Professor "+i+": ");
-                    vetProfessores[i].imprimeProfessor();
                     System.out.println("------------------------");
                 }
                 
