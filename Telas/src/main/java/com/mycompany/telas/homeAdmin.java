@@ -98,7 +98,7 @@ public class homeAdmin extends javax.swing.JFrame {
 
         jMenu2.setText("Atribuir");
 
-        jMenuItem4.setText("Atribuir turma a Aluno");
+        jMenuItem4.setText("Atribuir Aluno a turma");
         jMenu2.add(jMenuItem4);
 
         jMenuItem5.setText("Atribuir turma a Professor");
