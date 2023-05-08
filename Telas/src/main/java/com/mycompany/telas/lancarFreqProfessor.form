@@ -23,14 +23,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -46,53 +49,55 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane3" alignment="0" pref="607" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="labelNomeAluno" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="imgLogoUFJF" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="imgLogoUFJF" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelNomeAluno" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
+              <Component id="jScrollPane3" alignment="0" pref="619" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Component id="imgLogoUFJF" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="107" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                   <Component id="labelNomeAluno" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Component id="jScrollPane3" min="-2" pref="124" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jScrollPane3" min="-2" pref="127" max="-2" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="14" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Mat&#xed;cula: 11112233344"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="labelNomeAluno">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="SansSerif" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Aluno: Fulano da Silva"/>
+            <Property name="text" type="java.lang.String" value="Professor: Nome do Professor"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Siape: 12345678"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="imgLogoUFJF">
@@ -100,6 +105,22 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagens/logoUFJF.png"/>
             </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Disciplina: Algoritmos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Turma: A"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane3">
@@ -119,35 +140,35 @@
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="5" rowCount="4">
-                    <Column editable="true" title="Disciplina" type="java.lang.String">
-                      <Data value="Algoritmos"/>
-                      <Data value="C&#xe1;lculo I"/>
-                      <Data value="Qu&#xed;mica"/>
-                      <Data value="F&#xed;sica"/>
+                    <Column editable="true" title="" type="java.lang.String">
+                      <Data value="Fulano da Silva"/>
+                      <Data value="Beltrano Ferreira"/>
+                      <Data value="Ciclano de Souza"/>
+                      <Data value="Maria Vieira"/>
                     </Column>
-                    <Column editable="true" title="Tuma" type="java.lang.String">
-                      <Data value="A"/>
-                      <Data value="B"/>
-                      <Data value="C"/>
-                      <Data value="A"/>
+                    <Column editable="true" title="25/01" type="java.lang.String">
+                      <Data value="P"/>
+                      <Data value="F"/>
+                      <Data value="P"/>
+                      <Data value="P"/>
                     </Column>
-                    <Column editable="true" title="Nota" type="java.lang.Integer">
-                      <Data value="90"/>
-                      <Data value="60"/>
-                      <Data value="65"/>
-                      <Data value="50"/>
+                    <Column editable="true" title="27/01" type="java.lang.String">
+                      <Data value="P"/>
+                      <Data value="P"/>
+                      <Data value="P"/>
+                      <Data value="P"/>
                     </Column>
-                    <Column editable="true" title="Frequ&#xea;ncia" type="java.lang.String">
-                      <Data value="75%"/>
-                      <Data value="100%"/>
-                      <Data value="50%"/>
-                      <Data value="75%"/>
+                    <Column editable="true" title="01/02" type="java.lang.String">
+                      <Data value="F"/>
+                      <Data value="P"/>
+                      <Data value="P"/>
+                      <Data value="P"/>
                     </Column>
-                    <Column editable="true" title="Situa&#xe7;&#xe3;o" type="java.lang.String">
-                      <Data value="7"/>
-                      <Data value="0"/>
-                      <Data value="15"/>
-                      <Data value="7"/>
+                    <Column editable="true" title="03/02" type="java.lang.String">
+                      <Data value="F"/>
+                      <Data value="P"/>
+                      <Data value="F"/>
+                      <Data value="P"/>
                     </Column>
                   </Table>
                 </Property>
