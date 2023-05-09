@@ -10,21 +10,37 @@ import java.util.HashMap;
  *
  * @author filipe
  */
-public class Turma extends Disciplina {
+public class Turma {
+    final String codigoTurma;
+    final String codigoDisciplinaCorresp;
     private int siapeProfessor;    
     private HashMap <String,Integer> frequenciaAlunos = new HashMap<>();
     private HashMap <String,Float> notaAlunos = new HashMap<>();
     
 
-    public Turma(String codigoDisciplina, String nomeDisciplina, int siapeProfessor, HashMap notaAlunos) {
-        super(codigoDisciplina, nomeDisciplina);
+    public Turma(String codigoTurma,String codigoDisciplinaCorresp, int siapeProfessor) {
+        this.codigoTurma = codigoTurma;
+        this.codigoDisciplinaCorresp = codigoDisciplinaCorresp;
         this.siapeProfessor = siapeProfessor;
+        //falta inicialização dos hash maps
       
+    }//duvida sobre esse construtor
+    
+    
+    public String getCodigoTurma() {
+        return codigoTurma;
     }
     
-
+    public String getCodigoDisciplinaCorresp() {
+        return codigoDisciplinaCorresp;
+    }
+    
+    
     public int getSiapeProfessor() {
         return siapeProfessor;
+    }
+     public void setSiapeProfessor(int siapeProfessor) {
+        this.siapeProfessor = siapeProfessor;
     }
 
     
@@ -65,5 +81,4 @@ public class Turma extends Disciplina {
         }
         
     }
-
 }
