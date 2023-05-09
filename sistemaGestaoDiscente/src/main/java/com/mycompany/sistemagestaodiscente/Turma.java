@@ -5,7 +5,6 @@
 package com.mycompany.sistemagestaodiscente;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  *
@@ -13,13 +12,14 @@ import java.util.Map;
  */
 public class Turma extends Disciplina {
     private int siapeProfessor;    
-    private String matriculaAlunos[];
-    private float notaAlunos[];
+    private HashMap <String,Integer> frequenciaAlunos = new HashMap<>();
+    private HashMap <String,Float> notaAlunos = new HashMap<>();
+    
 
-    public Turma(String codigoDisciplina, String nomeDisciplina, int siapeProfessor, float notaAlunos[]) {
+    public Turma(String codigoDisciplina, String nomeDisciplina, int siapeProfessor, HashMap notaAlunos) {
         super(codigoDisciplina, nomeDisciplina);
         this.siapeProfessor = siapeProfessor;
-        this.notaAlunos = notaAlunos;
+      
     }
     
 
@@ -27,14 +27,43 @@ public class Turma extends Disciplina {
         return siapeProfessor;
     }
 
-
-    public float[] getNotaAlunos() {
-        return notaAlunos;
+    
+    public int getFrequenciaAluno(String matricula){
+        if(this.frequenciaAlunos.isEmpty())
+            return -1;
+        return this.frequenciaAlunos.get(matricula);
+    }
+    
+    
+    //atualiza frequencia do aluno
+    public void setFrequenciaAluno(String matricula, boolean presenca){
+        if(this.frequenciaAlunos.containsKey(matricula)){
+            if(presenca)
+                this.frequenciaAlunos.put(matricula, this.frequenciaAlunos.get(matricula)+1);
+                
+        }else{
+            if(presenca)
+                this.frequenciaAlunos.put(matricula, 1);
+            else
+                this.frequenciaAlunos.put(matricula, 0);
+        }
     }
 
+    public float getNotaAlunos(String matricula) {
+        if(this.notaAlunos.isEmpty())
+            return -1;
+        
+        return this.notaAlunos.get(matricula);
+    }
 
-    public void setNotaAlunos(float[] notaAlunos) {
-        this.notaAlunos = notaAlunos;
+    //atualiza nota do aluno
+    public void setNotaAlunos(String matricula, float notaAluno) {
+        if(this.notaAlunos.containsKey(matricula)){
+            this.notaAlunos.put(matricula, this.notaAlunos.get(matricula)+notaAluno);
+        }else{
+            this.notaAlunos.put(matricula, notaAluno);
+        }
+        
     }
 
 }
