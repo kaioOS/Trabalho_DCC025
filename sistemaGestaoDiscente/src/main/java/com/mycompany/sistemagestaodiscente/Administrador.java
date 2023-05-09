@@ -38,11 +38,11 @@ public class Administrador extends Usuario{
         return aluno;
     }
 
-    public void atribuiMateriaAluno(){
+    public void atribuiTurmaAluno(){
         
     }
 
-    public void atribuiMateriaProfessor() {
+    public void atribuiTurmaProfessor() {
         
     }
 }

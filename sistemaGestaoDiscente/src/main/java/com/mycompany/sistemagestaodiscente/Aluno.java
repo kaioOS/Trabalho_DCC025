@@ -16,10 +16,10 @@ public class Aluno extends Usuario {
         super(nome,CPF,telefone,login,senha,tipoUsuario);
         this.matricula=matricula;
     }
-    public void consultaNotas(){
+    public void consultaNotas(String matricula, String codigoTurma){
         
     }
-    public void consultaFrequencia(){
+    public void consultaFrequencia(String matricula, String codigoTurma){
         
     }
     public void validaMatricula(){

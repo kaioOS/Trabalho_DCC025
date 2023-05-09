@@ -26,14 +26,11 @@ public class Professor extends Usuario{
     private void setSiape(int siape) {
         this.siape = siape;
     }
-    
-    public void cadastroAlunoPorProfessor(){
+
+    public void lancarNotaAluno(String matricula){
         
     }
-    public void lancarNota(){
-        
-    }
-    public void lancarFrequencia(){
+    public void lancarFrequencia(String codigoTurma){
         
     }
     public void consultaTurmas(){
