@@ -57,17 +57,17 @@ public class lancarFreqProfessor extends javax.swing.JFrame {
         tableNotaFreq.setForeground(new java.awt.Color(51, 51, 51));
         tableNotaFreq.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Fulano da Silva", "P", "P", "F", "F"},
-                {"Beltrano Ferreira", "F", "P", "P", "P"},
-                {"Ciclano de Souza", "P", "P", "P", "F"},
-                {"Maria Vieira", "P", "P", "P", "P"}
+                {"Fulano da Silva",  new Integer(1)},
+                {"Beltrano Ferreira",  new Integer(5)},
+                {"Ciclano de Souza",  new Integer(0)},
+                {"Maria Vieira",  new Integer(1)}
             },
             new String [] {
-                "", "25/01", "27/01", "01/02", "03/02"
+                "", "Faltas"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -94,8 +94,10 @@ public class lancarFreqProfessor extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
+                .addContainerGap(384, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
