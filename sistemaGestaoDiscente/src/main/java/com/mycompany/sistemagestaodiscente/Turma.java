@@ -24,7 +24,7 @@ public class Turma {
         this.siapeProfessor = siapeProfessor;
         //falta inicialização dos hash maps
       
-    }//duvida sobre esse construtor
+    }
     
     
     public String getCodigoTurma() {

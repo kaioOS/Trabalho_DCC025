@@ -25,11 +25,11 @@ public class SistemaGestaoDiscente {
         int contDisciplina = 0;
         
         //aluno1.imprimeAluno();
-        Administrador adm = new Administrador("Filipe",123,"123","filipe","123",0,1);
+        Administrador adm = new Administrador("Filipe","123","123","123",0,1);
                
         int opcao;
-        String nome,telefone, login, senha;
-        int CPF;
+        String nome,telefone, senha;
+        String CPF;
         String codigoDisciplina, nomeDisciplina;
         
         do{
@@ -57,19 +57,16 @@ public class SistemaGestaoDiscente {
                 nome = sc.nextLine();
                 
                 System.out.println("Digite o CPF:");
-                CPF = sc.nextInt();
+                CPF = sc.nextLine();
                 
                 System.out.println("Digite o telefone:");
                 telefone = sc.nextLine();
                 
-                sc.nextLine();
-                System.out.println("Digite o login:");
-                login = sc.nextLine();
                 
                 System.out.println("Digite a senha:");
                 senha = sc.nextLine();
                 
-                vetProfessores[contProfessor] = adm.cadastroProfessorPorAdm(nome, CPF, telefone, login, senha, 2);
+                vetProfessores[contProfessor] = adm.cadastroProfessorPorAdm(nome, CPF, telefone, senha, 2);
                 contProfessor++;
                 
             }else if(opcao==2){
@@ -85,22 +82,22 @@ public class SistemaGestaoDiscente {
                 
             }else if(opcao==3){
                 System.out.println("--------Cadastro de aluno--------");
+                
+                sc.nextLine();
+
                 System.out.println("Digite o nome:");
                 nome = sc.nextLine();
                 
                 System.out.println("Digite o CPF:");
-                CPF = sc.nextInt();
+                CPF = sc.nextLine();
 
                 System.out.println("Digite o telefone:");
                 telefone = sc.nextLine();
                 
-                System.out.println("Digite o login:");
-                login = sc.nextLine();
-
                 System.out.println("Digite a senha:");
                 senha = sc.nextLine();
                 
-                vetAlunos[contAlunos] = adm.cadastroAlunoPorAdm(nome, CPF, telefone, login, senha, 2);
+                vetAlunos[contAlunos] = adm.cadastroAlunoPorAdm(nome, CPF, telefone, senha, 2);
                 contAlunos++;
 
                 

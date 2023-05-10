@@ -12,8 +12,8 @@ public class Aluno extends Usuario {
     private String matricula;
     
      
-    public Aluno(String nome,int CPF,String telefone,String login,String senha, int tipoUsuario, String matricula){
-        super(nome,CPF,telefone,login,senha,tipoUsuario);
+    public Aluno(String nome,String CPF,String telefone,String senha, int tipoUsuario, String matricula){
+        super(nome,CPF,telefone,senha,tipoUsuario);
         this.matricula=matricula;
     }
     public void consultaNotas(String matricula, String codigoTurma){
@@ -37,7 +37,7 @@ public class Aluno extends Usuario {
     
     public void imprimeAluno(){
         imprimeUsuario();
-        System.out.println("Matricula:"+matricula);
+        System.out.println("Matricula: "+this.matricula);
         
     }
 }

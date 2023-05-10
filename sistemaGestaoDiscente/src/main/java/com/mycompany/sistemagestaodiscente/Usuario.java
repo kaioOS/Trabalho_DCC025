@@ -9,18 +9,16 @@ package com.mycompany.sistemagestaodiscente;
  */
 abstract class Usuario {
     private String nome;
-    private int CPF;
+    private String CPF;
     private String telefone;
-    private String login;
     private String senha;
     private int tipoUsuario;
 
     
-    public Usuario(String nome,int CPF,String telefone,String login,String senha, int tipoUsuario){
+    public Usuario(String nome,String CPF,String telefone,String senha, int tipoUsuario){
         this.nome = nome;
         this.CPF = CPF;
         this.telefone = telefone;
-        this.login = login;
         this.senha = senha;
         this.tipoUsuario = tipoUsuario;
     }
@@ -34,11 +32,11 @@ abstract class Usuario {
         this.nome = nome;
     }
 
-    public int getCPF() {
+    public String getCPF() {
         return CPF;
     }
 
-    private void setCPF(int CPF) {
+    private void setCPF(String CPF) {
         this.CPF = CPF;
     }
     
@@ -52,13 +50,6 @@ abstract class Usuario {
     //------------------------
     
     //Login
-    private String getLogin() {
-        return login;
-    }
-
-    private void setLogin(String login) {
-        this.login = login;
-    }
 
     private String getSenha() {
         return senha;
@@ -92,12 +83,11 @@ abstract class Usuario {
     //------------------------
     
     public void imprimeUsuario(){
-        System.out.println("Nome: "+nome);
-        System.out.println("CPF: "+CPF);
-        System.out.println("Telefone"+telefone);
-        System.out.println("Login: "+login);
-        System.out.println("Senha: "+senha);
-        System.out.println("TipoUsuario: "+tipoUsuario);
+        System.out.println("Nome: "+this.nome);
+        System.out.println("CPF: "+this.CPF);
+        System.out.println("Telefone: "+this.telefone);
+        System.out.println("Senha: "+this.senha);
+        System.out.println("TipoUsuario: "+this.tipoUsuario);
 
     }
 }
