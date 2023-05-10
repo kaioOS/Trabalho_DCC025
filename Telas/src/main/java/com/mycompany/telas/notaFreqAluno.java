@@ -38,7 +38,7 @@ public class notaFreqAluno extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabel1.setText("Matícula: 11112233344");
+        jLabel1.setText("Matrícula: 11112233344");
 
         labelNomeAluno.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         labelNomeAluno.setText("Aluno: Fulano da Silva");
@@ -86,7 +86,7 @@ public class notaFreqAluno extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelNomeAluno)
                             .addComponent(jLabel1))
-                        .addGap(0, 452, Short.MAX_VALUE)))
+                        .addGap(0, 446, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(imgLogoUFJF)
