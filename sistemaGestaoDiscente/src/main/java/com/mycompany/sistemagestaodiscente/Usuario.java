@@ -30,6 +30,7 @@ abstract class Usuario {
     public Usuario(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws UsuarioException{
         validarTelefone(telefone);
         validarEmail(email);
+        validarSenha(senha);
         this.nome = nome;
         this.CPF = CPF;
         this.telefone = telefone;
@@ -79,7 +80,8 @@ abstract class Usuario {
         return senha;
     }
 
-    private void setSenha(String senha) {
+    private void setSenha(String senha) throws UsuarioException {
+        validarSenha(String.valueOf(senha));
         this.senha = senha;
     }
 
@@ -93,8 +95,10 @@ abstract class Usuario {
     //------------------------
 
     //Validações
-    public void validarSenha(){
-       
+    public static void validarSenha(String senha) throws UsuarioException{
+       if (senha == null || senha.length() < 8) {
+            throw new UsuarioException("Senha inválida!");
+        }
     }
     
     public static void validarEmail(String email) throws UsuarioException {
