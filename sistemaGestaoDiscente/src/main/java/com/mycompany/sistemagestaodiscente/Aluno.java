@@ -18,8 +18,8 @@ public class Aluno extends Usuario {
     private String matricula;
     
      
-    public Aluno(String nome,String CPF,String telefone,String senha, int tipoUsuario, String matricula){
-        super(nome,CPF,telefone,senha,tipoUsuario);
+    public Aluno(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario, String matricula) throws UsuarioException{
+        super(nome,CPF,telefone,email, senha,tipoUsuario);
         this.matricula=matricula;
     }
     public void consultaNotas(String matricula, String codigoTurma){

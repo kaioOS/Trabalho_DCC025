@@ -20,8 +20,8 @@ public class Professor extends Usuario{
     private int siape;
     Random random = new Random();
 
-    public Professor(String nome,String CPF,String telefone, String senha, int tipoUsuario, int siape){
-        super(nome,CPF,telefone,senha,tipoUsuario);
+    public Professor(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario, int siape) throws UsuarioException{
+        super(nome,CPF,telefone, email, senha,tipoUsuario);
         this.siape = random.nextInt(9999999);
     }
    

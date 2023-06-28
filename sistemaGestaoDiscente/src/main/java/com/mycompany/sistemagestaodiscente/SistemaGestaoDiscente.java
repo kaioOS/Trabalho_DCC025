@@ -18,7 +18,7 @@ Gustavo Silva Ribeiro (202165057AC)
  */
 public class SistemaGestaoDiscente {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UsuarioException {
         Scanner sc = new Scanner(System.in);
         //Aluno aluno1 = new Aluno("Filipe",123,"123","filipe","123",2,"202165035AB");
         Aluno vetAlunos[] = new Aluno[100];
@@ -31,10 +31,10 @@ public class SistemaGestaoDiscente {
         int contDisciplina = 0;
         
         //aluno1.imprimeAluno();
-        Administrador adm = new Administrador("Filipe","123","123","123",0,1);
+        Administrador adm = new Administrador("Filipe","123","123","teste@teste.com", "123",0,1);
                
         int opcao;
-        String nome,telefone, senha;
+        String nome,telefone, email, senha;
         String CPF;
         String codigoDisciplina, nomeDisciplina;
         
@@ -68,11 +68,13 @@ public class SistemaGestaoDiscente {
                 System.out.println("Digite o telefone:");
                 telefone = sc.nextLine();
                 
+                System.out.println("Digite o email:");
+                email = sc.nextLine();
                 
                 System.out.println("Digite a senha:");
                 senha = sc.nextLine();
                 
-                vetProfessores[contProfessor] = adm.cadastroProfessorPorAdm(nome, CPF, telefone, senha, 2);
+                vetProfessores[contProfessor] = adm.cadastroProfessorPorAdm(nome, CPF, telefone,email, senha, 2);
                 contProfessor++;
                 
             }else if(opcao==2){
@@ -100,10 +102,13 @@ public class SistemaGestaoDiscente {
                 System.out.println("Digite o telefone:");
                 telefone = sc.nextLine();
                 
+                System.out.println("Digite o email:");
+                email = sc.nextLine();
+                
                 System.out.println("Digite a senha:");
                 senha = sc.nextLine();
                 
-                vetAlunos[contAlunos] = adm.cadastroAlunoPorAdm(nome, CPF, telefone, senha, 2);
+                vetAlunos[contAlunos] = adm.cadastroAlunoPorAdm(nome, CPF, telefone, email, senha, 2);
                 contAlunos++;
 
                 

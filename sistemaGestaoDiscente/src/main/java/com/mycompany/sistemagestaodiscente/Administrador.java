@@ -19,8 +19,8 @@ public class Administrador extends Usuario{
     private int idAdm;
     
     // Construtor da classe
-    public Administrador(String nome,String CPF,String telefone,String senha, int tipoUsuario, int idAdmin){
-        super(nome,CPF,telefone,senha,tipoUsuario);
+    public Administrador(String nome,String CPF,String telefone,String email, String senha, int tipoUsuario, int idAdmin) throws UsuarioException{
+        super(nome,CPF,telefone,email, senha,tipoUsuario);
         this.idAdm = idAdmin;
     }
     public Disciplina cadastraDisciplina(String codigoDisciplina, String nomeDisciplina){
@@ -29,17 +29,17 @@ public class Administrador extends Usuario{
     }
     
     // Métodos da classe
-    public Professor cadastroProfessorPorAdm(String nome,String CPF,String telefone,String senha, int tipoUsuario){
+    public Professor cadastroProfessorPorAdm(String nome,String CPF,String telefone,String email, String senha, int tipoUsuario) throws UsuarioException{
         Random random = new Random();
         int siape = random.nextInt(7);
-        Professor professor = new Professor(nome,CPF,telefone,senha,tipoUsuario,siape);
+        Professor professor = new Professor(nome,CPF,telefone, email, senha,tipoUsuario,siape);
         return professor;
     }
 
-    public Aluno cadastroAlunoPorAdm(String nome,String CPF,String telefone,String senha, int tipoUsuario){
+    public Aluno cadastroAlunoPorAdm(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws UsuarioException{
         System.out.println("Digite o nome");
         String matricula="2023"+CPF;
-        Aluno aluno = new Aluno(nome,CPF,telefone,senha,tipoUsuario,matricula);
+        Aluno aluno = new Aluno(nome,CPF,telefone, email, senha,tipoUsuario,matricula);
         return aluno;
     }
 
