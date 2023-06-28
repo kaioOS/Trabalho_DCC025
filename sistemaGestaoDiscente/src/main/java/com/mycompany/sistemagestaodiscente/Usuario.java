@@ -28,6 +28,7 @@ abstract class Usuario {
 
     
     public Usuario(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws UsuarioException{
+        validarTelefone(telefone);
         validarEmail(email);
         this.nome = nome;
         this.CPF = CPF;
@@ -107,7 +108,13 @@ abstract class Usuario {
     }
 
     
-    public void validarTelefone(){
+    public static void validarTelefone(String telefone) throws UsuarioException{
+        Pattern pattern = Pattern.compile("^\\(\\d{2}\\)\\s?\\d{5}-\\d{4}$");
+        Matcher matcher = pattern.matcher(telefone);
+        boolean matchFound = matcher.find();
+        if (!matchFound) {
+            throw new UsuarioException("Telefone inválido");
+        }
         
     }
     //------------------------
