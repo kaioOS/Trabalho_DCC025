@@ -43,10 +43,13 @@ public class Professor extends Usuario{
         this.siape = siape;
     }
 
-    public void lancarNotaAluno(String matricula){
+    public void lancarNotaAluno(Turma turma, Aluno aluno, float nota) {
         
-    }
-    public void lancarFrequencia(String codigoTurma){
+        if (turma!=null) {
+            turma.setNotaAlunos(aluno.getMatricula(), nota);
+        }
+}
+    public void lancarFrequencia(Turma turma, Aluno aluno, boolean frequencia){
         
     }
     public void validarSiape(String siape) throws UsuarioException{

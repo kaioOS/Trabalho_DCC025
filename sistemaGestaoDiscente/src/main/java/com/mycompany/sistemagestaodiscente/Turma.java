@@ -99,12 +99,20 @@ public class Turma {
 
     //atualiza nota do aluno
     public void setNotaAlunos(String matricula, float notaAluno) {
-        if(this.notaAlunos.containsKey(matricula)){
-            this.notaAlunos.put(matricula, this.notaAlunos.get(matricula)+notaAluno);
-        }else{
-            this.notaAlunos.put(matricula, notaAluno);
-        }
-        
+        for (Aluno aluno : alunos) {
+            if (aluno.getMatricula().equals(matricula)) {
+                if(this.notaAlunos.containsKey(matricula)){
+                this.notaAlunos.put(matricula, this.notaAlunos.get(matricula)+notaAluno);
+                }else{
+                    this.notaAlunos.put(matricula, notaAluno);
+                }
+                System.out.println("Nota lançada para o aluno " + aluno.getNome() + " na disciplina " + this.getCodigoDisciplinaCorresp());
+            }
+            else
+            {
+               System.out.println("Matricula nao encontrada!");
+            }
+        }   
     }
     
     public void imprimeTurma() {
