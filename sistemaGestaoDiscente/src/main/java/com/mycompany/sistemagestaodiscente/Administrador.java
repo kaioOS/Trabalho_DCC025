@@ -31,9 +31,7 @@ public class Administrador extends Usuario{
     
     // Métodos da classe
     public Professor cadastroProfessorPorAdm(String nome,String CPF,String telefone,String email, String senha, int tipoUsuario) throws UsuarioException{
-        Random random = new Random();
-        int siape = random.nextInt(7);
-        Professor professor = new Professor(nome,CPF,telefone, email, senha,tipoUsuario,siape);
+        Professor professor = new Professor(nome,CPF,telefone, email, senha,tipoUsuario);
         return professor;
     }
 

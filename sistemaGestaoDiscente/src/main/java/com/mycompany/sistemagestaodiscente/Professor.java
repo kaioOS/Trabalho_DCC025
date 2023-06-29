@@ -17,19 +17,21 @@ Filipe de Lima Namorato(202165035AB)
 Gustavo Silva Ribeiro (202165057AC) 
  */
 public class Professor extends Usuario{
-    private int siape;
+    private String siape;
     Random random = new Random();
 
-    public Professor(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario, int siape) throws UsuarioException{
+    public Professor(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws UsuarioException{
         super(nome,CPF,telefone, email, senha,tipoUsuario);
-        this.siape = random.nextInt(9999999);
+
+        this.siape = Integer.toString(random.nextInt(9000000) + 1000000); // Gera um número de 7 dígitos e passa para String
+        validaSiape();
     }
    
-    public int getSiape() {
+    public String getSiape() {
         return siape;
     }
     
-    private void setSiape(int siape) {
+    private void setSiape(String siape) {
         this.siape = siape;
     }
 
@@ -42,12 +44,26 @@ public class Professor extends Usuario{
     public void consultaTurmas(){
         
     }
-    public void validaSiape(){
+    public void validaSiape() throws UsuarioException{
+        if (siape.length() != 7) {
+            throw new UsuarioException("SIAPE invalido!");
+        }
+
+        char firstDigit = siape.charAt(0);
+        if (firstDigit == '0') {
+            throw new UsuarioException("SIAPE invalido!");
+        }
+
+        try {
+            Integer.parseInt(siape);
+        } catch (NumberFormatException e) {
+            throw new UsuarioException("SIAPE invalido!");
+        }
         
     }
     public void imprimeProfessor(){
         imprimeUsuario();
-        System.out.println("SIAPE:"+this.siape);
+        System.out.println("SIAPE: "+this.siape);
     }
     
 }

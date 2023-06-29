@@ -66,7 +66,7 @@ public class Aluno extends Usuario {
         Date data = new Date();
         int anoAtual = Integer.parseInt(data.toString().substring(24, 28));
         if (anoMatricula > anoAtual) {
-            throw new UsuarioException("Matricula invalida");
+            throw new UsuarioException("Matricula invalida!");
         }
     }
 
