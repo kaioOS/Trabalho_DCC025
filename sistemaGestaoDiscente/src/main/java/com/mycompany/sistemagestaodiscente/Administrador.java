@@ -43,8 +43,9 @@ public class Administrador extends Usuario{
         return aluno;
     }
 
-    public void atribuiTurmaAluno(){
-        
+    
+    public void atribuiTurmaAluno(Turma turma, Aluno aluno) throws TurmaException {
+        turma.adicionarAluno(aluno);
     }
 
     public void atribuiTurmaProfessor() {

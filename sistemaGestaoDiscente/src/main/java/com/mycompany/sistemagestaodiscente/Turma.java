@@ -4,7 +4,9 @@
  */
 package com.mycompany.sistemagestaodiscente;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
@@ -21,6 +23,7 @@ public class Turma {
     final String codigoTurma;
     final String codigoDisciplinaCorresp;
     private int siapeProfessor;    
+    private List<Aluno> alunos;
     private HashMap <String,Integer> frequenciaAlunos = new HashMap<>();
     private HashMap <String,Float> notaAlunos = new HashMap<>();
     
@@ -29,6 +32,7 @@ public class Turma {
         this.codigoTurma = codigoTurma;
         this.codigoDisciplinaCorresp = codigoDisciplinaCorresp;
         this.siapeProfessor = siapeProfessor;
+        alunos = new ArrayList<>();
         //falta inicialização dos hash maps
       
     }
@@ -48,6 +52,15 @@ public class Turma {
     }
      public void setSiapeProfessor(int siapeProfessor) {
         this.siapeProfessor = siapeProfessor;
+    }
+     
+    
+    public void adicionarAluno(Aluno aluno) throws TurmaException {
+        if (codigoDisciplinaCorresp != null) {
+            alunos.add(aluno);
+        } else {
+            throw new TurmaException("A turma não está vinculada a uma disciplina.");
+        }
     }
 
     
@@ -87,5 +100,19 @@ public class Turma {
             this.notaAlunos.put(matricula, notaAluno);
         }
         
+    }
+    
+    public void imprimeTurma() {
+        System.out.println("Codigo turma: "+this.codigoTurma);
+        System.out.println("Codigo disciplina: "+this.codigoDisciplinaCorresp);
+        System.out.println("SIAPE professor: "+this.siapeProfessor);
+    }
+    public void imprimirListaAlunos() {
+        System.out.println("Lista de Alunos da Disciplina "+ this.codigoDisciplinaCorresp +" Turma " + this.codigoTurma);
+
+        for (Aluno aluno : alunos) {
+            System.out.println("Nome: " + aluno.getNome());
+            System.out.println("Matrícula: " + aluno.getMatricula());
+        }
     }
 }

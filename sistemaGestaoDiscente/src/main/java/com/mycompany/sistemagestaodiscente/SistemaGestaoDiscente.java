@@ -18,7 +18,7 @@ Gustavo Silva Ribeiro (202165057AC)
  */
 public class SistemaGestaoDiscente {
 
-    public static void main(String[] args) throws UsuarioException {
+    public static void main(String[] args) throws UsuarioException, TurmaException {
         Scanner sc = new Scanner(System.in);
         //Aluno aluno1 = new Aluno("Filipe",123,"123","filipe","123",2,"202165035AB");
         Aluno vetAlunos[] = new Aluno[100];
@@ -30,13 +30,17 @@ public class SistemaGestaoDiscente {
         Disciplina vetDisciplina[] = new Disciplina[5];
         int contDisciplina = 0;
         
+        Turma vetTurma[] = new Turma[4];
+        int contTurma = 0;
+        
         //aluno1.imprimeAluno();
         Administrador adm = new Administrador("Filipe","123","(32) 99999-9999","teste@teste.com", "12345678",0,1);
                
         int opcao;
         String nome,telefone, email, senha;
         String CPF;
-        String codigoDisciplina, nomeDisciplina;
+        String codigoDisciplina, nomeDisciplina, codigoTurma, codigoDisciplinaCorresp;
+        int siapeProfessor;
         
         do{
             System.out.println("Bem vindo ao Sistema de Gestão Discente");
@@ -52,6 +56,9 @@ public class SistemaGestaoDiscente {
             
             System.out.println("5 para cadastrar Disciplina");
             System.out.println("6 para listar Disciplinas");
+            
+            System.out.println("7 para cadastrar Turma");
+            System.out.println("8 para listar Turmas");
             
             opcao = sc.nextInt();
             
@@ -143,11 +150,29 @@ public class SistemaGestaoDiscente {
                     vetDisciplina[i].imprimeDisciplina();
                     System.out.println("------------------------");
                 }
+            }else if(opcao == 7){
+                System.out.println("--------Cadastrando Turma--------");
+                sc.nextLine();
+                System.out.println("Digite o código da Turma: ");
+                codigoTurma = sc.nextLine();
+                System.out.println("Digite o código da Disciplina: ");
+                codigoDisciplinaCorresp = sc.nextLine();
+                System.out.println("Digite o SIAPE do Professor: ");
+                siapeProfessor = Integer.parseInt(sc.nextLine());
+                vetTurma[contTurma]= new Turma(codigoTurma, codigoDisciplinaCorresp, siapeProfessor);
+                contTurma++;
+            }else if(opcao == 8){
+                 System.out.println("--------Listando turmas--------");
+                for (int i = 0; i < contTurma; i++) {
+                    if(vetTurma[i]==null)
+                        break;
+                    System.out.println("Turma "+i+": ");
+                    vetTurma[i].imprimeTurma();
+                    System.out.println("------------------------");
+                }
             }
         
         }while(opcao!=0);
-        
-        
                 
     }
 }
