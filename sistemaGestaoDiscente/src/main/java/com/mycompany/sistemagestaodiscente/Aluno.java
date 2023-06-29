@@ -23,17 +23,24 @@ public class Aluno extends Usuario {
         this.matricula=matricula;
     }
     
-    public void consultaNotas(String matricula, Turma turma) {        
-        float nota = turma.getNotaAlunos(matricula);
+    public void consultaNotas(Turma turma) {        
+        float nota = turma.getNotaAlunos(this.matricula);
         
         if (nota == -1) {
             System.out.println("Nota não encontrada.");
         } else {
-            System.out.println("A nota do aluno com matrícula " + matricula + " na turma " + turma.getCodigoTurma() + " da disciplina "+ turma.getCodigoDisciplinaCorresp()+ " é: " + nota);
+            System.out.println("A nota do aluno com matrícula " + this.matricula + " na turma " + turma.getCodigoTurma() + " da disciplina "+ turma.getCodigoDisciplinaCorresp()+ " é: " + nota);
         }
     }
     
-    public void consultaFrequencia(String matricula, String codigoTurma){
+    public void consultaFrequencia(Turma turma){
+        int frequencia = turma.getFrequenciaAluno(this.matricula);
+        
+        if (frequencia == -1) {
+            System.out.println("Frequencia não encontrada.");
+        } else {
+            System.out.println("A frequencia do aluno com matrícula " + this.matricula + " na turma " + turma.getCodigoTurma() + " da disciplina "+ turma.getCodigoDisciplinaCorresp()+ " é: " + frequencia);
+        }
         
     }
     public void validaMatricula(){
