@@ -6,7 +6,7 @@ package com.mycompany.sistemagestaodiscente;
 
 /**
  *
- * @author luisa
+ * @author gustavo
  */
 public class TurmaException extends Exception {
 

@@ -31,6 +31,7 @@ abstract class Usuario {
         validarTelefone(telefone);
         validarEmail(email);
         validarSenha(senha);
+        validarCPF(CPF);
         this.nome = nome;
         this.CPF = CPF;
         this.telefone = telefone;
@@ -110,6 +111,49 @@ abstract class Usuario {
         }
 
     }
+    
+    public static void validarCPF(String cpf) throws UsuarioException {
+        cpf = cpf.replaceAll("[^0-9]", "");
+
+        if (cpf.length() != 11) {
+            throw new UsuarioException("CPF inválido!");
+        }
+        if (cpf.matches("(\\d)\\1{10}")) {
+            throw new UsuarioException("CPF inválido!");
+        }
+        int soma = 0;
+
+        for (int i = 0; i < 9; i++) {
+            soma += Character.getNumericValue(cpf.charAt(i)) * (10 - i);
+        }
+        int resto = soma % 11;
+        
+        int primeiroDigitoVerificador;
+        if (resto < 2) {
+            primeiroDigitoVerificador = 0;
+        } else {
+           primeiroDigitoVerificador = 11-resto;
+        }  
+
+        if (primeiroDigitoVerificador != Character.getNumericValue(cpf.charAt(9))) {
+            throw new UsuarioException("CPF inválido!");
+        }
+        soma = 0;
+        for (int i = 0; i < 10; i++) {
+            soma += Character.getNumericValue(cpf.charAt(i)) * (11 - i);
+        }
+        resto = soma % 11;
+        int segundoDigitoVerificador;
+        if (resto < 2) {
+            segundoDigitoVerificador = 0;
+        } else {
+           segundoDigitoVerificador = 11-resto;
+        } 
+        if (segundoDigitoVerificador != Character.getNumericValue(cpf.charAt(10))) {
+            throw new UsuarioException("CPF inválido!");
+        }
+    }
+    
 
     
     public static void validarTelefone(String telefone) throws UsuarioException{

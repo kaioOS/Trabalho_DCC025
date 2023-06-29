@@ -34,7 +34,7 @@ public class SistemaGestaoDiscente {
         int contTurma = 0;
         
         //aluno1.imprimeAluno();
-        Administrador adm = new Administrador("Filipe","123","(32) 99999-9999","teste@teste.com", "12345678",0,1);
+        Administrador adm = new Administrador("Filipe","384.628.477-70","(32) 99999-9999","teste@teste.com", "12345678",0,1);
                
         int opcao;
         String nome,telefone, email, senha;
