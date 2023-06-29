@@ -5,6 +5,7 @@
 package com.mycompany.sistemagestaodiscente;
 
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  *
@@ -18,12 +19,14 @@ Gustavo Silva Ribeiro (202165057AC)
 
 public class Aluno extends Usuario {
     private String matricula;
+    private HashMap<Disciplina, Turma> turmasPorDisciplinaAluno;
     
      
     public Aluno(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario, String matricula) throws UsuarioException{
         super(nome,CPF,telefone,email, senha,tipoUsuario);
         validarMatricula(matricula);
         this.matricula=matricula;
+        this.turmasPorDisciplinaAluno = new HashMap<>();
     }
     
     public void consultaNotas(Turma turma) {        
@@ -82,5 +85,10 @@ public class Aluno extends Usuario {
         imprimeUsuario();
         System.out.println("Matricula: "+this.matricula);
         
+    }
+    public void adicionarTurma(Turma turma) {
+        if (turma != null) {
+            turmasPorDisciplinaAluno.put(turma.getDisciplina(), turma);
+        }
     }
 }

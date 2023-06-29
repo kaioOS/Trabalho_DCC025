@@ -20,19 +20,17 @@ Gustavo Silva Ribeiro (202165057AC)
  */
 
 public class Turma {
-    final String codigoTurma;
-    final String codigoDisciplinaCorresp;
-    private int siapeProfessor;  
+    final String codigoTurma;  
     private Professor professor;
+    private Disciplina disciplina;
     private List<Aluno> alunos;
     private HashMap <String,Integer> frequenciaAlunos = new HashMap<>();
     private HashMap <String,Float> notaAlunos = new HashMap<>();
     
 
-    public Turma(String codigoTurma,String codigoDisciplinaCorresp, int siapeProfessor) {
+    public Turma(String codigoTurma, Disciplina disciplina) {
         this.codigoTurma = codigoTurma;
-        this.codigoDisciplinaCorresp = codigoDisciplinaCorresp;
-        this.siapeProfessor = siapeProfessor;
+        this.disciplina = disciplina;
         alunos = new ArrayList<>();
         //falta inicialização dos hash maps
       
@@ -43,36 +41,33 @@ public class Turma {
         return codigoTurma;
     }
     
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+    
     public String getCodigoDisciplinaCorresp() {
-        return codigoDisciplinaCorresp;
+        return this.disciplina.getCodigoDisciplina();
     }
     
     
-    public int getSiapeProfessor() {
-        return siapeProfessor;
+    public String getSiapeProfessor() {
+        return professor.getSiape();
     }
-     public void setSiapeProfessor(int siapeProfessor) {
-        this.siapeProfessor = siapeProfessor;
+    
+    public void setProfessor(Professor professor) {
+       this.professor = professor;
     }
      
     
     public void adicionarAluno(Aluno aluno) throws TurmaException {
-        if (codigoDisciplinaCorresp != null) {
+        if (this.disciplina.getCodigoDisciplina() != null) {
             alunos.add(aluno);
         } else {
             throw new TurmaException("A turma não está vinculada a uma disciplina.");
         }
     }
     
-    public void adicionarProfessor(Professor professor) throws TurmaException {
-        if (codigoDisciplinaCorresp != null) {
-            this.professor = professor;
-        } else {
-            throw new TurmaException("A turma não está vinculada a uma disciplina.");
-        }
-    }
-
-    
+        
     public int getFrequenciaAluno(String matricula){
         if(this.frequenciaAlunos.isEmpty())
             return -1;
@@ -113,11 +108,11 @@ public class Turma {
     
     public void imprimeTurma() {
         System.out.println("Codigo turma: "+this.codigoTurma);
-        System.out.println("Codigo disciplina: "+this.codigoDisciplinaCorresp);
-        System.out.println("SIAPE professor: "+this.siapeProfessor);
+        System.out.println("Codigo disciplina: "+this.disciplina.getCodigoDisciplina());
+        System.out.println("SIAPE professor: "+this.professor.getSiape());
     }
     public void imprimirListaAlunos() {
-        System.out.println("Lista de Alunos da Disciplina "+ this.codigoDisciplinaCorresp +" Turma " + this.codigoTurma);
+        System.out.println("Lista de Alunos da Disciplina "+ this.disciplina.getCodigoDisciplina() +" Turma " + this.codigoTurma);
 
         for (Aluno aluno : alunos) {
             System.out.println("Nome: " + aluno.getNome());
@@ -126,7 +121,7 @@ public class Turma {
     }
     
     public void imprimirProf() {
-        System.out.println("Professor da Disciplina "+ this.codigoDisciplinaCorresp +" Turma " + this.codigoTurma);
+        System.out.println("Professor da Disciplina "+ this.disciplina.getCodigoDisciplina() +" Turma " + this.codigoTurma);
         System.out.println("Nome: " + professor.getNome());
         System.out.println("Matrícula: " + professor.getSiape());
     }

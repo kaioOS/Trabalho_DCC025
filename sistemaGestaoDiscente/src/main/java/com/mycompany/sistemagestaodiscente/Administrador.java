@@ -36,21 +36,20 @@ public class Administrador extends Usuario{
     }
 
     public Aluno cadastroAlunoPorAdm(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws UsuarioException{
-        System.out.println("Digite o nome");
         Date data = new Date();
         CPF = CPF.replaceAll("[^0-9]", "");
         String matricula= data.toString().substring(24, 28) +CPF;
         Aluno aluno = new Aluno(nome,CPF,telefone, email, senha,tipoUsuario,matricula);
         return aluno;
     }
-
+    
     
     public void atribuiTurmaAluno(Turma turma, Aluno aluno) throws TurmaException {
-        turma.adicionarAluno(aluno);
+        aluno.adicionarTurma(turma);
     }
 
-    public void atribuiTurmaProfessor(Turma turma, Professor professor) throws TurmaException {
-        turma.adicionarProfessor(professor);
+    public void atribuiTurmaProfessor( Turma turma, Professor professor) throws TurmaException {
+        professor.adicionarTurma(turma);
         
     }
 }
