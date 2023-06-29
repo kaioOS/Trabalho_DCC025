@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.telas;
-
+import com.mycompany.sistemagestaodiscente.*;
 /**
  *
  * @author User
@@ -37,6 +37,7 @@ public class cadastrarProfessor extends javax.swing.JFrame {
         txtPassword2 = new javax.swing.JPasswordField();
         labelPassword2 = new javax.swing.JLabel();
         labelLogoSGD1 = new javax.swing.JLabel();
+        buttonRegister = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,6 +55,13 @@ public class cadastrarProfessor extends javax.swing.JFrame {
 
         labelLogoSGD1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         labelLogoSGD1.setText("Cadastrar Professor");
+
+        buttonRegister.setText("Cadastrar");
+        buttonRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRegisterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -79,7 +87,9 @@ public class cadastrarProfessor extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(labelPassword2)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtPassword2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(buttonRegister)
+                                .addComponent(txtPassword2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(labelLogoSGD1))
                 .addContainerGap(239, Short.MAX_VALUE))
         );
@@ -105,7 +115,9 @@ public class cadastrarProfessor extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelPassword2)
                     .addComponent(txtPassword2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(66, 66, 66))
+                .addGap(18, 18, 18)
+                .addComponent(buttonRegister)
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -123,6 +135,11 @@ public class cadastrarProfessor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
+        String cpf = txtUser.getText();
+        char[] senha = txtPassword.getPassword();
+    }//GEN-LAST:event_buttonRegisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,6 +177,7 @@ public class cadastrarProfessor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonRegister;
     private javax.swing.JLabel imgLogoUFJF;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelLogoSGD1;

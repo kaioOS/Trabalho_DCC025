@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.telas;
-
+import com.mycompany.sistemagestaodiscente.*;
 /**
  *
  * @author User
@@ -33,6 +33,7 @@ public class casdastrarDisciplina extends javax.swing.JFrame {
         txtUser = new javax.swing.JTextField();
         labelLogoSGD1 = new javax.swing.JLabel();
         txtUser2 = new javax.swing.JTextField();
+        buttonRegister = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,6 +47,13 @@ public class casdastrarDisciplina extends javax.swing.JFrame {
 
         labelLogoSGD1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         labelLogoSGD1.setText("Cadastrar Disciplina");
+
+        buttonRegister.setText("Cadastrar");
+        buttonRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRegisterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -63,7 +71,8 @@ public class casdastrarDisciplina extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtUser2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtUser2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonRegister)))
                     .addComponent(labelLogoSGD1))
                 .addContainerGap(145, Short.MAX_VALUE))
         );
@@ -81,7 +90,9 @@ public class casdastrarDisciplina extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelPassword)
                     .addComponent(txtUser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(119, 119, 119))
+                .addGap(43, 43, 43)
+                .addComponent(buttonRegister)
+                .addGap(53, 53, 53))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -99,6 +110,10 @@ public class casdastrarDisciplina extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
+        
+    }//GEN-LAST:event_buttonRegisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,6 +151,7 @@ public class casdastrarDisciplina extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonRegister;
     private javax.swing.JLabel imgLogoUFJF;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelLogoSGD1;

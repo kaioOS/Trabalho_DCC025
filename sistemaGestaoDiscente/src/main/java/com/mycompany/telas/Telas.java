@@ -3,7 +3,7 @@
  */
 
 package com.mycompany.telas;
-
+import com.mycompany.sistemagestaodiscente.*;
 /**
  *
  * @author User

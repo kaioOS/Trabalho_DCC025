@@ -60,6 +60,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtUser" min="-2" pref="181" max="-2" attributes="0"/>
                               <Component id="txtUser2" min="-2" pref="181" max="-2" attributes="0"/>
+                              <Component id="buttonRegister" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="labelLogoSGD1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -84,7 +85,9 @@
                       <Component id="labelPassword" min="-2" max="-2" attributes="0"/>
                       <Component id="txtUser2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="buttonRegister" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -118,6 +121,14 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtUser2">
+        </Component>
+        <Component class="javax.swing.JButton" name="buttonRegister">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cadastrar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRegisterActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

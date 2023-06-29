@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.telas;
-
+import com.mycompany.sistemagestaodiscente.*;
 /**
  *
  * @author User
@@ -43,7 +43,7 @@ public class notaFreqAluno extends javax.swing.JFrame {
         labelNomeAluno.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         labelNomeAluno.setText("Aluno: Fulano da Silva");
 
-        imgLogoUFJF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logoUFJF.png"))); // NOI18N
+        imgLogoUFJF.setIcon(new javax.swing.ImageIcon("./src/main/java/imagens/logoUFJF.png"));
 
         tableNotaFreq.setFont(new java.awt.Font("Nunito", 0, 13)); // NOI18N
         tableNotaFreq.setForeground(new java.awt.Color(51, 51, 51));

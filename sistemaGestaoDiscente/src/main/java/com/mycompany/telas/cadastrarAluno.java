@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.telas;
-
+import com.mycompany.sistemagestaodiscente.*;
 /**
  *
  * @author User
@@ -32,11 +32,12 @@ public class cadastrarAluno extends javax.swing.JFrame {
         labelPassword = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         labelPassword1 = new javax.swing.JLabel();
-        txtPassword2 = new javax.swing.JPasswordField();
+        txtPassword = new javax.swing.JPasswordField();
         labelPassword2 = new javax.swing.JLabel();
         labelLogoSGD1 = new javax.swing.JLabel();
         txtUser1 = new javax.swing.JTextField();
         txtUser2 = new javax.swing.JTextField();
+        buttonRegister = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,6 +55,14 @@ public class cadastrarAluno extends javax.swing.JFrame {
 
         labelLogoSGD1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         labelLogoSGD1.setText("Cadastrar Aluno");
+
+        buttonRegister.setText("Cadastrar");
+        buttonRegister.setActionCommand("Cadastrar");
+        buttonRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRegisterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -79,7 +88,9 @@ public class cadastrarAluno extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(labelPassword2)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtPassword2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(buttonRegister)
+                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(labelLogoSGD1))
                 .addContainerGap(151, Short.MAX_VALUE))
         );
@@ -104,8 +115,10 @@ public class cadastrarAluno extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelPassword2)
-                    .addComponent(txtPassword2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(66, 66, 66))
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(buttonRegister)
+                .addGap(17, 17, 17))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -123,6 +136,11 @@ public class cadastrarAluno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
+        String cpf = txtUser.getText();
+        char[] senha = txtPassword.getPassword();
+    }//GEN-LAST:event_buttonRegisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,6 +178,7 @@ public class cadastrarAluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonRegister;
     private javax.swing.JLabel imgLogoUFJF;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelLogoSGD1;
@@ -167,7 +186,7 @@ public class cadastrarAluno extends javax.swing.JFrame {
     private javax.swing.JLabel labelPassword1;
     private javax.swing.JLabel labelPassword2;
     private javax.swing.JLabel labelUser;
-    private javax.swing.JPasswordField txtPassword2;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUser;
     private javax.swing.JTextField txtUser1;
     private javax.swing.JTextField txtUser2;

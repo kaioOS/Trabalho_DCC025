@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.telas;
-
+import com.mycompany.sistemagestaodiscente.*;
 /**
  *
  * @author User
@@ -46,6 +46,11 @@ public class telaLogin extends javax.swing.JFrame {
         labelPassword.setText("Senha");
 
         buttonLogin.setText("Entrar");
+        buttonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLoginActionPerformed(evt);
+            }
+        });
 
         labelLogoSGD1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         labelLogoSGD1.setText("Sistema de Gestão");
@@ -53,7 +58,7 @@ public class telaLogin extends javax.swing.JFrame {
         labelLogoSGD2.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         labelLogoSGD2.setText("Discente");
 
-        imgLogoUFJF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logoUFJF.png"))); // NOI18N
+        imgLogoUFJF.setIcon(new javax.swing.ImageIcon("./src/main/java/imagens/logoUFJF.png"));
 
         javax.swing.GroupLayout panelLoginLayout = new javax.swing.GroupLayout(panelLogin);
         panelLogin.setLayout(panelLoginLayout);
@@ -122,6 +127,11 @@ public class telaLogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
+        String cpf = txtUser.getText();
+        char[] senha = txtPassword.getPassword();
+    }//GEN-LAST:event_buttonLoginActionPerformed
 
     /**
      * @param args the command line arguments

@@ -70,7 +70,10 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="labelPassword2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txtPassword2" min="-2" pref="181" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="buttonRegister" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtPassword2" min="-2" pref="181" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <Component id="labelLogoSGD1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -105,7 +108,9 @@
                       <Component id="labelPassword2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtPassword2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="buttonRegister" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -153,6 +158,14 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastrar Professor"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="buttonRegister">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cadastrar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRegisterActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
