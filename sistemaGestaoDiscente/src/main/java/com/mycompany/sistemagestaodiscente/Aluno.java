@@ -22,9 +22,17 @@ public class Aluno extends Usuario {
         super(nome,CPF,telefone,email, senha,tipoUsuario);
         this.matricula=matricula;
     }
-    public void consultaNotas(String matricula, String codigoTurma){
+    
+    public void consultaNotas(String matricula, Turma turma) {        
+        float nota = turma.getNotaAlunos(matricula);
         
+        if (nota == -1) {
+            System.out.println("Nota não encontrada.");
+        } else {
+            System.out.println("A nota do aluno com matrícula " + matricula + " na turma " + turma.getCodigoTurma() + " da disciplina "+ turma.getCodigoDisciplinaCorresp()+ " é: " + nota);
+        }
     }
+    
     public void consultaFrequencia(String matricula, String codigoTurma){
         
     }
