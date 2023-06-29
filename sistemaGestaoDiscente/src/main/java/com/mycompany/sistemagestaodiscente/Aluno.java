@@ -22,8 +22,8 @@ public class Aluno extends Usuario {
      
     public Aluno(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario, String matricula) throws UsuarioException{
         super(nome,CPF,telefone,email, senha,tipoUsuario);
+        validarMatricula(matricula);
         this.matricula=matricula;
-        validarMatricula();
     }
     
     public void consultaNotas(Turma turma) {        
@@ -46,37 +46,36 @@ public class Aluno extends Usuario {
         }
         
     }
-    public void validarMatricula() throws UsuarioException {
-        if (this.getMatricula().length() < 15) {
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) throws UsuarioException {
+        validarMatricula(matricula);
+        this.matricula = matricula;
+    }
+    public void validarMatricula(String matricula) throws UsuarioException {
+        if (matricula.length() < 15) {
             throw new UsuarioException("Matricula invalida!");
         }
         for (int i = 0; i < 15; i++) {
-            if (!Character.isDigit(this.getMatricula().charAt(i))) {
+            if (!Character.isDigit(matricula.charAt(i))) {
                 throw new UsuarioException("Matricula invalida!");
             }
         }
-        if (this.getMatricula().length() > 15) {
-            for (int i = 15; i < this.getMatricula().length(); i++) {
-                if (!Character.isLetter(this.getMatricula().charAt(i))) {
+        if (matricula.length() > 15) {
+            for (int i = 15; i < matricula.length(); i++) {
+                if (!Character.isLetter(matricula.charAt(i))) {
                     throw new UsuarioException("Matricula invalida!");
                 }
             }
         }
-        int anoMatricula = Integer.parseInt(this.getMatricula().substring(0, 3));
+        int anoMatricula = Integer.parseInt(matricula.substring(0, 3));
         Date data = new Date();
         int anoAtual = Integer.parseInt(data.toString().substring(24, 28));
         if (anoMatricula > anoAtual) {
             throw new UsuarioException("Matricula invalida!");
         }
-    }
-
-    
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
     }
     
     public void imprimeAluno(){

@@ -24,14 +24,15 @@ public class Professor extends Usuario{
         super(nome,CPF,telefone, email, senha,tipoUsuario);
 
         this.siape = Integer.toString(random.nextInt(9000000) + 1000000); // Gera um número de 7 dígitos e passa para String
-        validaSiape();
+        validarSiape(this.siape);
     }
    
     public String getSiape() {
         return siape;
     }
     
-    private void setSiape(String siape) {
+    private void setSiape(String siape)throws UsuarioException {
+        validarSiape(siape);
         this.siape = siape;
     }
 
@@ -44,13 +45,13 @@ public class Professor extends Usuario{
     public void consultaTurmas(){
         
     }
-    public void validaSiape() throws UsuarioException{
+    public void validarSiape(String siape) throws UsuarioException{
         if (siape.length() != 7) {
             throw new UsuarioException("SIAPE invalido!");
         }
 
-        char firstDigit = siape.charAt(0);
-        if (firstDigit == '0') {
+        char primeiroDigito = siape.charAt(0);
+        if (primeiroDigito == '0') {
             throw new UsuarioException("SIAPE invalido!");
         }
 

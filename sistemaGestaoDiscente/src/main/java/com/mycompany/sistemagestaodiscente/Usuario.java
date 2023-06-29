@@ -28,6 +28,7 @@ abstract class Usuario {
 
     
     public Usuario(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws UsuarioException{
+        validarNome(nome);
         validarTelefone(telefone);
         validarEmail(email);
         validarSenha(senha);
@@ -45,7 +46,8 @@ abstract class Usuario {
         return nome;
     }
 
-    private void setNome(String nome) {
+    private void setNome(String nome) throws UsuarioException {
+        validarNome(nome);
         this.nome = nome;
     }
 
@@ -53,7 +55,8 @@ abstract class Usuario {
         return CPF;
     }
 
-    private void setCPF(String CPF) {
+    private void setCPF(String CPF) throws UsuarioException {
+        validarCPF(CPF);
         this.CPF = CPF;
     }
     
@@ -61,7 +64,8 @@ abstract class Usuario {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
+    public void setTelefone(String telefone) throws UsuarioException {
+        validarTelefone(telefone);
         this.telefone = telefone;
     }
     
@@ -69,7 +73,8 @@ abstract class Usuario {
         return email;
     }
 
-    private void setEmail(String email) {
+    private void setEmail(String email) throws UsuarioException {
+        validarEmail(email);
         this.email = email;
     }
     
@@ -164,6 +169,12 @@ abstract class Usuario {
             throw new UsuarioException("Telefone inválido");
         }
         
+    }
+    public static void validarNome(String nome) throws UsuarioException
+    {
+        if (!nome.matches("[a-zA-Z]+")) {
+            throw new UsuarioException("Nome inválido!");
+        }
     }
     //------------------------
     
