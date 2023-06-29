@@ -86,9 +86,10 @@ public class Aluno extends Usuario {
         System.out.println("Matricula: "+this.matricula);
         
     }
-    public void adicionarTurma(Turma turma) {
+    public void adicionarTurma(Turma turma) throws TurmaException {
         if (turma != null) {
             turmasPorDisciplinaAluno.put(turma.getDisciplina(), turma);
+            turma.adicionarAluno(this);
         }
     }
 }

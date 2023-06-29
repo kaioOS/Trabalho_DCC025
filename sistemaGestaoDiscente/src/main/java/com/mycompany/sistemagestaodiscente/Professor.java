@@ -74,6 +74,7 @@ public class Professor extends Usuario{
     public void adicionarTurma(Turma turma) {
         if (turma != null) {
         this.turmasProfessor.put(turma.getDisciplina(), turma);
+        turma.setProfessor(this);
         }
     }
     

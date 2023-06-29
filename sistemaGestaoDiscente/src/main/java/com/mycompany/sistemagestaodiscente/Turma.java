@@ -24,15 +24,16 @@ public class Turma {
     private Professor professor;
     private Disciplina disciplina;
     private List<Aluno> alunos;
-    private HashMap <String,Integer> frequenciaAlunos = new HashMap<>();
-    private HashMap <String,Float> notaAlunos = new HashMap<>();
+    private HashMap <String,Integer> frequenciaAlunos;
+    private HashMap <String,Float> notaAlunos;
     
 
     public Turma(String codigoTurma, Disciplina disciplina) {
         this.codigoTurma = codigoTurma;
         this.disciplina = disciplina;
-        alunos = new ArrayList<>();
-        //falta inicialização dos hash maps
+        this.alunos = new ArrayList<>();
+        this.frequenciaAlunos = new HashMap<>();
+        this.notaAlunos = new HashMap<>();
       
     }
     
@@ -109,7 +110,13 @@ public class Turma {
     public void imprimeTurma() {
         System.out.println("Codigo turma: "+this.codigoTurma);
         System.out.println("Codigo disciplina: "+this.disciplina.getCodigoDisciplina());
-        System.out.println("SIAPE professor: "+this.professor.getSiape());
+        if(this.professor!=null){
+            System.out.println("SIAPE professor: "+this.professor.getSiape());
+        }
+        else
+        {
+            System.out.println("Professor nao cadastrado!");
+        }
     }
     public void imprimirListaAlunos() {
         System.out.println("Lista de Alunos da Disciplina "+ this.disciplina.getCodigoDisciplina() +" Turma " + this.codigoTurma);
