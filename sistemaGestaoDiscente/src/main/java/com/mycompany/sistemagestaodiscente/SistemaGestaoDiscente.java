@@ -30,13 +30,11 @@ public class SistemaGestaoDiscente {
         Disciplina vetDisciplina[] = new Disciplina[5];
         int contDisciplina = 0;
         
-        Turma vetTurma[] = new Turma[4];
-        int contTurma = 0;
-        
+               
         //aluno1.imprimeAluno();
         Administrador adm = new Administrador("Filipe","384.628.477-70","(32) 99999-9999","teste@teste.com", "12345678",0,1);
         
-// TESTES        
+ //TESTES        
 //        Aluno a1 = adm.cadastroAlunoPorAdm("Gustavo","384.628.477-70","(32) 99999-9999","teste@teste.com", "12345678",2);
 //        Aluno a2 = adm.cadastroAlunoPorAdm("Fulano","489.325.417-01","(32) 99999-9999","teste@teste.com", "12345678",2);
 //        Professor p1 = adm.cadastroProfessorPorAdm("Kaio","384.628.477-70","(32) 99999-9999","teste@teste.com", "12345678",1);
@@ -82,8 +80,6 @@ public class SistemaGestaoDiscente {
             System.out.println("5 para cadastrar Disciplina");
             System.out.println("6 para listar Disciplinas");
             
-            System.out.println("7 para cadastrar Turma");
-            System.out.println("8 para listar Turmas");
             
             opcao = sc.nextInt();
             
