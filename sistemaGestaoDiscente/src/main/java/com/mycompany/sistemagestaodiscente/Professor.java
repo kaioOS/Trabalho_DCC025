@@ -48,9 +48,11 @@ public class Professor extends Usuario{
         if (turma!=null) {
             turma.setNotaAlunos(aluno.getMatricula(), nota);
         }
-}
-    public void lancarFrequencia(Turma turma, Aluno aluno, boolean frequencia){
-        
+    }
+    public void lancarFrequencia(Turma turma, Aluno aluno, boolean presenca){
+        if (turma!=null) {
+            turma.setFrequenciaAluno(aluno.getMatricula(), presenca);
+        }
     }
     public void validarSiape(String siape) throws UsuarioException{
         if (siape.length() != 7) {

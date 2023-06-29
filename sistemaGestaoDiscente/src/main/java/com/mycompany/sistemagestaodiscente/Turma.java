@@ -78,15 +78,23 @@ public class Turma {
     
     //atualiza frequencia do aluno
     public void setFrequenciaAluno(String matricula, boolean presenca){
-        if(this.frequenciaAlunos.containsKey(matricula)){
+        for (Aluno aluno : alunos) {
+            if (aluno.getMatricula().equals(matricula)) {
+                if(this.frequenciaAlunos.containsKey(matricula)){
             if(presenca)
-                this.frequenciaAlunos.put(matricula, this.frequenciaAlunos.get(matricula)+1);
-                
-        }else{
-            if(presenca)
-                this.frequenciaAlunos.put(matricula, 1);
+                this.frequenciaAlunos.put(matricula, this.frequenciaAlunos.get(matricula)+1); 
+            }else{
+                if(presenca)
+                    this.frequenciaAlunos.put(matricula, 1);
+                else
+                    this.frequenciaAlunos.put(matricula, 0);
+            }
+                System.out.println("Frequencia lançada para o aluno " + aluno.getNome() + " na disciplina " + this.getCodigoDisciplinaCorresp());
+            }
             else
-                this.frequenciaAlunos.put(matricula, 0);
+            {
+               System.out.println("Matricula nao encontrada!");
+            }
         }
     }
 

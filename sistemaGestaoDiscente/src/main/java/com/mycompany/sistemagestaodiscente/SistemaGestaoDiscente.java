@@ -35,27 +35,32 @@ public class SistemaGestaoDiscente {
         
         //aluno1.imprimeAluno();
         Administrador adm = new Administrador("Filipe","384.628.477-70","(32) 99999-9999","teste@teste.com", "12345678",0,1);
-        Aluno a1 = adm.cadastroAlunoPorAdm("Gustavo","384.628.477-70","(32) 99999-9999","teste@teste.com", "12345678",2);
-        Aluno a2 = adm.cadastroAlunoPorAdm("Fulano","489.325.417-01","(32) 99999-9999","teste@teste.com", "12345678",2);
-        Professor p1 = adm.cadastroProfessorPorAdm("Kaio","384.628.477-70","(32) 99999-9999","teste@teste.com", "12345678",1);
-        Disciplina d = new Disciplina("MAT123", "MAT");
-        Turma t = new Turma("A", d);
-        Disciplina d2 = new Disciplina("DCC123", "DCC");
-        Turma t2 = new Turma("B", d2);
-        Disciplina d3 = new Disciplina("DCC123", "DCC");
-        Turma t3 = new Turma("A", d3);
-
-        adm.atribuiTurmaProfessor(t, p1);
-        adm.atribuiTurmaProfessor(t2, p1);
-        adm.atribuiTurmaProfessor(t3, p1);
-        adm.atribuiTurmaAluno(t, a1);
-        adm.atribuiTurmaAluno(t2, a2);
-        p1.imprimeTurmas();
-        p1.consultaTurma(d3);
-        t.imprimeTurma();
-        t.imprimirListaAlunos();
-        p1.lancarNotaAluno(t, a1, 100);
-        p1.lancarNotaAluno(t, a2, 100);
+        
+// TESTES        
+//        Aluno a1 = adm.cadastroAlunoPorAdm("Gustavo","384.628.477-70","(32) 99999-9999","teste@teste.com", "12345678",2);
+//        Aluno a2 = adm.cadastroAlunoPorAdm("Fulano","489.325.417-01","(32) 99999-9999","teste@teste.com", "12345678",2);
+//        Professor p1 = adm.cadastroProfessorPorAdm("Kaio","384.628.477-70","(32) 99999-9999","teste@teste.com", "12345678",1);
+//        Disciplina d = new Disciplina("MAT123", "MAT");
+//        Turma t = new Turma("A", d);
+//        Disciplina d2 = new Disciplina("DCC123", "DCC");
+//        Turma t2 = new Turma("B", d2);
+//        Disciplina d3 = new Disciplina("DCC123", "DCC");
+//        Turma t3 = new Turma("A", d3);
+//
+//        adm.atribuiTurmaProfessor(t, p1);
+//        adm.atribuiTurmaProfessor(t2, p1);
+//        adm.atribuiTurmaProfessor(t3, p1);
+//        adm.atribuiTurmaAluno(t, a1);
+//        adm.atribuiTurmaAluno(t2, a2);
+//        p1.imprimeTurmas();
+//        p1.consultaTurma(d3);
+//        t.imprimeTurma();
+//        t.imprimirListaAlunos();
+//        p1.lancarNotaAluno(t, a1, 100);
+//        p1.lancarNotaAluno(t, a2, 100);
+//        p1.lancarFrequencia(t, a1, true);
+//        p1.lancarFrequencia(t, a1, false);
+//        p1.lancarFrequencia(t, a2, true);
         
         int opcao;
         String nome,telefone, email, senha;
