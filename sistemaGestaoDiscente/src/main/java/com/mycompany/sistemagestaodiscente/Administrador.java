@@ -48,7 +48,8 @@ public class Administrador extends Usuario{
         turma.adicionarAluno(aluno);
     }
 
-    public void atribuiTurmaProfessor() {
+    public void atribuiTurmaProfessor(Turma turma, Professor professor) throws TurmaException {
+        turma.adicionarProfessor(professor);
         
     }
 }

@@ -22,7 +22,8 @@ Gustavo Silva Ribeiro (202165057AC)
 public class Turma {
     final String codigoTurma;
     final String codigoDisciplinaCorresp;
-    private int siapeProfessor;    
+    private int siapeProfessor;  
+    private Professor professor;
     private List<Aluno> alunos;
     private HashMap <String,Integer> frequenciaAlunos = new HashMap<>();
     private HashMap <String,Float> notaAlunos = new HashMap<>();
@@ -58,6 +59,14 @@ public class Turma {
     public void adicionarAluno(Aluno aluno) throws TurmaException {
         if (codigoDisciplinaCorresp != null) {
             alunos.add(aluno);
+        } else {
+            throw new TurmaException("A turma não está vinculada a uma disciplina.");
+        }
+    }
+    
+    public void adicionarProfessor(Professor professor) throws TurmaException {
+        if (codigoDisciplinaCorresp != null) {
+            this.professor = professor;
         } else {
             throw new TurmaException("A turma não está vinculada a uma disciplina.");
         }
@@ -114,5 +123,11 @@ public class Turma {
             System.out.println("Nome: " + aluno.getNome());
             System.out.println("Matrícula: " + aluno.getMatricula());
         }
+    }
+    
+    public void imprimirProf() {
+        System.out.println("Professor da Disciplina "+ this.codigoDisciplinaCorresp +" Turma " + this.codigoTurma);
+        System.out.println("Nome: " + professor.getNome());
+        System.out.println("Matrícula: " + professor.getSiape());
     }
 }
