@@ -8,10 +8,10 @@ package com.mycompany.sistemagestaodiscente;
  *
  * @author gustavo
  */
-public class TurmaException extends Exception {
-
-    public TurmaException() {
-        super("A turma não está vinculada a uma disciplina.");
+public class EmailException extends Exception{
+    
+    public EmailException() {
+        super("Email inválido!");
     }
     
 }

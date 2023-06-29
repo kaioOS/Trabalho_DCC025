@@ -20,7 +20,7 @@ public class Administrador extends Usuario{
     private int idAdm;
     
     // Construtor da classe
-    public Administrador(String nome,String CPF,String telefone,String email, String senha, int tipoUsuario, int idAdmin) throws UsuarioException{
+    public Administrador(String nome,String CPF,String telefone,String email, String senha, int tipoUsuario, int idAdmin) throws NomeException, TelefoneException, EmailException, SenhaException, CPFException{
         super(nome,CPF,telefone,email, senha,tipoUsuario);
         this.idAdm = idAdmin;
     }
@@ -30,12 +30,12 @@ public class Administrador extends Usuario{
     }
     
     // Métodos da classe
-    public Professor cadastroProfessorPorAdm(String nome,String CPF,String telefone,String email, String senha, int tipoUsuario) throws UsuarioException{
+    public Professor cadastroProfessorPorAdm(String nome,String CPF,String telefone,String email, String senha, int tipoUsuario) throws NomeException, TelefoneException, EmailException, SenhaException, CPFException, SIAPEException {
         Professor professor = new Professor(nome,CPF,telefone, email, senha,tipoUsuario);
         return professor;
     }
 
-    public Aluno cadastroAlunoPorAdm(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws UsuarioException{
+    public Aluno cadastroAlunoPorAdm(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws NomeException, TelefoneException, EmailException, SenhaException, CPFException, MatriculaException{
         Date data = new Date();
         CPF = CPF.replaceAll("[^0-9]", "");
         String matricula= data.toString().substring(24, 28) +CPF;

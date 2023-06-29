@@ -64,7 +64,7 @@ public class Turma {
         if (this.disciplina.getCodigoDisciplina() != null) {
             alunos.add(aluno);
         } else {
-            throw new TurmaException("A turma não está vinculada a uma disciplina.");
+            throw new TurmaException();
         }
     }
     

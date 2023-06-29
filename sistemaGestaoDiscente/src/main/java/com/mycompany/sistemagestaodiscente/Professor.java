@@ -25,7 +25,7 @@ public class Professor extends Usuario{
     private Map<Disciplina, Turma> turmasProfessor;
     Random random = new Random();
 
-    public Professor(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws UsuarioException{
+    public Professor(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws NomeException, TelefoneException, EmailException, SenhaException, CPFException, SIAPEException{
         super(nome,CPF,telefone, email, senha,tipoUsuario);
 
         this.siape = Integer.toString(random.nextInt(9000000) + 1000000); // Gera um número de 7 dígitos e passa para String
@@ -38,7 +38,7 @@ public class Professor extends Usuario{
         return siape;
     }
     
-    private void setSiape(String siape)throws UsuarioException {
+    private void setSiape(String siape)throws SIAPEException {
         validarSiape(siape);
         this.siape = siape;
     }
@@ -54,20 +54,15 @@ public class Professor extends Usuario{
             turma.setFrequenciaAluno(aluno.getMatricula(), presenca);
         }
     }
-    public void validarSiape(String siape) throws UsuarioException{
+    public void validarSiape(String siape) throws SIAPEException{
         if (siape.length() != 7) {
-            throw new UsuarioException("SIAPE invalido!");
-        }
-
-        char primeiroDigito = siape.charAt(0);
-        if (primeiroDigito == '0') {
-            throw new UsuarioException("SIAPE invalido!");
+            throw new SIAPEException();
         }
 
         try {
             Integer.parseInt(siape);
         } catch (NumberFormatException e) {
-            throw new UsuarioException("SIAPE invalido!");
+            throw new SIAPEException();
         }
         
     }

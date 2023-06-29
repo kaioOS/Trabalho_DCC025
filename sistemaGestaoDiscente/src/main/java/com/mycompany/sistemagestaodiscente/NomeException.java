@@ -8,10 +8,10 @@ package com.mycompany.sistemagestaodiscente;
  *
  * @author gustavo
  */
-public class UsuarioException extends Exception {
+public class NomeException extends Exception {
     
-    public UsuarioException(String mensagem) {
-        super(mensagem);
+    public NomeException() {
+        super("Nome inválido!");
     }
     
 }

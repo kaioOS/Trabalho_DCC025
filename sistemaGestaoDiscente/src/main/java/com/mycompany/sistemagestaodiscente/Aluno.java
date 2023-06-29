@@ -22,7 +22,7 @@ public class Aluno extends Usuario {
     private HashMap<Disciplina, Turma> turmasPorDisciplinaAluno;
     
      
-    public Aluno(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario, String matricula) throws UsuarioException{
+    public Aluno(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario, String matricula) throws NomeException, TelefoneException, EmailException, SenhaException, CPFException, MatriculaException{
         super(nome,CPF,telefone,email, senha,tipoUsuario);
         validarMatricula(matricula);
         this.matricula=matricula;
@@ -53,23 +53,23 @@ public class Aluno extends Usuario {
         return matricula;
     }
 
-    public void setMatricula(String matricula) throws UsuarioException {
+    public void setMatricula(String matricula) throws MatriculaException {
         validarMatricula(matricula);
         this.matricula = matricula;
     }
-    public void validarMatricula(String matricula) throws UsuarioException {
+    public void validarMatricula(String matricula) throws MatriculaException {
         if (matricula.length() < 15) {
-            throw new UsuarioException("Matricula invalida!");
+            throw new MatriculaException();
         }
         for (int i = 0; i < 15; i++) {
             if (!Character.isDigit(matricula.charAt(i))) {
-                throw new UsuarioException("Matricula invalida!");
+                throw new MatriculaException();
             }
         }
         if (matricula.length() > 15) {
             for (int i = 15; i < matricula.length(); i++) {
                 if (!Character.isLetter(matricula.charAt(i))) {
-                    throw new UsuarioException("Matricula invalida!");
+                    throw new MatriculaException();
                 }
             }
         }
@@ -77,7 +77,7 @@ public class Aluno extends Usuario {
         Date data = new Date();
         int anoAtual = Integer.parseInt(data.toString().substring(24, 28));
         if (anoMatricula > anoAtual) {
-            throw new UsuarioException("Matricula invalida!");
+            throw new MatriculaException();
         }
     }
     

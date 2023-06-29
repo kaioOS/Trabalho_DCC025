@@ -18,7 +18,7 @@ Gustavo Silva Ribeiro (202165057AC)
  */
 public class SistemaGestaoDiscente {
 
-    public static void main(String[] args) throws UsuarioException, TurmaException {
+    public static void main(String[] args) throws TurmaException, NomeException, TelefoneException, EmailException, SenhaException, CPFException, SIAPEException, MatriculaException {
         Scanner sc = new Scanner(System.in);
         //Aluno aluno1 = new Aluno("Filipe",123,"123","filipe","123",2,"202165035AB");
         Aluno vetAlunos[] = new Aluno[100];
