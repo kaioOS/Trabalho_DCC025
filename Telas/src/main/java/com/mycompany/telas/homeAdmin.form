@@ -62,12 +62,17 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Atribuir Aluno a turma"/>
+                <Property name="text" type="java.lang.String" value="Atribuir Turma a Aluno "/>
+                <Property name="actionCommand" type="java.lang.String" value="Atribuir Aluno a Turma"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Atribuir turma a Professor"/>
+                <Property name="text" type="java.lang.String" value="Atribuir Turma a Professor"/>
+                <Property name="actionCommand" type="java.lang.String" value="Atribuir Turma a Professor"/>
               </Properties>
             </MenuItem>
           </SubComponents>

@@ -98,10 +98,17 @@ public class homeAdmin extends javax.swing.JFrame {
 
         menuAtribAdmin.setText("Atribuir");
 
-        jMenuItem4.setText("Atribuir Aluno a turma");
+        jMenuItem4.setText("Atribuir Turma a Aluno ");
+        jMenuItem4.setActionCommand("Atribuir Aluno a Turma");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         menuAtribAdmin.add(jMenuItem4);
 
-        jMenuItem5.setText("Atribuir turma a Professor");
+        jMenuItem5.setText("Atribuir Turma a Professor");
+        jMenuItem5.setActionCommand("Atribuir Turma a Professor");
         menuAtribAdmin.add(jMenuItem5);
 
         menuAdmin.add(menuAtribAdmin);
@@ -133,6 +140,10 @@ public class homeAdmin extends javax.swing.JFrame {
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
