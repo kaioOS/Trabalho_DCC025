@@ -54,6 +54,15 @@ public class Professor extends Usuario{
             turma.setFrequenciaAluno(aluno.getMatricula(), presenca);
         }
     }
+    
+    
+    public void calculaMediaFinalAluno(Turma turma, Aluno aluno) throws NotaException {
+        
+        if (turma!=null) {
+            turma.getNotaFinalAluno(aluno.getMatricula());
+        }
+    }
+    
     public void validarSiape(String siape) throws SIAPEException{
         if (siape.length() != 7) {
             throw new SIAPEException();

@@ -26,17 +26,32 @@ public class Turma {
     private List<Aluno> alunos;
     private HashMap <String,Integer> frequenciaAlunos;
     private HashMap <String,Float> notaAlunos;
+    private int formaAvaliacao;
+    private Nota notaProvas;
     
 
-    public Turma(String codigoTurma, Disciplina disciplina) {
+    public Turma(String codigoTurma, Disciplina disciplina, int formaAvaliacao) throws FormaAvaliacaoException {
+        validaFormaAvalicao(formaAvaliacao);
         this.codigoTurma = codigoTurma;
         this.disciplina = disciplina;
+        this.formaAvaliacao = formaAvaliacao;
         this.alunos = new ArrayList<>();
         this.frequenciaAlunos = new HashMap<>();
-        this.notaAlunos = new HashMap<>();
+        
+        if(this.formaAvaliacao == 1)
+        {
+            notaProvas = new NotaMediaAritmetica();
+        }
+        if(formaAvaliacao == 2)
+        {
+            notaProvas = new NotaMediaPonderada();          
+        }
+        if(formaAvaliacao == 3)
+        {
+            notaProvas = new NotaMediaComDescarte();      
+        }
       
     }
-    
     
     public String getCodigoTurma() {
         return codigoTurma;
@@ -44,6 +59,21 @@ public class Turma {
     
     public Disciplina getDisciplina() {
         return disciplina;
+    }
+    public int getFormaAvaliacao() {
+        return formaAvaliacao;
+    }
+    
+    public void setFormaAvaliacao(int formaAvaliacao) throws FormaAvaliacaoException {
+        validaFormaAvalicao(formaAvaliacao);
+        this.formaAvaliacao=formaAvaliacao;
+    }
+    
+    public void validaFormaAvalicao(int formaAvaliacao) throws FormaAvaliacaoException{
+        if(formaAvaliacao!=1 && formaAvaliacao!=2 && formaAvaliacao!=3)
+        {
+            throw new FormaAvaliacaoException();
+        }
     }
     
     public String getCodigoDisciplinaCorresp() {
@@ -98,22 +128,20 @@ public class Turma {
         }
     }
 
-    public float getNotaAlunos(String matricula) {
-        if(this.notaAlunos.isEmpty())
-            return -1;
-        
-        return this.notaAlunos.get(matricula);
+    public List<Float> getNotaAlunos(String matricula) {
+        return this.notaProvas.getNotaAlunos().get(matricula);
+    }
+    
+    public float getNotaFinalAluno(String matricula) throws NotaException
+    {
+        return this.notaProvas.calcularMediaFinal(matricula);
     }
 
     //atualiza nota do aluno
     public void setNotaAlunos(String matricula, float notaAluno) {
         for (Aluno aluno : alunos) {
             if (aluno.getMatricula().equals(matricula)) {
-                if(this.notaAlunos.containsKey(matricula)){
-                this.notaAlunos.put(matricula, this.notaAlunos.get(matricula)+notaAluno);
-                }else{
-                    this.notaAlunos.put(matricula, notaAluno);
-                }
+                notaProvas.adicionarNota(aluno, notaAluno);
                 System.out.println("Nota lançada para o aluno " + aluno.getNome() + " na disciplina " + this.getCodigoDisciplinaCorresp());
             }
             else
@@ -148,4 +176,6 @@ public class Turma {
         System.out.println("Nome: " + professor.getNome());
         System.out.println("Matrícula: " + professor.getSiape());
     }
+
+    
 }

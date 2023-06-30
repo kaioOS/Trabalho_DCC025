@@ -6,6 +6,7 @@ package com.mycompany.sistemagestaodiscente;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
@@ -30,12 +31,15 @@ public class Aluno extends Usuario {
     }
     
     public void consultaNotas(Turma turma) {        
-        float nota = turma.getNotaAlunos(this.matricula);
+        List<Float> notas = turma.getNotaAlunos(this.matricula);
         
-        if (nota == -1) {
+        if (notas.isEmpty()) {
             System.out.println("Nota não encontrada.");
         } else {
-            System.out.println("A nota do aluno com matrícula " + this.matricula + " na turma " + turma.getCodigoTurma() + " da disciplina "+ turma.getCodigoDisciplinaCorresp()+ " é: " + nota);
+            System.out.println("As notas do aluno com matrícula " + this.matricula + " na turma " + turma.getCodigoTurma() + " da disciplina "+ turma.getCodigoDisciplinaCorresp()+ " são: ");
+            for (float nota : notas) {
+                System.out.println(nota);
+            }
         }
     }
     

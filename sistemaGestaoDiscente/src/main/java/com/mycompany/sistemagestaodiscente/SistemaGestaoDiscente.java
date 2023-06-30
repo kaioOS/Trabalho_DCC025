@@ -4,6 +4,7 @@
 
 package com.mycompany.sistemagestaodiscente;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -18,7 +19,7 @@ Gustavo Silva Ribeiro (202165057AC)
  */
 public class SistemaGestaoDiscente {
 
-    public static void main(String[] args) throws TurmaException, NomeException, TelefoneException, EmailException, SenhaException, CPFException, SIAPEException, MatriculaException {
+    public static void main(String[] args) throws TurmaException, NomeException, TelefoneException, EmailException, SenhaException, CPFException, SIAPEException, MatriculaException, FormaAvaliacaoException, NotaException {
         Scanner sc = new Scanner(System.in);
         //Aluno aluno1 = new Aluno("Filipe",123,"123","filipe","123",2,"202165035AB");
         Aluno vetAlunos[] = new Aluno[100];
@@ -39,27 +40,63 @@ public class SistemaGestaoDiscente {
 //        Aluno a2 = adm.cadastroAlunoPorAdm("Fulano","489.325.417-01","(32) 99999-9999","teste@teste.com", "12345678",2);
 //        Professor p1 = adm.cadastroProfessorPorAdm("Kaio","384.628.477-70","(32) 99999-9999","teste@teste.com", "12345678",1);
 //        Disciplina d = new Disciplina("MAT123", "MAT");
-//        Turma t = new Turma("A", d);
+//        Turma t = new Turma("A", d, 3);
 //        Disciplina d2 = new Disciplina("DCC123", "DCC");
-//        Turma t2 = new Turma("B", d2);
+//        Turma t2 = new Turma("B", d2, 2);
 //        Disciplina d3 = new Disciplina("DCC123", "DCC");
-//        Turma t3 = new Turma("A", d3);
+//        Turma t3 = new Turma("A", d3, 1);
 //
 //        adm.atribuiTurmaProfessor(t, p1);
 //        adm.atribuiTurmaProfessor(t2, p1);
 //        adm.atribuiTurmaProfessor(t3, p1);
 //        adm.atribuiTurmaAluno(t, a1);
 //        adm.atribuiTurmaAluno(t2, a2);
+//        adm.atribuiTurmaAluno(t3, a2);
 //        p1.imprimeTurmas();
 //        p1.consultaTurma(d3);
 //        t.imprimeTurma();
 //        t.imprimirListaAlunos();
-//        p1.lancarNotaAluno(t, a1, 100);
+//        p1.lancarNotaAluno(t, a1, 10);
+//        p1.lancarNotaAluno(t, a1, 50);
+//        p1.lancarNotaAluno(t, a1, 80);
+//        
+//        List<Float> notas = t.getNotaAlunos(a1.getMatricula());
+//        System.out.println("Notas:");
+//        for (float nota : notas) {
+//            System.out.println(nota);
+//        }
+//        
+//        System.out.println("Nota final: " + t.getNotaFinalAluno(a1.getMatricula()));
+//         
+//        p1.lancarNotaAluno(t2, a2, 10);
+//        p1.lancarNotaAluno(t2, a2, 50);
+//        p1.lancarNotaAluno(t2, a2, 80);
+//        
+//        List<Float> notas2 = t2.getNotaAlunos(a2.getMatricula());
+//        System.out.println("Notas:");
+//        for (float nota : notas2) {
+//            System.out.println(nota);
+//        }
+//        
+//        System.out.println("Nota final: " + t2.getNotaFinalAluno(a2.getMatricula()));
+//         
+//        p1.lancarNotaAluno(t3, a2, 10);
+//        p1.lancarNotaAluno(t3, a2, 50);
+//        p1.lancarNotaAluno(t3, a2, 80);
+//        
+//        List<Float> notas3 = t3.getNotaAlunos(a2.getMatricula());
+//        System.out.println("Notas:");
+//        for (float nota : notas3) {
+//            System.out.println(nota);
+//        }
+//        
+//        System.out.println("Nota final: " + t3.getNotaFinalAluno(a2.getMatricula()));
+//         
 //        p1.lancarNotaAluno(t, a2, 100);
 //        p1.lancarFrequencia(t, a1, true);
 //        p1.lancarFrequencia(t, a1, false);
 //        p1.lancarFrequencia(t, a2, true);
-        
+//        
         int opcao;
         String nome,telefone, email, senha;
         String CPF;
