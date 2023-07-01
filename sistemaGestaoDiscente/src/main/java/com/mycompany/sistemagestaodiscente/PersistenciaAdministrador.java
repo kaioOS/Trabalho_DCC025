@@ -54,7 +54,7 @@ public class PersistenciaAdministrador implements PersistenciaDados{
 
     @Override
     public <Administrador> void armazenarDados(List<Administrador> objetos) {
-                try {
+        try {
             FileWriter writer = new FileWriter(
                     "./src/main/java/com/mycompany/bancoDeDados/administrador.json");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();

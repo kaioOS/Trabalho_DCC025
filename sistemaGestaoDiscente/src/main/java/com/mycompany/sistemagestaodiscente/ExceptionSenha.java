@@ -13,10 +13,10 @@ Kaio de Oliveira e Sousa(202165080AC)
 Filipe de Lima Namorato(202165035AB)
 Gustavo Silva Ribeiro (202165057AC) 
  */
-public class CPFException extends Exception{
-    
-    public CPFException() {
-        super("CPF inválido!");
+public class ExceptionSenha extends Exception {
+
+    public ExceptionSenha() {
+        super("Sennha inválida!");
     }
     
 }

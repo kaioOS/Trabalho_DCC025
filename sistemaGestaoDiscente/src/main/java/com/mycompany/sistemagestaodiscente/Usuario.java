@@ -27,7 +27,7 @@ abstract class Usuario {
     private int tipoUsuario;
 
     
-    public Usuario(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws NomeException, TelefoneException, EmailException, SenhaException, CPFException{
+    public Usuario(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF{
         validarNome(nome);
         validarTelefone(telefone);
         validarEmail(email);
@@ -46,7 +46,7 @@ abstract class Usuario {
         return nome;
     }
 
-    private void setNome(String nome) throws NomeException {
+    private void setNome(String nome) throws ExceptionNome {
         validarNome(nome);
         this.nome = nome;
     }
@@ -55,7 +55,7 @@ abstract class Usuario {
         return CPF;
     }
 
-    private void setCPF(String CPF) throws CPFException {
+    private void setCPF(String CPF) throws ExceptionCPF {
         validarCPF(CPF);
         this.CPF = CPF;
     }
@@ -64,7 +64,7 @@ abstract class Usuario {
         return telefone;
     }
 
-    public void setTelefone(String telefone) throws TelefoneException {
+    public void setTelefone(String telefone) throws ExceptionTelefone {
         validarTelefone(telefone);
         this.telefone = telefone;
     }
@@ -73,7 +73,7 @@ abstract class Usuario {
         return email;
     }
 
-    private void setEmail(String email) throws EmailException {
+    private void setEmail(String email) throws ExceptionEmail {
         validarEmail(email);
         this.email = email;
     }
@@ -86,7 +86,7 @@ abstract class Usuario {
         return senha;
     }
 
-    private void setSenha(String senha) throws SenhaException {
+    private void setSenha(String senha) throws ExceptionSenha {
         validarSenha(String.valueOf(senha));
         this.senha = senha;
     }
@@ -101,30 +101,30 @@ abstract class Usuario {
     //------------------------
 
     //Validações
-    public static void validarSenha(String senha) throws SenhaException{
+    public static void validarSenha(String senha) throws ExceptionSenha{
        if (senha == null || senha.length() < 8) {
-            throw new SenhaException();
+            throw new ExceptionSenha();
         }
     }
     
-    public static void validarEmail(String email) throws EmailException {
+    public static void validarEmail(String email) throws ExceptionEmail {
         Pattern pattern = Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
         Matcher matcher = pattern.matcher(email);
         boolean matchFound = matcher.find();
         if (!matchFound) {
-            throw new EmailException();
+            throw new ExceptionEmail();
         }
 
     }
     
-    public static void validarCPF(String cpf) throws CPFException {
+    public static void validarCPF(String cpf) throws ExceptionCPF {
         cpf = cpf.replaceAll("[^0-9]", "");
 
         if (cpf.length() != 11) {
-            throw new CPFException();
+            throw new ExceptionCPF();
         }
         if (cpf.matches("(\\d)\\1{10}")) {
-            throw new CPFException();
+            throw new ExceptionCPF();
         }
         int soma = 0;
 
@@ -141,7 +141,7 @@ abstract class Usuario {
         }  
 
         if (primeiroDigitoVerificador != Character.getNumericValue(cpf.charAt(9))) {
-            throw new CPFException();
+            throw new ExceptionCPF();
         }
         soma = 0;
         for (int i = 0; i < 10; i++) {
@@ -155,25 +155,25 @@ abstract class Usuario {
            segundoDigitoVerificador = 11-resto;
         } 
         if (segundoDigitoVerificador != Character.getNumericValue(cpf.charAt(10))) {
-            throw new CPFException();
+            throw new ExceptionCPF();
         }
     }
     
 
     
-    public static void validarTelefone(String telefone) throws TelefoneException{
+    public static void validarTelefone(String telefone) throws ExceptionTelefone{
         Pattern pattern = Pattern.compile("^\\(\\d{2}\\)\\s?\\d{5}-\\d{4}$");
         Matcher matcher = pattern.matcher(telefone);
         boolean matchFound = matcher.find();
         if (!matchFound) {
-            throw new TelefoneException();
+            throw new ExceptionTelefone();
         }
         
     }
-    public static void validarNome(String nome) throws NomeException
+    public static void validarNome(String nome) throws ExceptionNome
     {
         if (!nome.matches("[a-zA-Z]+")) {
-            throw new NomeException();
+            throw new ExceptionNome();
         }
     }
     //------------------------

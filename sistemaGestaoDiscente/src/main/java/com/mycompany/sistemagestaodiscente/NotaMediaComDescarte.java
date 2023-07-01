@@ -24,15 +24,15 @@ public class NotaMediaComDescarte extends Nota{
     }
 
     @Override
-    public float calcularMediaFinal(String matricula) throws NotaException {
+    public float calcularMediaFinal(String matricula) throws ExceptionNota {
         Map<String, List<Float>> notaAlunos = getNotaAlunos();
         if (!notaAlunos.containsKey(matricula)) {
-            throw new NotaException("Não há notas para a matrícula especificada.");
+            throw new ExceptionNota("Não há notas para a matrícula especificada.");
         }
 
         List<Float> notas = notaAlunos.get(matricula);
         if (notas.size() < 2) {
-            throw new NotaException("É necessário ter pelo menos duas avaliações para calcular a média com descarte.");
+            throw new ExceptionNota("É necessário ter pelo menos duas avaliações para calcular a média com descarte.");
         }
         float menorNota = Float.MAX_VALUE;
         float somaNotas = 0;

@@ -25,7 +25,7 @@ public abstract class Nota {
         this.notaAlunos = new HashMap<>();
     }
 
-    public abstract float calcularMediaFinal(String matricula) throws NotaException;
+    public abstract float calcularMediaFinal(String matricula) throws ExceptionNota;
 
 
     public void adicionarNota(Aluno aluno, float nota) {

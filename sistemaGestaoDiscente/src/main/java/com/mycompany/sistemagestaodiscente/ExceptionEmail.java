@@ -13,9 +13,9 @@ Kaio de Oliveira e Sousa(202165080AC)
 Filipe de Lima Namorato(202165035AB)
 Gustavo Silva Ribeiro (202165057AC) 
  */
-public class EmailException extends Exception{
+public class ExceptionEmail extends Exception{
     
-    public EmailException() {
+    public ExceptionEmail() {
         super("Email inválido!");
     }
     

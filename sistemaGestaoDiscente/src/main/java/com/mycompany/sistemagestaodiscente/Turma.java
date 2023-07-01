@@ -30,7 +30,7 @@ public class Turma {
     private Nota notaProvas;
     
 
-    public Turma(String codigoTurma, Disciplina disciplina, int formaAvaliacao) throws FormaAvaliacaoException {
+    public Turma(String codigoTurma, Disciplina disciplina, int formaAvaliacao) throws ExceptionFormaAvaliacao {
         validaFormaAvalicao(formaAvaliacao);
         this.codigoTurma = codigoTurma;
         this.disciplina = disciplina;
@@ -64,15 +64,15 @@ public class Turma {
         return formaAvaliacao;
     }
     
-    public void setFormaAvaliacao(int formaAvaliacao) throws FormaAvaliacaoException {
+    public void setFormaAvaliacao(int formaAvaliacao) throws ExceptionFormaAvaliacao {
         validaFormaAvalicao(formaAvaliacao);
         this.formaAvaliacao=formaAvaliacao;
     }
     
-    public void validaFormaAvalicao(int formaAvaliacao) throws FormaAvaliacaoException{
+    public void validaFormaAvalicao(int formaAvaliacao) throws ExceptionFormaAvaliacao{
         if(formaAvaliacao!=1 && formaAvaliacao!=2 && formaAvaliacao!=3)
         {
-            throw new FormaAvaliacaoException();
+            throw new ExceptionFormaAvaliacao();
         }
     }
     
@@ -90,11 +90,11 @@ public class Turma {
     }
      
     
-    public void adicionarAluno(Aluno aluno) throws TurmaException {
+    public void adicionarAluno(Aluno aluno) throws ExceptionTurma {
         if (this.disciplina.getCodigoDisciplina() != null) {
             alunos.add(aluno);
         } else {
-            throw new TurmaException();
+            throw new ExceptionTurma();
         }
     }
     
@@ -132,7 +132,7 @@ public class Turma {
         return this.notaProvas.getNotaAlunos().get(matricula);
     }
     
-    public float getNotaFinalAluno(String matricula) throws NotaException
+    public float getNotaFinalAluno(String matricula) throws ExceptionNota
     {
         return this.notaProvas.calcularMediaFinal(matricula);
     }

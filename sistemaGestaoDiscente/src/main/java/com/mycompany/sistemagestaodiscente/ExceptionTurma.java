@@ -13,10 +13,10 @@ Kaio de Oliveira e Sousa(202165080AC)
 Filipe de Lima Namorato(202165035AB)
 Gustavo Silva Ribeiro (202165057AC) 
  */
-public class SenhaException extends Exception {
+public class ExceptionTurma extends Exception {
 
-    public SenhaException() {
-        super("Sennha inválida!");
+    public ExceptionTurma() {
+        super("A turma não está vinculada a uma disciplina.");
     }
     
 }

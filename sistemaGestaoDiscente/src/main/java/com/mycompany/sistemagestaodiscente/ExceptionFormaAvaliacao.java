@@ -13,10 +13,9 @@ Kaio de Oliveira e Sousa(202165080AC)
 Filipe de Lima Namorato(202165035AB)
 Gustavo Silva Ribeiro (202165057AC) 
  */
-public class MatriculaException extends Exception{
-    
-    public MatriculaException() {
-        super("Matrícula inválida!");
+public class ExceptionFormaAvaliacao extends Exception{
+
+    public ExceptionFormaAvaliacao() {
+        super("Forma de avaliação inválida!");
     }
-    
 }

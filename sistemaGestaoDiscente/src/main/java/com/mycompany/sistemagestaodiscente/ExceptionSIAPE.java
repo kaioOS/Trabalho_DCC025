@@ -13,10 +13,9 @@ Kaio de Oliveira e Sousa(202165080AC)
 Filipe de Lima Namorato(202165035AB)
 Gustavo Silva Ribeiro (202165057AC) 
  */
-public class TurmaException extends Exception {
-
-    public TurmaException() {
-        super("A turma não está vinculada a uma disciplina.");
-    }
+public class ExceptionSIAPE extends Exception{
     
+    public ExceptionSIAPE() {
+        super("SIAPE inválido!");
+    }
 }

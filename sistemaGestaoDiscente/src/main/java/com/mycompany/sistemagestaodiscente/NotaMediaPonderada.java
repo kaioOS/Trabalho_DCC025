@@ -35,10 +35,10 @@ public class NotaMediaPonderada extends Nota{
     }
 
     @Override
-    public float calcularMediaFinal(String matricula) throws NotaException {
+    public float calcularMediaFinal(String matricula) throws ExceptionNota {
         Map<String, List<Float>> notaAlunos = getNotaAlunos();
         if (!notaAlunos.containsKey(matricula)) {
-            throw new NotaException("Não há notas para a matrícula especificada.");
+            throw new ExceptionNota("Não há notas para a matrícula especificada.");
         }
 
         List<Float> notas = notaAlunos.get(matricula);
@@ -46,7 +46,7 @@ public class NotaMediaPonderada extends Nota{
        
 
         if (notas.size() != pesos.size()) {
-            throw new NotaException("O número de notas e pesos não coincide.");
+            throw new ExceptionNota("O número de notas e pesos não coincide.");
         }
 
         float somaNotasPonderadas = 0;
