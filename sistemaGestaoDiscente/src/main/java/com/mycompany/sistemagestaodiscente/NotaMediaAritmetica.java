@@ -17,7 +17,7 @@ Kaio de Oliveira e Sousa(202165080AC)
 Filipe de Lima Namorato(202165035AB)
 Gustavo Silva Ribeiro (202165057AC) 
  */
-public class NotaMediaAritmetica extends Nota {
+public class NotaMediaAritmetica extends Avaliacao {
     public NotaMediaAritmetica() {
         super();
     }

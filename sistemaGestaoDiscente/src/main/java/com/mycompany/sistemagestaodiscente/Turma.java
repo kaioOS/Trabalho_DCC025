@@ -27,7 +27,7 @@ public class Turma {
     private HashMap <String,Integer> frequenciaAlunos;
     private HashMap <String,Float> notaAlunos;
     private int formaAvaliacao;
-    private Nota notaProvas;
+    private Avaliacao notaProvas;
     
 
     public Turma(String codigoTurma, Disciplina disciplina, int formaAvaliacao) throws ExceptionFormaAvaliacao {

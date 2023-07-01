@@ -18,10 +18,10 @@ Kaio de Oliveira e Sousa(202165080AC)
 Filipe de Lima Namorato(202165035AB)
 Gustavo Silva Ribeiro (202165057AC) 
  */
-public abstract class Nota {
+public abstract class Avaliacao {
     private Map<String, List<Float>> notaAlunos;
 
-    public Nota() {
+    public Avaliacao() {
         this.notaAlunos = new HashMap<>();
     }
 
