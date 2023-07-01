@@ -162,13 +162,10 @@ abstract class Usuario {
 
     
     public static void validarTelefone(String telefone) throws ExceptionTelefone{
-        Pattern pattern = Pattern.compile("^\\(\\d{2}\\)\\s?\\d{5}-\\d{4}$");
-        Matcher matcher = pattern.matcher(telefone);
-        boolean matchFound = matcher.find();
-        if (!matchFound) {
+        String telefoneNumeros = telefone.replaceAll("\\D", "");
+        if (!telefoneNumeros.matches("\\d{10,11}")) {
             throw new ExceptionTelefone();
-        }
-        
+        }        
     }
     public static void validarNome(String nome) throws ExceptionNome
     {
