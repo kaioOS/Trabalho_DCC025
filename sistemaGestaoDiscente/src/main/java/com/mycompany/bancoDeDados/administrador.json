@@ -1,0 +1,10 @@
+[
+    {
+        "idAdmin" : "001",
+        "nome": "admin",
+        "CPF":"91879098040",
+        "telefone":"3723326926",
+        "senha":"123456",
+        "tipoUsuario":"0"
+    }
+]

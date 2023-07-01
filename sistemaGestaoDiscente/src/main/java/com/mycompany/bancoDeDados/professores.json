@@ -1,0 +1,10 @@
+[
+    {
+        "siape" : "9854327",
+        "nome": " ProfessorTeste",
+        "CPF":"61178543072",
+        "telefone":"3220432692",
+        "senha":"123456",
+        "tipoUsuario":"1"
+    }
+]

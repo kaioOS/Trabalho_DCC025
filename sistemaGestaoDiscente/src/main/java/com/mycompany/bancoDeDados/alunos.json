@@ -1,0 +1,10 @@
+[
+    {
+        "matricula" : "202165001",
+        "nome": " AlunoTeste",
+        "CPF":"82232937062",
+        "telefone":"3329694877",
+        "senha":"123456",
+        "tipoUsuario":"2"
+    }
+]
