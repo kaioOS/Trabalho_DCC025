@@ -19,7 +19,7 @@ Filipe de Lima Namorato(202165035AB)
 Gustavo Silva Ribeiro (202165057AC) 
  */
 
-abstract class Usuario {
+public abstract class Usuario {
     private String nome;
     private String CPF;
     private String telefone;
@@ -214,8 +214,10 @@ abstract class Usuario {
                     return true;
                 }
             }
+            System.out.println("Aluno");
             return false;
         }
+        System.out.println("Ultimo");
         return false;
     }
     

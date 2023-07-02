@@ -6,7 +6,7 @@ package com.mycompany.sistemagestaodiscente;
 
 import java.util.List;
 import java.util.Scanner;
-
+import com.mycompany.telas.*;
 /**
  *
  * @author filipe
@@ -21,6 +21,8 @@ public class SistemaGestaoDiscente {
 
     public static void main(String[] args) throws ExceptionTurma, ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionSIAPE, ExceptionMatricula, ExceptionFormaAvaliacao, ExceptionNota {
         Scanner sc = new Scanner(System.in);
+        telaLogin login = new telaLogin();
+        login.setVisible(true);
         //Aluno aluno1 = new Aluno("Filipe",123,"123","filipe","123",2,"202165035AB");
         Aluno vetAlunos[] = new Aluno[100];
         int contAlunos = 0;
