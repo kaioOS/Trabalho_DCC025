@@ -10,12 +10,15 @@ Filipe de Lima Namorato(202165035AB)
 Gustavo Silva Ribeiro (202165057AC)
  */
 public class homeAdmin extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form homeAdmin
+     * @param administrador
      */
     public homeAdmin() {
+       
         initComponents();
+        
     }
 
     /**
@@ -29,16 +32,15 @@ public class homeAdmin extends javax.swing.JFrame {
 
         jComboBox1 = new javax.swing.JComboBox<>();
         panelAdmin = new javax.swing.JPanel();
-        imgLogoUFJF = new javax.swing.JLabel();
         menuAdmin = new javax.swing.JMenuBar();
-        menuCadastAdmin = new javax.swing.JMenu();
+        CadastroD = new javax.swing.JMenu();
+        CadastroA = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        CadastroP = new javax.swing.JMenuItem();
+        CadastroT = new javax.swing.JMenuItem();
         menuAtribAdmin = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        AtribuirTA = new javax.swing.JMenuItem();
+        AtribuirTP = new javax.swing.JMenuItem();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -47,70 +49,71 @@ public class homeAdmin extends javax.swing.JFrame {
 
         panelAdmin.setBackground(new java.awt.Color(255, 255, 255));
 
-        imgLogoUFJF.setIcon(new javax.swing.ImageIcon("./src/main/java/imagens/logoUFJF.png"));
-
         javax.swing.GroupLayout panelAdminLayout = new javax.swing.GroupLayout(panelAdmin);
         panelAdmin.setLayout(panelAdminLayout);
         panelAdminLayout.setHorizontalGroup(
             panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAdminLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(imgLogoUFJF)
-                .addContainerGap(121, Short.MAX_VALUE))
+            .addGap(0, 434, Short.MAX_VALUE)
         );
         panelAdminLayout.setVerticalGroup(
             panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAdminLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(imgLogoUFJF)
-                .addContainerGap(110, Short.MAX_VALUE))
+            .addGap(0, 318, Short.MAX_VALUE)
         );
 
-        menuCadastAdmin.setText("Cadastrar");
+        CadastroD.setText("Cadastrar");
+        CadastroD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastroDActionPerformed(evt);
+            }
+        });
 
-        jMenuItem1.setText("Cadastrar Professor");
+        CadastroA.setText("Cadastrar Aluno");
+        CadastroA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastroAActionPerformed(evt);
+            }
+        });
+        CadastroD.add(CadastroA);
+
+        jMenuItem1.setText("Cadastrar Disciplina");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        menuCadastAdmin.add(jMenuItem1);
+        CadastroD.add(jMenuItem1);
 
-        jMenuItem2.setText("Cadastrar Aluno");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        CadastroP.setText("Cadastrar Professor");
+        CadastroP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                CadastroPActionPerformed(evt);
             }
         });
-        menuCadastAdmin.add(jMenuItem2);
+        CadastroD.add(CadastroP);
 
-        jMenuItem3.setText("Cadastrar Disciplina");
-        menuCadastAdmin.add(jMenuItem3);
-
-        jMenuItem6.setText("Cadastrar Turma");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        CadastroT.setText("Cadastrar Turma");
+        CadastroT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                CadastroTActionPerformed(evt);
             }
         });
-        menuCadastAdmin.add(jMenuItem6);
+        CadastroD.add(CadastroT);
 
-        menuAdmin.add(menuCadastAdmin);
+        menuAdmin.add(CadastroD);
 
         menuAtribAdmin.setText("Atribuir");
 
-        jMenuItem4.setText("Atribuir Turma a Aluno ");
-        jMenuItem4.setActionCommand("Atribuir Aluno a Turma");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        AtribuirTA.setText("Atribuir Turma a Aluno ");
+        AtribuirTA.setActionCommand("Atribuir Aluno a Turma");
+        AtribuirTA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                AtribuirTAActionPerformed(evt);
             }
         });
-        menuAtribAdmin.add(jMenuItem4);
+        menuAtribAdmin.add(AtribuirTA);
 
-        jMenuItem5.setText("Atribuir Turma a Professor");
-        jMenuItem5.setActionCommand("Atribuir Turma a Professor");
-        menuAtribAdmin.add(jMenuItem5);
+        AtribuirTP.setText("Atribuir Turma a Professor");
+        menuAtribAdmin.add(AtribuirTP);
 
         menuAdmin.add(menuAtribAdmin);
 
@@ -130,21 +133,33 @@ public class homeAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void CadastroPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroPActionPerformed
+        cadastrarProfessor cProfessor = new cadastrarProfessor();
+        cProfessor.setVisible(true);
+    }//GEN-LAST:event_CadastroPActionPerformed
+    
+    private void CadastroAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroAActionPerformed
+        cadastrarAluno cAluno = new cadastrarAluno();
+        cAluno.setVisible(true);
+    }//GEN-LAST:event_CadastroAActionPerformed
+  
+    private void CadastroTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroTActionPerformed
+        cadastrarTurma cTurma = new cadastrarTurma();
+        cTurma.setVisible(true);
+    }//GEN-LAST:event_CadastroTActionPerformed
+
+    private void AtribuirTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtribuirTAActionPerformed
+        
+    }//GEN-LAST:event_AtribuirTAActionPerformed
+
+    private void CadastroDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroDActionPerformed
+        cadastrarDisciplina cDisciplina = new cadastrarDisciplina();
+        cDisciplina.setVisible(true);
+    }//GEN-LAST:event_CadastroDActionPerformed
+
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
-
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,6 +170,7 @@ public class homeAdmin extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -182,17 +198,16 @@ public class homeAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel imgLogoUFJF;
+    private javax.swing.JMenuItem AtribuirTA;
+    private javax.swing.JMenuItem AtribuirTP;
+    private javax.swing.JMenuItem CadastroA;
+    private javax.swing.JMenu CadastroD;
+    private javax.swing.JMenuItem CadastroP;
+    private javax.swing.JMenuItem CadastroT;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuBar menuAdmin;
     private javax.swing.JMenu menuAtribAdmin;
-    private javax.swing.JMenu menuCadastAdmin;
     private javax.swing.JPanel panelAdmin;
     // End of variables declaration//GEN-END:variables
 }

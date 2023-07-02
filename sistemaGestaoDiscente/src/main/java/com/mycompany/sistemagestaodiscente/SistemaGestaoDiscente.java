@@ -5,6 +5,7 @@
 package com.mycompany.sistemagestaodiscente;
 
 import java.util.List;
+import java.util.Date;
 import java.util.Scanner;
 import com.mycompany.telas.*;
 /**
@@ -23,7 +24,9 @@ public class SistemaGestaoDiscente {
         Scanner sc = new Scanner(System.in);
         telaLogin login = new telaLogin();
         login.setVisible(true);
-        //Aluno aluno1 = new Aluno("Filipe",123,"123","filipe","123",2,"202165035AB");
+        /*Date data = new Date();
+        System.out.println("data: "+ data); 
+       //Aluno aluno1 = new Aluno("Filipe",123,"123","filipe","123",2,"202165035AB");
         Aluno vetAlunos[] = new Aluno[100];
         int contAlunos = 0;
         
@@ -175,7 +178,7 @@ public class SistemaGestaoDiscente {
                 System.out.println("Digite a senha:");
                 senha = sc.nextLine();
                 
-                vetAlunos[contAlunos] = adm.cadastroAlunoPorAdm(nome, CPF, telefone, email, senha, 2);
+                vetAlunos[contAlunos] = Administrador.cadastroAlunoPorAdm(nome, CPF, telefone, email, senha, 2);
                 contAlunos++;
 
                 
@@ -213,6 +216,6 @@ public class SistemaGestaoDiscente {
             }
         
         }while(opcao!=0);
-                
+       */         
     }
 }

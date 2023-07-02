@@ -28,7 +28,6 @@ public class homeAluno extends javax.swing.JFrame {
     private void initComponents() {
 
         panelAluno = new javax.swing.JPanel();
-        imgLogoUFJF = new javax.swing.JLabel();
         menuAluno = new javax.swing.JMenuBar();
         menuConsultAluno = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -37,23 +36,15 @@ public class homeAluno extends javax.swing.JFrame {
 
         panelAluno.setBackground(new java.awt.Color(255, 255, 255));
 
-        imgLogoUFJF.setIcon(new javax.swing.ImageIcon("./src/main/java/imagens/logoUFJF.png"));
-
         javax.swing.GroupLayout panelAlunoLayout = new javax.swing.GroupLayout(panelAluno);
         panelAluno.setLayout(panelAlunoLayout);
         panelAlunoLayout.setHorizontalGroup(
             panelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAlunoLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(imgLogoUFJF)
-                .addContainerGap(98, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         panelAlunoLayout.setVerticalGroup(
             panelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAlunoLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(imgLogoUFJF)
-                .addContainerGap(77, Short.MAX_VALUE))
+            .addGap(0, 277, Short.MAX_VALUE)
         );
 
         menuConsultAluno.setText("Consultar");
@@ -115,7 +106,6 @@ public class homeAluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel imgLogoUFJF;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuBar menuAluno;
     private javax.swing.JMenu menuConsultAluno;

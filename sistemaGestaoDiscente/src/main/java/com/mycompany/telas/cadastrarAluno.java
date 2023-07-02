@@ -14,6 +14,8 @@ Gustavo Silva Ribeiro (202165057AC)
  */
 public class cadastrarAluno extends javax.swing.JFrame {
 
+    Administrador administrador;
+    
     public cadastrarAluno() {
         initComponents();
     }
@@ -164,7 +166,13 @@ public class cadastrarAluno extends javax.swing.JFrame {
         char[] Csenha = txtPassword.getPassword();
         String senha = new String(Csenha);
         try {
-            Aluno aluno = new Aluno(nome,cpf,telefone,email,senha,matricula);
+            Aluno.verficaMatriculaExiste(matricula);
+        }catch(ExceptionMatricula ex1){
+            JOptionPane.showMessageDialog(null, "Matrícula já cadastrada");
+        }
+        
+        try {
+            Administrador.cadastroAlunoPorAdm(nome, cpf, telefone, email, senha, 2);
         } catch (ExceptionNome ex) {
             JOptionPane.showMessageDialog(null, "Nome inválido");
         } catch (ExceptionTelefone ex) {

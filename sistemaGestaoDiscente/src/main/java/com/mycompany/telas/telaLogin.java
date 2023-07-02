@@ -1,6 +1,7 @@
 
 package com.mycompany.telas;
 import com.mycompany.sistemagestaodiscente.*;
+import java.util.List;
 import javax.swing.JOptionPane;
 /**
 Kaio de Oliveira e Sousa(202165080AC)
@@ -160,6 +161,7 @@ public class telaLogin extends javax.swing.JFrame {
             {
                 homeAluno aluno = new homeAluno();
                 aluno.setVisible(true);
+                this.setVisible(false);
             }
             else
                 JOptionPane.showMessageDialog(null, "Usuário inválido");
@@ -170,6 +172,7 @@ public class telaLogin extends javax.swing.JFrame {
             {
                 homeProfessor professor = new homeProfessor();
                 professor.setVisible(true);
+                this.setVisible(false);
             }
             else
                 JOptionPane.showMessageDialog(null, "Usuário inválido");
@@ -179,8 +182,18 @@ public class telaLogin extends javax.swing.JFrame {
         {
             if(Usuario.verificaLoginUsuario(cpf,senha,0))
             {
-                homeAdmin admin = new homeAdmin();
-                admin.setVisible(true);
+                
+                PersistenciaAdministrador persistenciaAdministrador = new PersistenciaAdministrador();
+                List<Administrador> administradores = persistenciaAdministrador.carregarDados();
+                for (Administrador administrador : administradores) {
+                    if (administrador.getCPF().equals(cpf)) {
+                        homeAdmin admin = new homeAdmin();
+                        admin.setVisible(true);
+                        this.setVisible(false);
+                    }
+                }
+                
+                
             }
             else
                 JOptionPane.showMessageDialog(null, "Usuário inválido");

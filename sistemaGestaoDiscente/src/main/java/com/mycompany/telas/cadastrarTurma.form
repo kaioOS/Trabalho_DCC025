@@ -147,7 +147,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Verdana" size="12" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Cadastrar Professor"/>
+            <Property name="text" type="java.lang.String" value="Cadastrar Turma"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="buttonRegister">

@@ -28,7 +28,6 @@ public class homeProfessor extends javax.swing.JFrame {
     private void initComponents() {
 
         panelProfessor = new javax.swing.JPanel();
-        imgLogoUFJF = new javax.swing.JLabel();
         menuProfessor = new javax.swing.JMenuBar();
         menuAtribProfessor = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -42,23 +41,15 @@ public class homeProfessor extends javax.swing.JFrame {
 
         panelProfessor.setBackground(new java.awt.Color(255, 255, 255));
 
-        imgLogoUFJF.setIcon(new javax.swing.ImageIcon("./src/main/java/imagens/logoUFJF.png"));
-
         javax.swing.GroupLayout panelProfessorLayout = new javax.swing.GroupLayout(panelProfessor);
         panelProfessor.setLayout(panelProfessorLayout);
         panelProfessorLayout.setHorizontalGroup(
             panelProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelProfessorLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(imgLogoUFJF)
-                .addContainerGap(98, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         panelProfessorLayout.setVerticalGroup(
             panelProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelProfessorLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(imgLogoUFJF)
-                .addContainerGap(77, Short.MAX_VALUE))
+            .addGap(0, 277, Short.MAX_VALUE)
         );
 
         menuAtribProfessor.setText("Atribuir");
@@ -155,7 +146,6 @@ public class homeProfessor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel imgLogoUFJF;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;

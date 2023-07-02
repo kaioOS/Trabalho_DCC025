@@ -9,12 +9,12 @@ Kaio de Oliveira e Sousa(202165080AC)
 Filipe de Lima Namorato(202165035AB)
 Gustavo Silva Ribeiro (202165057AC)
  */
-public class casdastrarDisciplina extends javax.swing.JFrame {
+public class cadastrarDisciplina extends javax.swing.JFrame {
 
     /**
      * Creates new form casdastrarDisciplina
      */
-    public casdastrarDisciplina() {
+    public cadastrarDisciplina() {
         initComponents();
     }
 
@@ -28,7 +28,6 @@ public class casdastrarDisciplina extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        imgLogoUFJF = new javax.swing.JLabel();
         labelUser = new javax.swing.JLabel();
         labelPassword = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
@@ -39,8 +38,6 @@ public class casdastrarDisciplina extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        imgLogoUFJF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logoUFJF.png"))); // NOI18N
 
         labelUser.setText("Nome");
 
@@ -63,7 +60,6 @@ public class casdastrarDisciplina extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imgLogoUFJF)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -80,8 +76,7 @@ public class casdastrarDisciplina extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(imgLogoUFJF)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addContainerGap(160, Short.MAX_VALUE)
                 .addComponent(labelLogoSGD1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -133,27 +128,29 @@ public class casdastrarDisciplina extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(casdastrarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastrarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(casdastrarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastrarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(casdastrarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastrarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(casdastrarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastrarDisciplina.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new casdastrarDisciplina().setVisible(true);
+                new cadastrarDisciplina().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonRegister;
-    private javax.swing.JLabel imgLogoUFJF;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelLogoSGD1;
     private javax.swing.JLabel labelPassword;

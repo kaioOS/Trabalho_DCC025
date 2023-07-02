@@ -9,12 +9,12 @@ Kaio de Oliveira e Sousa(202165080AC)
 Filipe de Lima Namorato(202165035AB)
 Gustavo Silva Ribeiro (202165057AC)
  */
-public class cadastrarProfessor extends javax.swing.JFrame {
+public class cadastrarTurma extends javax.swing.JFrame {
 
     /**
      * Creates new form cadastrarProfessor
      */
-    public cadastrarProfessor() {
+    public cadastrarTurma() {
         initComponents();
     }
 
@@ -52,7 +52,7 @@ public class cadastrarProfessor extends javax.swing.JFrame {
         labelPassword2.setText("Senha");
 
         labelLogoSGD1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        labelLogoSGD1.setText("Cadastrar Professor");
+        labelLogoSGD1.setText("Cadastrar Turma");
 
         buttonRegister.setText("Cadastrar");
         buttonRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -154,20 +154,21 @@ public class cadastrarProfessor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(cadastrarProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastrarTurma.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(cadastrarProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastrarTurma.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(cadastrarProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastrarTurma.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(cadastrarProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastrarTurma.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new cadastrarProfessor().setVisible(true);
+                new cadastrarTurma().setVisible(true);
             }
         });
     }

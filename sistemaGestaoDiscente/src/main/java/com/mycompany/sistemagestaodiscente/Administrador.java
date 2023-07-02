@@ -5,6 +5,7 @@
 package com.mycompany.sistemagestaodiscente;
 
 import java.util.Date;
+import java.util.*;
 import java.util.Random;
 
 /**
@@ -30,25 +31,29 @@ public class Administrador extends Usuario{
     }
     
     // Métodos da classe
-    public Professor cadastroProfessorPorAdm(String nome,String CPF,String telefone,String email, String senha) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionSIAPE {
+    public static Professor cadastroProfessorPorAdm(String nome,String CPF,String telefone,String email, String senha) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionSIAPE {
         Professor professor = new Professor(nome,CPF,telefone, email, senha);
         return professor;
     }
 
-    public Aluno cadastroAlunoPorAdm(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionMatricula{
+    public static Aluno cadastroAlunoPorAdm(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionMatricula{
+        PersistenciaAluno persistenciaAluno = new PersistenciaAluno();
         Date data = new Date();
         CPF = CPF.replaceAll("[^0-9]", "");
         String matricula= data.toString().substring(24, 28) +CPF;
         Aluno aluno = new Aluno(nome,CPF,telefone, email, senha, matricula);
+        List <Aluno> alunos = new ArrayList<>();
+        alunos.add(aluno);
+        persistenciaAluno.armazenarDados(alunos);
         return aluno;
     }
     
     
-    public void atribuiTurmaAluno(Turma turma, Aluno aluno) throws ExceptionTurma {
+    public static void atribuiTurmaAluno(Turma turma, Aluno aluno) throws ExceptionTurma {
         aluno.adicionarTurma(turma);
     }
 
-    public void atribuiTurmaProfessor( Turma turma, Professor professor) throws ExceptionTurma {
+    public static void atribuiTurmaProfessor( Turma turma, Professor professor) throws ExceptionTurma {
         professor.adicionarTurma(turma);
         
     }

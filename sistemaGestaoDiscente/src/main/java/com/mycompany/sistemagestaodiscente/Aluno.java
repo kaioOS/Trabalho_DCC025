@@ -20,14 +20,14 @@ Gustavo Silva Ribeiro (202165057AC)
 
 public class Aluno extends Usuario {
     private String matricula;
-    private HashMap<Disciplina, Turma> turmasPorDisciplinaAluno;
+    //private HashMap<Disciplina, Turma> turmasPorDisciplinaAluno;
     
      
     public Aluno(String nome,String CPF,String telefone, String email, String senha, String matricula) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionMatricula{
         super(nome,CPF,telefone,email, senha, 2);
         validarMatricula(matricula);
         this.matricula=matricula;
-        this.turmasPorDisciplinaAluno = new HashMap<>();
+        //this.turmasPorDisciplinaAluno = new HashMap<>();
     }
     
     public void consultaNotas(Turma turma) {        
@@ -84,7 +84,16 @@ public class Aluno extends Usuario {
             throw new ExceptionMatricula();
         }
     }
-    
+    public static void verficaMatriculaExiste(String matricula) throws ExceptionMatricula
+    {
+        PersistenciaAluno persistenciaAluno = new PersistenciaAluno();
+        List<Aluno> alunos = persistenciaAluno.carregarDados();
+        for (Aluno aluno : alunos) {
+            if (aluno.getMatricula().equals(matricula)) {
+                throw new ExceptionMatricula();
+            }
+        }
+    }
     public void imprimeAluno(){
         imprimeUsuario();
         System.out.println("Matricula: "+this.matricula);
@@ -92,7 +101,7 @@ public class Aluno extends Usuario {
     }
     public void adicionarTurma(Turma turma) throws ExceptionTurma {
         if (turma != null) {
-            turmasPorDisciplinaAluno.put(turma.getDisciplina(), turma);
+            //turmasPorDisciplinaAluno.put(turma.getDisciplina(), turma);
             turma.adicionarAluno(this);
         }
     }
