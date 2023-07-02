@@ -4,6 +4,15 @@
  */
 package com.mycompany.sistemagestaodiscente;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.stream.JsonReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,13 +22,51 @@ import java.util.List;
 public class PersistenciaDisciplina implements PersistenciaDados{
 
     @Override
-    public <T> void armazenarDados(List<T> objetos) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public <Disciplina> void armazenarDados(List<Disciplina> objetos) {
+        try{
+            FileWriter writer = new FileWriter(
+                    "./src/main/java/com/mycompany/bancoDeDados/disciplinas.json");
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            gson.toJson(objetos, writer);
+            writer.flush();
+            writer.close();
+
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
     }
 
     @Override
-    public <T> List<T> carregarDados() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<Disciplina> carregarDados() {
+        
+        List<Disciplina> Disciplinas = new ArrayList<>();
+
+        Gson gson = new Gson();
+        File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/disciplinas.json");
+
+        if (arquivo.exists() && !arquivo.isDirectory()) {
+            try {
+                JsonReader reader = new JsonReader(new FileReader(arquivo));
+
+                JsonElement json = gson.fromJson(reader, JsonElement.class);
+
+                if (json != null) {
+                    JsonArray array = json.getAsJsonArray();
+
+                    for (JsonElement element : array) {
+                        Disciplina disciplina = gson.fromJson(element, Disciplina.class);
+                        Disciplinas.add(disciplina);
+                    }
+                }
+
+                reader.close();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        return Disciplinas;
     }
     
 }
