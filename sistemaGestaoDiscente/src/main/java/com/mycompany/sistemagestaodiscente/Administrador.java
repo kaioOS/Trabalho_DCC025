@@ -25,7 +25,7 @@ public class Administrador extends Usuario{
         super(nome,CPF,telefone,email, senha, 0);
         this.idAdm = idAdmin;
     }
-    public Disciplina cadastraDisciplina(String codigoDisciplina, String nomeDisciplina){
+    public static Disciplina cadastroDisciplinaPorAdm(String codigoDisciplina, String nomeDisciplina){
         PersistenciaDisciplina persistenciaDisciplina = new PersistenciaDisciplina();
         
         Disciplina disciplina = new Disciplina(codigoDisciplina, nomeDisciplina);
@@ -40,6 +40,7 @@ public class Administrador extends Usuario{
     // Métodos da classe
     public static Professor cadastroProfessorPorAdm(String nome,String CPF,String telefone,String email, String senha) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionSIAPE {
         PersistenciaProfessor persistenciaProfessor = new PersistenciaProfessor();
+        CPF = CPF.replaceAll("[^0-9]", "");
         Professor professor = new Professor(nome,CPF,telefone, email, senha);
         List <Professor> professores = new ArrayList<>();
         professores = persistenciaProfessor.carregarDados();
@@ -62,10 +63,16 @@ public class Administrador extends Usuario{
     }
     
     
-    public static void atribuiTurmaAluno(Turma turma, Aluno aluno) throws ExceptionTurma {
-        aluno.adicionarTurma(turma);
+    public Turma cadastraTurma(String codigoTurma, Disciplina codigoDisciplinaCorres, int tipoAvaliacao) throws ExceptionFormaAvaliacao{
+        PersistenciaTurma persistenciaTurma = new PersistenciaTurma();
+        Turma turma = new Turma(codigoTurma, codigoDisciplinaCorres, tipoAvaliacao);
+        List<Turma> turmas = new ArrayList<>();
+        turmas = persistenciaTurma.carregarDados();
+        turmas.add(turma);
+        persistenciaTurma.armazenarDados(turmas);
+        
+        return turma;
     }
-
     public static void atribuiTurmaProfessor( Turma turma, Professor professor) throws ExceptionTurma {
         professor.adicionarTurma(turma);
         

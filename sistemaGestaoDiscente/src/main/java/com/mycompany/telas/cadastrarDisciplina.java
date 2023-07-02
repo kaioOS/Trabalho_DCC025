@@ -4,6 +4,7 @@
  */
 package com.mycompany.telas;
 import com.mycompany.sistemagestaodiscente.*;
+import javax.swing.JOptionPane;
 /**
 Kaio de Oliveira e Sousa(202165080AC)
 Filipe de Lima Namorato(202165035AB)
@@ -30,10 +31,11 @@ public class cadastrarDisciplina extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         labelUser = new javax.swing.JLabel();
         labelPassword = new javax.swing.JLabel();
-        txtUser = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
         labelLogoSGD1 = new javax.swing.JLabel();
-        txtUser2 = new javax.swing.JTextField();
+        txtCod = new javax.swing.JTextField();
         buttonRegister = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,6 +55,13 @@ public class cadastrarDisciplina extends javax.swing.JFrame {
             }
         });
 
+        BackButton.setText("Voltar");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -67,28 +76,34 @@ public class cadastrarDisciplina extends javax.swing.JFrame {
                             .addComponent(labelPassword))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtUser2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonRegister)))
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCod, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(82, 82, 82)
+                                .addComponent(buttonRegister))))
                     .addComponent(labelLogoSGD1))
                 .addContainerGap(145, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(BackButton)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(160, Short.MAX_VALUE)
+                .addComponent(BackButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
                 .addComponent(labelLogoSGD1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUser)
-                    .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelPassword)
-                    .addComponent(txtUser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
+                    .addComponent(txtCod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(82, 82, 82)
                 .addComponent(buttonRegister)
-                .addGap(53, 53, 53))
+                .addGap(14, 14, 14))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -108,8 +123,23 @@ public class cadastrarDisciplina extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
+        String nome = txtName.getText();
+        String codigo = txtCod.getText();
+        
+       
+        Administrador.cadastroDisciplinaPorAdm(nome,codigo);
+        this.setVisible(false);
+        JOptionPane.showMessageDialog(null, "Cadastro completo!");
+        cadastrarDisciplina novaTela = new cadastrarDisciplina();
+        novaTela.setVisible(true);
+       
         
     }//GEN-LAST:event_buttonRegisterActionPerformed
+
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
+
+        this.setVisible(false);
+    }//GEN-LAST:event_BackButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,12 +180,13 @@ public class cadastrarDisciplina extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackButton;
     private javax.swing.JButton buttonRegister;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelLogoSGD1;
     private javax.swing.JLabel labelPassword;
     private javax.swing.JLabel labelUser;
-    private javax.swing.JTextField txtUser;
-    private javax.swing.JTextField txtUser2;
+    private javax.swing.JTextField txtCod;
+    private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 }

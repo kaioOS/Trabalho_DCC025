@@ -162,6 +162,7 @@ public class cadastrarProfessor extends javax.swing.JFrame {
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
         String nome = txtName.getText();
         String cpf = txtCPF.getText();
+        cpf = cpf.replaceAll("[^0-9]", "");
         char[] Csenha = txtPassword.getPassword();
         String senha = new String(Csenha);
         String telefone = txtPhone.getText();
