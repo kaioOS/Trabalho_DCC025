@@ -25,8 +25,8 @@ public class Professor extends Usuario{
     private Map<Disciplina, Turma> turmasProfessor;
     Random random = new Random();
 
-    public Professor(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionSIAPE{
-        super(nome,CPF,telefone, email, senha,tipoUsuario);
+    public Professor(String nome,String CPF,String telefone, String email, String senha) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionSIAPE{
+        super(nome,CPF,telefone, email, senha, 1);
 
         this.siape = Integer.toString(random.nextInt(9000000) + 1000000); // Gera um número de 7 dígitos e passa para String
         validarSiape(this.siape);

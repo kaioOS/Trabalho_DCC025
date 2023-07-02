@@ -33,7 +33,7 @@ public class SistemaGestaoDiscente {
         
                
         //aluno1.imprimeAluno();
-        Administrador adm = new Administrador("Filipe","384.628.477-70","(32) 99999-9999","teste@teste.com", "12345678",0,1);
+        Administrador adm = new Administrador("Filipe","384.628.477-70","(32) 99999-9999","teste@teste.com", "12345678",1);
         
  //TESTES        
 //        Aluno a1 = adm.cadastroAlunoPorAdm("Gustavo","384.628.477-70","(32) 99999-9999","teste@teste.com", "12345678",2);
@@ -139,7 +139,7 @@ public class SistemaGestaoDiscente {
                 System.out.println("Digite a senha:");
                 senha = sc.nextLine();
                 
-                vetProfessores[contProfessor] = adm.cadastroProfessorPorAdm(nome, CPF, telefone,email, senha, 2);
+                vetProfessores[contProfessor] = adm.cadastroProfessorPorAdm(nome, CPF, telefone,email, senha);
                 contProfessor++;
                 
             }else if(opcao==2){

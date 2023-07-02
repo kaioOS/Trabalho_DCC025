@@ -23,8 +23,8 @@ public class Aluno extends Usuario {
     private HashMap<Disciplina, Turma> turmasPorDisciplinaAluno;
     
      
-    public Aluno(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario, String matricula) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionMatricula{
-        super(nome,CPF,telefone,email, senha,tipoUsuario);
+    public Aluno(String nome,String CPF,String telefone, String email, String senha, String matricula) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionMatricula{
+        super(nome,CPF,telefone,email, senha, 2);
         validarMatricula(matricula);
         this.matricula=matricula;
         this.turmasPorDisciplinaAluno = new HashMap<>();
