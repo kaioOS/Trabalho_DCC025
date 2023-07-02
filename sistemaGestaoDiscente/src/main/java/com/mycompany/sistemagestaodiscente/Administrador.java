@@ -26,20 +26,32 @@ public class Administrador extends Usuario{
         this.idAdm = idAdmin;
     }
     public Disciplina cadastraDisciplina(String codigoDisciplina, String nomeDisciplina){
-        Disciplina disc = new Disciplina(codigoDisciplina, nomeDisciplina);
-        return disc;
+        PersistenciaDisciplina persistenciaDisciplina = new PersistenciaDisciplina();
+        
+        Disciplina disciplina = new Disciplina(codigoDisciplina, nomeDisciplina);
+        List<Disciplina> disciplinas = new ArrayList<>();
+        disciplinas = persistenciaDisciplina.carregarDados();
+        disciplinas.add(disciplina);
+        persistenciaDisciplina.armazenarDados(disciplinas);
+        
+        return disciplina;
     }
     
     // Métodos da classe
     public static Professor cadastroProfessorPorAdm(String nome,String CPF,String telefone,String email, String senha) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionSIAPE {
+        PersistenciaProfessor persistenciaProfessor = new PersistenciaProfessor();
         Professor professor = new Professor(nome,CPF,telefone, email, senha);
+        List <Professor> professores = new ArrayList<>();
+        professores = persistenciaProfessor.carregarDados();
+        professores.add(professor);
+        persistenciaProfessor.armazenarDados(professores);
         return professor;
     }
 
     public static Aluno cadastroAlunoPorAdm(String nome,String CPF,String telefone, String email, String senha) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionMatricula{
         PersistenciaAluno persistenciaAluno = new PersistenciaAluno();
         Date data = new Date();
-        //CPF = CPF.replaceAll("[^0-9]", "");
+        CPF = CPF.replaceAll("[^0-9]", "");
         String matricula= data.toString().substring(24, 28) +CPF;
         Aluno aluno = new Aluno(nome,CPF,telefone, email, senha, matricula);
         List <Aluno> alunos = new ArrayList<>();
