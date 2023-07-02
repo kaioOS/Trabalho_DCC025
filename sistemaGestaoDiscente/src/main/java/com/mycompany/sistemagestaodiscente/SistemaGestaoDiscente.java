@@ -182,8 +182,8 @@ public class SistemaGestaoDiscente {
                 System.out.println("--------Listando alunos--------");
                 for (int i = 0; i < contAlunos; i++){
                     if(vetAlunos[i]==null)
-                        break;
-                    System.out.println("Aluno"+i+": ");
+                        break; 
+                   System.out.println("Aluno"+i+": ");
                     vetAlunos[i].imprimeAluno();
                     System.out.println("------------------------");
                 }

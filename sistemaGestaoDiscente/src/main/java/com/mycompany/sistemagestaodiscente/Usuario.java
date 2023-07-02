@@ -4,6 +4,7 @@
  */
 package com.mycompany.sistemagestaodiscente;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -159,7 +160,32 @@ abstract class Usuario {
         }
     }
     
+    public static void verificaCpfExiste(String cpf) throws ExceptionCPF{
+        PersistenciaAluno persistenciaAluno = new PersistenciaAluno();
+        PersistenciaProfessor persistenciaProfessor = new PersistenciaProfessor();
+        PersistenciaAdministrador persistenciaAdministrador = new PersistenciaAdministrador();
+        
+        List<Aluno> alunos = persistenciaAluno.carregarDados();
+        List<Professor> professores = persistenciaProfessor.carregarDados();
+        List<Administrador> administradores = persistenciaAdministrador.carregarDados();
+        
+        for (Aluno aluno : alunos) {
+            if (aluno.getCPF().equals(cpf)) {
+                throw new ExceptionCPF();
+            }
+        }
 
+        for (Professor professor : professores) {
+            if (professor.getCPF().equals(cpf)) {
+                throw new ExceptionCPF();
+            }
+        }
+        for (Administrador administrador : administradores) {
+            if (administrador.getCPF().equals(cpf)) {
+                throw new ExceptionCPF();
+            }
+        }
+    }
     
     public static void validarTelefone(String telefone) throws ExceptionTelefone{
         String telefoneNumeros = telefone.replaceAll("\\D", "");
