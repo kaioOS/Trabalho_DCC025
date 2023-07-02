@@ -83,7 +83,7 @@ abstract class Usuario {
     
     //Login
 
-    private String getSenha() {
+    public String getSenha() {
         return senha;
     }
 
@@ -185,6 +185,38 @@ abstract class Usuario {
                 throw new ExceptionCPF();
             }
         }
+    }
+    
+    public static boolean verificaLoginUsuario(String cpf, String senha, int tipoUsuario){
+        if(tipoUsuario == 0){
+            PersistenciaAdministrador persistenciaAdministrador = new PersistenciaAdministrador();
+            List<Administrador> administradores = persistenciaAdministrador.carregarDados();
+            for (Administrador administrador : administradores) {
+                if (administrador.getCPF().equals(cpf) && administrador.getSenha().equals(senha)) {
+                    return true;
+                }
+           }
+           return false;
+        }else if(tipoUsuario == 1){
+            PersistenciaProfessor persistenciaProfessor = new PersistenciaProfessor();
+            List<Professor> professores = persistenciaProfessor.carregarDados();
+            for (Professor professor : professores) {
+                if (professor.getCPF().equals(cpf) && professor.getSenha().equals(senha)) {
+                    return true;
+                }
+            }
+            return false;
+        }else if(tipoUsuario == 2){
+            PersistenciaAluno persistenciaAluno = new PersistenciaAluno();
+            List<Aluno> alunos = persistenciaAluno.carregarDados();
+            for (Aluno aluno : alunos) {
+                if (aluno.getCPF().equals(cpf) && aluno.getSenha().equals(senha)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        return false;
     }
     
     public static void validarTelefone(String telefone) throws ExceptionTelefone{
