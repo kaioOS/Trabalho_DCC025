@@ -14,7 +14,7 @@ Gustavo Silva Ribeiro (202165057AC)
  */
 public class cadastrarAluno extends javax.swing.JFrame {
 
-    Administrador administrador;
+    
     
     public cadastrarAluno() {
         initComponents();
@@ -33,17 +33,16 @@ public class cadastrarAluno extends javax.swing.JFrame {
         labelUser = new javax.swing.JLabel();
         labelPassword = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
-        labelPassword1 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
         labelPassword2 = new javax.swing.JLabel();
         labelLogoSGD1 = new javax.swing.JLabel();
-        txtUser1 = new javax.swing.JTextField();
-        txtMatricula = new javax.swing.JTextField();
+        txtCPF = new javax.swing.JTextField();
         buttonRegister = new javax.swing.JButton();
         labelUser1 = new javax.swing.JLabel();
         txtPhone = new javax.swing.JTextField();
         labelUser2 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
+        BackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,8 +51,6 @@ public class cadastrarAluno extends javax.swing.JFrame {
         labelUser.setText("Nome");
 
         labelPassword.setText("CPF");
-
-        labelPassword1.setText("Matrícula");
 
         labelPassword2.setText("Senha");
 
@@ -71,6 +68,13 @@ public class cadastrarAluno extends javax.swing.JFrame {
 
         labelUser2.setText("E-mail");
 
+        BackButton.setText("Voltar");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -79,8 +83,14 @@ public class cadastrarAluno extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonRegister)
+                    .addComponent(labelLogoSGD1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(labelPassword2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(labelUser)
@@ -88,11 +98,7 @@ public class cadastrarAluno extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(labelPassword1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -100,20 +106,19 @@ public class cadastrarAluno extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(labelPassword2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(labelUser2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(labelLogoSGD1))
+                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(56, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(BackButton)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(157, Short.MAX_VALUE)
+                .addComponent(BackButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                 .addComponent(labelLogoSGD1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -127,16 +132,12 @@ public class cadastrarAluno extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(labelUser2)
                         .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtUser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(labelPassword2)
-                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(labelPassword1)
-                        .addComponent(txtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(51, 51, 51)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelPassword2)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57)
                 .addComponent(buttonRegister)
                 .addGap(20, 20, 20))
         );
@@ -158,21 +159,15 @@ public class cadastrarAluno extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
-        String cpf = txtName.getText();
-        String matricula = txtMatricula.getText();
+        String cpf = txtCPF.getText();
         String email = txtEmail.getText();
         String telefone = txtPhone.getText();
         String nome = txtName.getText();
         char[] Csenha = txtPassword.getPassword();
         String senha = new String(Csenha);
-        try {
-            Aluno.verficaMatriculaExiste(matricula);
-        }catch(ExceptionMatricula ex1){
-            JOptionPane.showMessageDialog(null, "Matrícula já cadastrada");
-        }
         
         try {
-            Administrador.cadastroAlunoPorAdm(nome, cpf, telefone, email, senha, 2);
+            Administrador.cadastroAlunoPorAdm(nome, cpf, telefone, email, senha);
         } catch (ExceptionNome ex) {
             JOptionPane.showMessageDialog(null, "Nome inválido");
         } catch (ExceptionTelefone ex) {
@@ -186,7 +181,16 @@ public class cadastrarAluno extends javax.swing.JFrame {
         } catch (ExceptionMatricula ex) {
             JOptionPane.showMessageDialog(null, "Matrícula inválida");
         }
+        this.setVisible(false);
+        cadastrarAluno novaTela = new cadastrarAluno();
+        novaTela.setVisible(true);
     }//GEN-LAST:event_buttonRegisterActionPerformed
+
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
+
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_BackButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,20 +228,19 @@ public class cadastrarAluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackButton;
     private javax.swing.JButton buttonRegister;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelLogoSGD1;
     private javax.swing.JLabel labelPassword;
-    private javax.swing.JLabel labelPassword1;
     private javax.swing.JLabel labelPassword2;
     private javax.swing.JLabel labelUser;
     private javax.swing.JLabel labelUser1;
     private javax.swing.JLabel labelUser2;
+    private javax.swing.JTextField txtCPF;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtMatricula;
     private javax.swing.JTextField txtName;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtPhone;
-    private javax.swing.JTextField txtUser1;
     // End of variables declaration//GEN-END:variables
 }

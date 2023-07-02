@@ -36,13 +36,14 @@ public class Administrador extends Usuario{
         return professor;
     }
 
-    public static Aluno cadastroAlunoPorAdm(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionMatricula{
+    public static Aluno cadastroAlunoPorAdm(String nome,String CPF,String telefone, String email, String senha) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionMatricula{
         PersistenciaAluno persistenciaAluno = new PersistenciaAluno();
         Date data = new Date();
-        CPF = CPF.replaceAll("[^0-9]", "");
+        //CPF = CPF.replaceAll("[^0-9]", "");
         String matricula= data.toString().substring(24, 28) +CPF;
         Aluno aluno = new Aluno(nome,CPF,telefone, email, senha, matricula);
         List <Aluno> alunos = new ArrayList<>();
+        alunos = persistenciaAluno.carregarDados();
         alunos.add(aluno);
         persistenciaAluno.armazenarDados(alunos);
         return aluno;
