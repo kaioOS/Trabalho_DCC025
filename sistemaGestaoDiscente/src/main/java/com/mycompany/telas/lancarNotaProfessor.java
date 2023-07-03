@@ -28,7 +28,6 @@ public class lancarNotaProfessor extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        imgLogoUFJF = new javax.swing.JLabel();
         labelNomeAluno = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -39,8 +38,6 @@ public class lancarNotaProfessor extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        imgLogoUFJF.setIcon(new javax.swing.ImageIcon("./src/main/java/imagens/logoUFJF.png"));
 
         labelNomeAluno.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         labelNomeAluno.setText("Professor: Nome do Professor");
@@ -93,20 +90,17 @@ public class lancarNotaProfessor extends javax.swing.JFrame {
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(imgLogoUFJF)
                             .addComponent(labelNomeAluno)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
-                        .addGap(0, 84, Short.MAX_VALUE)))
+                        .addGap(0, 101, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addComponent(imgLogoUFJF)
-                .addGap(64, 64, 64)
+                .addContainerGap(227, Short.MAX_VALUE)
                 .addComponent(labelNomeAluno)
                 .addGap(4, 4, 4)
                 .addComponent(jLabel1)
@@ -171,7 +165,6 @@ public class lancarNotaProfessor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel imgLogoUFJF;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -30,7 +30,6 @@ public class notaFreqAluno extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         labelNomeAluno = new javax.swing.JLabel();
-        imgLogoUFJF = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableNotaFreq = new javax.swing.JTable();
 
@@ -43,8 +42,6 @@ public class notaFreqAluno extends javax.swing.JFrame {
 
         labelNomeAluno.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         labelNomeAluno.setText("Aluno: Fulano da Silva");
-
-        imgLogoUFJF.setIcon(new javax.swing.ImageIcon("./src/main/java/imagens/logoUFJF.png"));
 
         tableNotaFreq.setFont(new java.awt.Font("Nunito", 0, 13)); // NOI18N
         tableNotaFreq.setForeground(new java.awt.Color(51, 51, 51));
@@ -89,15 +86,11 @@ public class notaFreqAluno extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addGap(0, 446, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(imgLogoUFJF)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(imgLogoUFJF)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addContainerGap(243, Short.MAX_VALUE)
                 .addComponent(labelNomeAluno)
                 .addGap(4, 4, 4)
                 .addComponent(jLabel1)
@@ -157,7 +150,6 @@ public class notaFreqAluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel imgLogoUFJF;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane3;
