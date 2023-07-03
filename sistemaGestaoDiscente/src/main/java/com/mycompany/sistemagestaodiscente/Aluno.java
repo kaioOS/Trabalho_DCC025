@@ -20,16 +20,19 @@ Gustavo Silva Ribeiro (202165057AC)
 
 public class Aluno extends Usuario {
     private String matricula;
-    //private HashMap<Disciplina, Turma> turmasPorDisciplinaAluno;
+    private HashMap<String, String> turmasAluno;//<codigoDisciplina,codigoTurma>
     
+    public Aluno() {
+        super();
+    }
      
     public Aluno(String nome,String CPF,String telefone, String email, String senha, String matricula) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionMatricula{
         super(nome,CPF,telefone,email, senha, 2);
         validarMatricula(matricula);
         this.matricula=matricula;
-        //this.turmasPorDisciplinaAluno = new HashMap<>();
+        this.turmasAluno = new HashMap<>();
     }
-    
+
     public void consultaNotas(Turma turma) {        
         List<Float> notas = turma.getNotaAlunos(this.matricula);
         
@@ -49,18 +52,24 @@ public class Aluno extends Usuario {
         if (frequencia == -1) {
             System.out.println("Frequencia não encontrada.");
         } else {
-            System.out.println("A frequencia do aluno com matrícula " + this.matricula + " na turma " + turma.getCodigoTurma() + " da disciplina "+ turma.getCodigoDisciplinaCorresp()+ " é: " + frequencia);
+                System.out.println("A frequencia do aluno com matrícula " + this.matricula + " na turma " + turma.getCodigoTurma() + " da disciplina "+ turma.getCodigoDisciplinaCorresp()+ " é: " + frequencia);
         }
         
     }
     public String getMatricula() {
-        return matricula;
+        return this.matricula;
     }
 
     public void setMatricula(String matricula) throws ExceptionMatricula {
         validarMatricula(matricula);
         this.matricula = matricula;
     }
+    
+        public void setTurmaAluno(HashMap<String, String> turmasAluno) {
+            this.turmasAluno = turmasAluno;
+        }
+    
+    
     public void validarMatricula(String matricula) throws ExceptionMatricula {
         if (matricula.length() < 15) {
             throw new ExceptionMatricula();
@@ -101,7 +110,7 @@ public class Aluno extends Usuario {
     }
     public void adicionarTurma(Turma turma) throws ExceptionTurma {
         if (turma != null) {
-            //turmasPorDisciplinaAluno.put(turma.getDisciplina(), turma);
+            this.turmasAluno.put(turma.getCodigoDisciplinaCorresp(), turma.getCodigoDisciplinaCorresp());
             turma.adicionarAluno(this);
         }
     }

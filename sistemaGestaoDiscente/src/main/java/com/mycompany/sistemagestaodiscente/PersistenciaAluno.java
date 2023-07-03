@@ -8,12 +8,18 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.lang.reflect.Type;
+import com.google.gson.reflect.TypeToken;
+import java.io.IOException;
+
 
 /**
  *
@@ -22,9 +28,9 @@ import java.util.List;
 public class PersistenciaAluno  implements PersistenciaDados{
 
 
-    @Override
+        @Override
     public List<Aluno> carregarDados() {
-        List<Aluno> Alunos = new ArrayList<>();
+        List<Aluno> alunos = new ArrayList<>();
 
         Gson gson = new Gson();
         File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/alunos.json");
@@ -36,11 +42,37 @@ public class PersistenciaAluno  implements PersistenciaDados{
                 JsonElement json = gson.fromJson(reader, JsonElement.class);
 
                 if (json != null) {
-                    JsonArray array = json.getAsJsonArray();
+                    if (json.isJsonArray()) {
+                        JsonArray array = json.getAsJsonArray();
 
-                    for (JsonElement element : array) {
-                        Aluno Aluno = gson.fromJson(element, Aluno.class);
-                        Alunos.add(Aluno);
+                        for (JsonElement element : array) {
+                            JsonObject alunoJson = element.getAsJsonObject();
+                            Aluno aluno = new Aluno();
+
+                            // Desserializa os outros dados do aluno do JSON
+                            aluno.setMatricula(alunoJson.get("matricula").getAsString());
+                            aluno.setNome(alunoJson.get("nome").getAsString());
+                            aluno.setCPF(alunoJson.get("CPF").getAsString());
+                            aluno.setTelefone(alunoJson.get("telefone").getAsString());
+                            aluno.setSenha(alunoJson.get("senha").getAsString());
+                            aluno.setTipoUsuario(alunoJson.get("tipoUsuario").getAsInt());
+                            
+                            
+
+                            // Desserializa o HashMap do aluno do JSON
+                            if (alunoJson.has("hashMapJson")) {
+                                String hashMapJson = alunoJson.get("hashMapJson").getAsString();
+
+                                // Converte o JSON do HashMap de volta para um HashMap usando o GSON
+                                Type type = new TypeToken<HashMap<String, String>>(){}.getType();
+                                HashMap<String, String> hashMap = gson.fromJson(hashMapJson, type);
+
+                                // Adiciona o HashMap ao objeto Aluno
+                                aluno.setTurmaAluno(hashMap);
+                            }
+
+                            alunos.add(aluno);
+                        }
                     }
                 }
 
@@ -50,22 +82,32 @@ public class PersistenciaAluno  implements PersistenciaDados{
             }
         }
 
-        return Alunos;
+        return alunos;
     }
 
+
+    
     @Override
     public <Aluno> void armazenarDados(List<Aluno> objetos) {
-        try {
-            FileWriter writer = new FileWriter(
-                    "./src/main/java/com/mycompany/bancoDeDados/alunos.json");
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            gson.toJson(objetos, writer);
-            writer.flush();
-            writer.close();
+    try {
+        File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/alunos.json");
+        FileWriter writer = new FileWriter(arquivo);
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        gson.toJson(objetos, writer);
+
+        writer.flush();
+        writer.close();
+
+        System.out.println("Dados dos alunos armazenados com sucesso.");
+
+    } catch (IOException e) {
+        System.out.println("Erro ao armazenar os dados dos alunos: " + e.getMessage());
     }
+}
+
+    
+    
+    
     
 }

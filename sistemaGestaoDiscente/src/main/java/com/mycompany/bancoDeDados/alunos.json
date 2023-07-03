@@ -1,10 +1,20 @@
 [
-    {
-        "matricula" : "202165001",
-        "nome": " AlunoTeste",
-        "CPF":"82232937062",
-        "telefone":"3329694877",
-        "senha":"123456",
-        "tipoUsuario":"2"
-    }
+  {
+    "matricula": "202331480375020",
+    "nome": "Teste Teste",
+    "CPF": "31480375020",
+    "telefone": "32984868348",
+    "senha": "12345678",
+    "tipoUsuario": 2
+  },
+  {
+    "matricula": "202343526859094",
+    "turmasAluno": {},
+    "nome": "Teste Tes",
+    "CPF": "43526859094",
+    "telefone": "32984868348",
+    "email": "filipe@filipe.com",
+    "senha": "12345678",
+    "tipoUsuario": 2
+  }
 ]

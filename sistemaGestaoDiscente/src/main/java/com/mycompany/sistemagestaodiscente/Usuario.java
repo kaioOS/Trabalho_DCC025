@@ -27,7 +27,9 @@ public abstract class Usuario {
     private String senha;
     private int tipoUsuario;
 
-    
+    public Usuario(){
+        
+    }
     public Usuario(String nome,String CPF,String telefone, String email, String senha, int tipoUsuario) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF{
         validarNome(nome);
         validarTelefone(telefone);
@@ -47,7 +49,7 @@ public abstract class Usuario {
         return nome;
     }
 
-    private void setNome(String nome) throws ExceptionNome {
+    public void setNome(String nome) throws ExceptionNome {
         validarNome(nome);
         this.nome = nome;
     }
@@ -56,7 +58,7 @@ public abstract class Usuario {
         return CPF;
     }
 
-    private void setCPF(String CPF) throws ExceptionCPF {
+    public void setCPF(String CPF) throws ExceptionCPF {
         validarCPF(CPF);
         this.CPF = CPF;
     }
@@ -87,7 +89,7 @@ public abstract class Usuario {
         return senha;
     }
 
-    private void setSenha(String senha) throws ExceptionSenha {
+    public void setSenha(String senha) throws ExceptionSenha {
         validarSenha(String.valueOf(senha));
         this.senha = senha;
     }
@@ -96,7 +98,7 @@ public abstract class Usuario {
         return tipoUsuario;
     }
 
-    private void setTipoUsuario(int tipoUsuario) {
+    public void setTipoUsuario(int tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }    
     //------------------------
