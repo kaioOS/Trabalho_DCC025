@@ -176,6 +176,16 @@ public class Turma {
         System.out.println("Nome: " + professor.getNome());
         System.out.println("Matrícula: " + professor.getSiape());
     }
+    public static boolean verificaTurma(String codigoTurma, Disciplina disciplina){
+        PersistenciaTurma persistenciaTurma = new PersistenciaTurma();
+        List<Turma> turmas = persistenciaTurma.carregarDados();
+        for (Turma turma : turmas) {
+            if (turma.getCodigoTurma().equals(codigoTurma) && turma.getCodigoDisciplinaCorresp().equals(disciplina.getCodigoDisciplina())) {
+                    return true;
+            }
+        }
+        return false;
+    }
 
     
 }
