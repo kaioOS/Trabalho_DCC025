@@ -30,7 +30,6 @@ public class lancarFreqProfessor extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         labelNomeAluno = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        imgLogoUFJF = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -45,8 +44,6 @@ public class lancarFreqProfessor extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel1.setText("Siape: 12345678");
-
-        imgLogoUFJF.setIcon(new javax.swing.ImageIcon("./src/main/java/imagens/logoUFJF.png"));
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel2.setText("Disciplina: Algoritmos");
@@ -90,12 +87,11 @@ public class lancarFreqProfessor extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imgLogoUFJF)
                     .addComponent(labelNomeAluno)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
-                .addContainerGap(384, Short.MAX_VALUE))
+                .addContainerGap(401, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -103,9 +99,7 @@ public class lancarFreqProfessor extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(imgLogoUFJF)
-                .addGap(64, 64, 64)
+                .addGap(211, 211, 211)
                 .addComponent(labelNomeAluno)
                 .addGap(4, 4, 4)
                 .addComponent(jLabel1)
@@ -172,7 +166,6 @@ public class lancarFreqProfessor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel imgLogoUFJF;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
