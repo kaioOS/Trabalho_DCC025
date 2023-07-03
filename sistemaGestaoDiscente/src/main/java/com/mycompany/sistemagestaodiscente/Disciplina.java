@@ -32,8 +32,11 @@ public class Disciplina{
     public String getCodigoDisciplina() {
         return codigoDisciplina;
     }
-
-
+    public void setNovaTurma(String codTurma)
+    {
+        this.turmasCadastradas.add(codTurma);
+    }
+    
     public String getNomeDisciplina() {
         return nomeDisciplina;
     }

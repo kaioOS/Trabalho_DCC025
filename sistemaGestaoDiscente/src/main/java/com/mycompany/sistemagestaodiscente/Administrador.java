@@ -25,7 +25,7 @@ public class Administrador extends Usuario{
         super(nome,CPF,telefone,email, senha, 0);
         this.idAdm = idAdmin;
     }
-    public static Disciplina cadastroDisciplinaPorAdm(String codigoDisciplina, String nomeDisciplina){
+    public static void cadastroDisciplinaPorAdm(String codigoDisciplina, String nomeDisciplina){
         PersistenciaDisciplina persistenciaDisciplina = new PersistenciaDisciplina();
         
         Disciplina disciplina = new Disciplina(codigoDisciplina, nomeDisciplina);
@@ -34,11 +34,11 @@ public class Administrador extends Usuario{
         disciplinas.add(disciplina);
         persistenciaDisciplina.armazenarDados(disciplinas);
         
-        return disciplina;
+       
     }
     
     // Métodos da classe
-    public static Professor cadastroProfessorPorAdm(String nome,String CPF,String telefone,String email, String senha) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionSIAPE {
+    public static void cadastroProfessorPorAdm(String nome,String CPF,String telefone,String email, String senha) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionSIAPE {
         PersistenciaProfessor persistenciaProfessor = new PersistenciaProfessor();
         CPF = CPF.replaceAll("[^0-9]", "");
         Professor professor = new Professor(nome,CPF,telefone, email, senha);
@@ -46,10 +46,10 @@ public class Administrador extends Usuario{
         professores = persistenciaProfessor.carregarDados();
         professores.add(professor);
         persistenciaProfessor.armazenarDados(professores);
-        return professor;
+        
     }
 
-    public static Aluno cadastroAlunoPorAdm(String nome,String CPF,String telefone, String email, String senha) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionMatricula{
+    public static void cadastroAlunoPorAdm(String nome,String CPF,String telefone, String email, String senha) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionMatricula{
         PersistenciaAluno persistenciaAluno = new PersistenciaAluno();
         Date data = new Date();
         CPF = CPF.replaceAll("[^0-9]", "");
@@ -59,20 +59,33 @@ public class Administrador extends Usuario{
         alunos = persistenciaAluno.carregarDados();
         alunos.add(aluno);
         persistenciaAluno.armazenarDados(alunos);
-        return aluno;
-    }
-    
-    
-    public Turma cadastraTurma(String codigoTurma, Disciplina codigoDisciplinaCorres, int tipoAvaliacao) throws ExceptionFormaAvaliacao{
-        PersistenciaTurma persistenciaTurma = new PersistenciaTurma();
-        Turma turma = new Turma(codigoTurma, codigoDisciplinaCorres, tipoAvaliacao);
-        List<Turma> turmas = new ArrayList<>();
-        turmas = persistenciaTurma.carregarDados();
-        turmas.add(turma);
-        persistenciaTurma.armazenarDados(turmas);
         
-        return turma;
     }
+    
+    
+    public static void cadastroTurmaPorAdm(String codigoTurma, String codigoDisciplinaCorres, int tipoAvaliacao) throws ExceptionFormaAvaliacao{
+        PersistenciaTurma persistenciaTurma = new PersistenciaTurma();
+        PersistenciaDisciplina persistenciaDisciplina = new PersistenciaDisciplina();
+        List <Disciplina> disciplinas =  new ArrayList<>();
+        disciplinas = persistenciaDisciplina.carregarDados();
+        for (Disciplina disciplina : disciplinas) {
+            if(disciplina.getCodigoDisciplina().equals(codigoDisciplinaCorres))
+            {
+                disciplina.setNovaTurma(codigoTurma);
+                Disciplina disciplinaCorres = disciplina;
+                Turma turma = new Turma(codigoTurma, disciplinaCorres, tipoAvaliacao);
+                List<Turma> turmas = new ArrayList<>();
+                turmas = persistenciaTurma.carregarDados();
+                turmas.add(turma);
+                persistenciaTurma.armazenarDados(turmas);
+                
+            }
+        }
+        
+    }    
+        
+        
+    
     public static void atribuiTurmaProfessor( Turma turma, Professor professor) throws ExceptionTurma {
         professor.adicionarTurma(turma);
         

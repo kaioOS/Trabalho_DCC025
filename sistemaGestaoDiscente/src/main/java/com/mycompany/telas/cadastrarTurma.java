@@ -4,6 +4,10 @@
  */
 package com.mycompany.telas;
 import com.mycompany.sistemagestaodiscente.*;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
 Kaio de Oliveira e Sousa(202165080AC)
 Filipe de Lima Namorato(202165035AB)
@@ -27,24 +31,28 @@ public class cadastrarTurma extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         labelUser = new javax.swing.JLabel();
         labelPassword = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
-        txtPassword1 = new javax.swing.JPasswordField();
+        txtCodDisc = new javax.swing.JTextField();
         labelPassword1 = new javax.swing.JLabel();
         labelLogoSGD1 = new javax.swing.JLabel();
         buttonRegister = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        txtDisc = new javax.swing.JTextField();
+        rbS = new javax.swing.JRadioButton();
+        rbMD = new javax.swing.JRadioButton();
+        rbMA = new javax.swing.JRadioButton();
+        rbMP = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        labelUser.setText("Nome");
+        labelUser.setText(" Código da Turma");
 
-        labelPassword.setText("Disciplina");
+        labelPassword.setText("Código da Disciplina correspondente");
 
         labelPassword1.setText("Forma de avaliação");
 
@@ -65,66 +73,83 @@ public class cadastrarTurma extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("jTextField1");
+        buttonGroup1.add(rbS);
+        rbS.setText("Somatório");
+
+        buttonGroup1.add(rbMD);
+        rbMD.setText("Média com descarte de menor nota");
+
+        buttonGroup1.add(rbMA);
+        rbMA.setText("Média Aritmética");
+
+        buttonGroup1.add(rbMP);
+        rbMP.setText("Média Ponderada");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(labelPassword1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(labelUser)
-                                .addComponent(labelPassword))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                                .addComponent(jTextField1))))
-                    .addComponent(labelLogoSGD1))
-                .addContainerGap(173, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(BackButton)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(buttonRegister)
-                .addGap(191, 191, 191))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelLogoSGD1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelPassword)
+                            .addComponent(labelUser)
+                            .addComponent(labelPassword1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtCodDisc, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                                .addComponent(txtDisc))
+                            .addComponent(rbMA)
+                            .addComponent(rbMP)
+                            .addComponent(rbS)
+                            .addComponent(rbMD)
+                            .addComponent(buttonRegister))))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(BackButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addComponent(labelLogoSGD1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUser)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCodDisc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelPassword)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtDisc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelPassword))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelPassword1)
-                    .addComponent(txtPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
+                    .addComponent(rbS))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rbMA)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rbMD)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rbMP)
+                .addGap(46, 46, 46)
                 .addComponent(buttonRegister)
-                .addGap(15, 15, 15))
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,8 +162,44 @@ public class cadastrarTurma extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
-        String cpf = txtName.getText();
-        char[] senha = txtPassword.getPassword();
+        String codigoTurma = txtCodDisc.getText();
+        String disciplina = txtDisc.getText();
+        if (!rbS.isSelected() && !rbMA.isSelected() && !rbMD.isSelected() && !rbMP.isSelected()) {
+            JOptionPane.showMessageDialog(null, "Selecione um tipo avaliação");
+        }
+        else if(rbS.isSelected())
+        {
+            
+            
+        }
+        else if(rbMD.isSelected())
+        {
+            try {
+                Administrador.cadastroTurmaPorAdm(codigoTurma, disciplina, 3);
+            } catch (ExceptionFormaAvaliacao ex) {
+                JOptionPane.showMessageDialog(null, "Tipo de avaliação inválido");
+            }
+        }
+        else if(rbMA.isSelected())
+        {          
+            try {
+                Administrador.cadastroTurmaPorAdm(codigoTurma, disciplina, 1);
+            } catch (ExceptionFormaAvaliacao ex) {
+                JOptionPane.showMessageDialog(null, "Tipo de avaliação inválido");
+            }
+        }
+        else if(rbMP.isSelected())
+        {
+            try {
+                Administrador.cadastroTurmaPorAdm(codigoTurma, disciplina, 2);
+            } catch (ExceptionFormaAvaliacao ex) {
+                JOptionPane.showMessageDialog(null, "Tipo de avaliação inválido");
+            }
+        }
+        JOptionPane.showMessageDialog(null, "Cadastro completo!");
+        this.setVisible(false);
+        cadastrarTurma novaTela = new cadastrarTurma();
+        novaTela.setVisible(true);
     }//GEN-LAST:event_buttonRegisterActionPerformed
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
@@ -184,14 +245,18 @@ public class cadastrarTurma extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton buttonRegister;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelLogoSGD1;
     private javax.swing.JLabel labelPassword;
     private javax.swing.JLabel labelPassword1;
     private javax.swing.JLabel labelUser;
-    private javax.swing.JTextField txtName;
-    private javax.swing.JPasswordField txtPassword1;
+    private javax.swing.JRadioButton rbMA;
+    private javax.swing.JRadioButton rbMD;
+    private javax.swing.JRadioButton rbMP;
+    private javax.swing.JRadioButton rbS;
+    private javax.swing.JTextField txtCodDisc;
+    private javax.swing.JTextField txtDisc;
     // End of variables declaration//GEN-END:variables
 }
