@@ -1,10 +1,20 @@
 [
-    {
-        "siape" : "9854327",
-        "nome": " ProfessorTeste",
-        "CPF":"61178543072",
-        "telefone":"3220432692",
-        "senha":"123456",
-        "tipoUsuario":"1"
-    }
+  {
+    "siape": "7737567",
+    "nome": "Professor Teste",
+    "CPF": "57280230024",
+    "telefone": "32984868348",
+    "email": "filipe@professor.com",
+    "senha": "12345678",
+    "tipoUsuario": 1
+  },
+  {
+    "siape": "9901846",
+    "nome": "Professor Teste",
+    "CPF": "21006149082",
+    "telefone": "32999901780",
+    "email": "teste2@gmail.com",
+    "senha": "12345678",
+    "tipoUsuario": 1
+  }
 ]

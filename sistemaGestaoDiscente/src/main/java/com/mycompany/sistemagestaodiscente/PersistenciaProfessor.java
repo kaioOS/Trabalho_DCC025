@@ -8,21 +8,27 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.reflect.Type;
+import com.google.gson.reflect.TypeToken;
+import java.io.IOException;
+import java.util.HashMap;
 
 /**
  *
  * @author filipe
  */
 public class PersistenciaProfessor implements PersistenciaDados{
-     @Override
+    
+    @Override
     public List<Professor> carregarDados() {
-        List<Professor> Professors = new ArrayList<>();
+        List<Professor> professores = new ArrayList<>();
 
         Gson gson = new Gson();
         File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/professores.json");
@@ -34,11 +40,37 @@ public class PersistenciaProfessor implements PersistenciaDados{
                 JsonElement json = gson.fromJson(reader, JsonElement.class);
 
                 if (json != null) {
-                    JsonArray array = json.getAsJsonArray();
+                    if (json.isJsonArray()) {
+                        JsonArray array = json.getAsJsonArray();
 
-                    for (JsonElement element : array) {
-                        Professor Professor = gson.fromJson(element, Professor.class);
-                        Professors.add(Professor);
+                        for (JsonElement element : array) {
+                            JsonObject professorJson = element.getAsJsonObject();
+                            Professor professor = new Professor();
+
+                            // Desserializa os outros dados do professor do JSON
+                            professor.setSiape(professorJson.get("siape").getAsString());
+                            professor.setNome(professorJson.get("nome").getAsString());
+                            professor.setCPF(professorJson.get("CPF").getAsString());
+                            professor.setTelefone(professorJson.get("telefone").getAsString());
+                            professor.setEmail(professorJson.get("email").getAsString());
+                            professor.setSenha(professorJson.get("senha").getAsString());
+                            professor.setTipoUsuario(professorJson.get("tipoUsuario").getAsInt());
+                            
+
+                            // Desserializa o HashMap do professor do JSON
+                            if (professorJson.has("hashMapJson")) {
+                                String hashMapJson = professorJson.get("hashMapJson").getAsString();
+
+                                // Converte o JSON do HashMap de volta para um HashMap usando o GSON
+                                Type type = new TypeToken<HashMap<String, String>>(){}.getType();
+                                HashMap<Disciplina, Turma> hashMap = gson.fromJson(hashMapJson, type);
+
+                                // Adiciona o HashMap ao objeto Professor
+                                professor.setTurmasProfessor(hashMap);
+                            }
+
+                            professores.add(professor);
+                        }
                     }
                 }
 
@@ -48,22 +80,27 @@ public class PersistenciaProfessor implements PersistenciaDados{
             }
         }
 
-        return Professors;
+        return professores;
     }
 
     @Override
     public <Professor> void armazenarDados(List<Professor> objetos) {
-        try {
-            FileWriter writer = new FileWriter(
-                    "./src/main/java/com/mycompany/bancoDeDados/professores.json");
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            gson.toJson(objetos, writer);
-            writer.flush();
-            writer.close();
+    try {
+        File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/professores.json");
+        FileWriter writer = new FileWriter(arquivo);
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        gson.toJson(objetos, writer);
+
+        writer.flush();
+        writer.close();
+
+        System.out.println("Dados dos alunos armazenados com sucesso.");
+
+    } catch (IOException e) {
+        System.out.println("Erro ao armazenar os dados dos alunos: " + e.getMessage());
     }
+}
+
     
 }

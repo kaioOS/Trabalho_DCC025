@@ -76,7 +76,7 @@ public abstract class Usuario {
         return email;
     }
 
-    private void setEmail(String email) throws ExceptionEmail {
+    public void setEmail(String email) throws ExceptionEmail {
         validarEmail(email);
         this.email = email;
     }

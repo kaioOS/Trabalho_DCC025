@@ -22,9 +22,11 @@ Gustavo Silva Ribeiro (202165057AC)
  */
 public class Professor extends Usuario{
     private String siape;
-    //private Map<Disciplina, Turma> turmasProfessor;
+    private Map<Disciplina, Turma> turmasProfessor;
     
-
+    public Professor(){
+        super();
+    }
     public Professor(String nome,String CPF,String telefone, String email, String senha) throws ExceptionNome, ExceptionTelefone, ExceptionEmail, ExceptionSenha, ExceptionCPF, ExceptionSIAPE{
         super(nome,CPF,telefone, email, senha, 1);
         Random random = new Random();
@@ -38,11 +40,20 @@ public class Professor extends Usuario{
         return siape;
     }
     
-    private void setSiape(String siape)throws ExceptionSIAPE {
+    public void setSiape(String siape)throws ExceptionSIAPE {
         validarSiape(siape);
         this.siape = siape;
     }
+    
+    public Map<Disciplina, Turma> getTurmasProfessor() {
+        return turmasProfessor;
+    }
 
+
+    public void setTurmasProfessor(Map<Disciplina, Turma> turmasProfessor) {
+        this.turmasProfessor = turmasProfessor;
+    }
+    
     public void lancarNotaAluno(Turma turma, Aluno aluno, float nota) {
         
         if (turma!=null) {
