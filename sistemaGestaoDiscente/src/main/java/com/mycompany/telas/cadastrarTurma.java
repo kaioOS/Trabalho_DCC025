@@ -176,6 +176,10 @@ public class cadastrarTurma extends javax.swing.JFrame {
         {
             try {
                 Administrador.cadastroTurmaPorAdm(codigoTurma, disciplina, 3);
+                JOptionPane.showMessageDialog(null, "Cadastro completo!");
+                this.setVisible(false);
+                cadastrarTurma novaTela = new cadastrarTurma();
+                novaTela.setVisible(true);
             } catch (ExceptionFormaAvaliacao ex) {
                 JOptionPane.showMessageDialog(null, "Tipo de avaliação inválido");
             }
@@ -184,6 +188,10 @@ public class cadastrarTurma extends javax.swing.JFrame {
         {          
             try {
                 Administrador.cadastroTurmaPorAdm(codigoTurma, disciplina, 1);
+                JOptionPane.showMessageDialog(null, "Cadastro completo!");
+                this.setVisible(false);
+                cadastrarTurma novaTela = new cadastrarTurma();
+                novaTela.setVisible(true);
             } catch (ExceptionFormaAvaliacao ex) {
                 JOptionPane.showMessageDialog(null, "Tipo de avaliação inválido");
             }
@@ -192,14 +200,15 @@ public class cadastrarTurma extends javax.swing.JFrame {
         {
             try {
                 Administrador.cadastroTurmaPorAdm(codigoTurma, disciplina, 2);
+                JOptionPane.showMessageDialog(null, "Cadastro completo!");
+                this.setVisible(false);
+                cadastrarTurma novaTela = new cadastrarTurma();
+                novaTela.setVisible(true);
             } catch (ExceptionFormaAvaliacao ex) {
                 JOptionPane.showMessageDialog(null, "Tipo de avaliação inválido");
             }
         }
-        JOptionPane.showMessageDialog(null, "Cadastro completo!");
-        this.setVisible(false);
-        cadastrarTurma novaTela = new cadastrarTurma();
-        novaTela.setVisible(true);
+       
     }//GEN-LAST:event_buttonRegisterActionPerformed
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
