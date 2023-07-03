@@ -45,6 +45,15 @@ public class Disciplina{
         System.out.println("Codigo disciplina: "+this.codigoDisciplina);
         System.out.println("Nome disciplina: "+this.nomeDisciplina);
     }
-
-   
+    
+    public static boolean verificaDisciplina(String codigoDisciplina, String nomeDisciplina){
+        PersistenciaDisciplina persistenciaDisciplina = new PersistenciaDisciplina();
+        List<Disciplina> disciplinas = persistenciaDisciplina.carregarDados();
+        for (Disciplina disciplina : disciplinas) {
+            if (disciplina.getCodigoDisciplina().equals(codigoDisciplina) && disciplina.getNomeDisciplina().equals(nomeDisciplina)) {
+                    return true;
+            }
+        }
+        return false;
+    }
 }
