@@ -23,7 +23,8 @@ public class Disciplina{
     private String nomeDisciplina;
     private List <String>turmasCadastradas = new ArrayList<>();
     
-    public Disciplina(String codigoDisciplina, String nomeDisciplina){
+    public Disciplina(String codigoDisciplina, String nomeDisciplina) throws ExceptionDisciplinaCadastrada{
+        verificaDisciplina(codigoDisciplina, nomeDisciplina);
         this.codigoDisciplina = codigoDisciplina;
         this.nomeDisciplina = nomeDisciplina;
     }
@@ -46,14 +47,13 @@ public class Disciplina{
         System.out.println("Nome disciplina: "+this.nomeDisciplina);
     }
     
-    public static boolean verificaDisciplina(String codigoDisciplina, String nomeDisciplina){
+    public static void verificaDisciplina(String codigoDisciplina, String nomeDisciplina) throws ExceptionDisciplinaCadastrada{
         PersistenciaDisciplina persistenciaDisciplina = new PersistenciaDisciplina();
         List<Disciplina> disciplinas = persistenciaDisciplina.carregarDados();
         for (Disciplina disciplina : disciplinas) {
             if (disciplina.getCodigoDisciplina().equals(codigoDisciplina) && disciplina.getNomeDisciplina().equals(nomeDisciplina)) {
-                    return true;
+                    throw new ExceptionDisciplinaCadastrada();
             }
         }
-        return false;
     }
 }

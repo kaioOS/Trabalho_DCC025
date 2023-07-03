@@ -25,7 +25,7 @@ public class Administrador extends Usuario{
         super(nome,CPF,telefone,email, senha, 0);
         this.idAdm = idAdmin;
     }
-    public static void cadastroDisciplinaPorAdm(String codigoDisciplina, String nomeDisciplina){
+    public static void cadastroDisciplinaPorAdm(String codigoDisciplina, String nomeDisciplina) throws ExceptionDisciplinaCadastrada{
         PersistenciaDisciplina persistenciaDisciplina = new PersistenciaDisciplina();
         
         Disciplina disciplina = new Disciplina(codigoDisciplina, nomeDisciplina);
@@ -63,7 +63,7 @@ public class Administrador extends Usuario{
     }
     
     
-    public static void cadastroTurmaPorAdm(String codigoTurma, String codigoDisciplinaCorres, int tipoAvaliacao) throws ExceptionFormaAvaliacao{
+    public static void cadastroTurmaPorAdm(String codigoTurma, String codigoDisciplinaCorres, int tipoAvaliacao) throws ExceptionFormaAvaliacao, ExceptionTurmaCadastrada{
         PersistenciaTurma persistenciaTurma = new PersistenciaTurma();
         PersistenciaDisciplina persistenciaDisciplina = new PersistenciaDisciplina();
         List <Disciplina> disciplinas =  new ArrayList<>();

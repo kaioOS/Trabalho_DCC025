@@ -30,8 +30,9 @@ public class Turma {
     private Avaliacao notaProvas;
     
 
-    public Turma(String codigoTurma, Disciplina disciplina, int formaAvaliacao) throws ExceptionFormaAvaliacao {
+    public Turma(String codigoTurma, Disciplina disciplina, int formaAvaliacao) throws ExceptionFormaAvaliacao, ExceptionTurmaCadastrada {
         validaFormaAvalicao(formaAvaliacao);
+        verificaTurma(codigoTurma, disciplina);
         this.codigoTurma = codigoTurma;
         this.disciplina = disciplina;
         this.formaAvaliacao = formaAvaliacao;
@@ -176,15 +177,15 @@ public class Turma {
         System.out.println("Nome: " + professor.getNome());
         System.out.println("Matrícula: " + professor.getSiape());
     }
-    public static boolean verificaTurma(String codigoTurma, Disciplina disciplina){
+    public static void verificaTurma(String codigoTurma, Disciplina disciplina) throws ExceptionTurmaCadastrada{
         PersistenciaTurma persistenciaTurma = new PersistenciaTurma();
         List<Turma> turmas = persistenciaTurma.carregarDados();
         for (Turma turma : turmas) {
             if (turma.getCodigoTurma().equals(codigoTurma) && turma.getCodigoDisciplinaCorresp().equals(disciplina.getCodigoDisciplina())) {
-                    return true;
+                    throw new ExceptionTurmaCadastrada();
             }
         }
-        return false;
+
     }
 
     

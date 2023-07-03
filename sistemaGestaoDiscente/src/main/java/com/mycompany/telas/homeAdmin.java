@@ -35,7 +35,7 @@ public class homeAdmin extends javax.swing.JFrame {
         menuAdmin = new javax.swing.JMenuBar();
         CadastroD = new javax.swing.JMenu();
         CadastroA = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        CadastroDisc = new javax.swing.JMenuItem();
         CadastroP = new javax.swing.JMenuItem();
         CadastroT = new javax.swing.JMenuItem();
         menuAtribAdmin = new javax.swing.JMenu();
@@ -75,13 +75,13 @@ public class homeAdmin extends javax.swing.JFrame {
         });
         CadastroD.add(CadastroA);
 
-        jMenuItem1.setText("Cadastrar Disciplina");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        CadastroDisc.setText("Cadastrar Disciplina");
+        CadastroDisc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                CadastroDiscActionPerformed(evt);
             }
         });
-        CadastroD.add(jMenuItem1);
+        CadastroD.add(CadastroDisc);
 
         CadastroP.setText("Cadastrar Professor");
         CadastroP.addActionListener(new java.awt.event.ActionListener() {
@@ -153,13 +153,13 @@ public class homeAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_AtribuirTAActionPerformed
 
     private void CadastroDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroDActionPerformed
-        cadastrarDisciplina cDisciplina = new cadastrarDisciplina();
-        cDisciplina.setVisible(true);
+        
     }//GEN-LAST:event_CadastroDActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void CadastroDiscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroDiscActionPerformed
+        cadastrarDisciplina cDisciplina = new cadastrarDisciplina();
+        cDisciplina.setVisible(true);
+    }//GEN-LAST:event_CadastroDiscActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,10 +202,10 @@ public class homeAdmin extends javax.swing.JFrame {
     private javax.swing.JMenuItem AtribuirTP;
     private javax.swing.JMenuItem CadastroA;
     private javax.swing.JMenu CadastroD;
+    private javax.swing.JMenuItem CadastroDisc;
     private javax.swing.JMenuItem CadastroP;
     private javax.swing.JMenuItem CadastroT;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuBar menuAdmin;
     private javax.swing.JMenu menuAtribAdmin;
     private javax.swing.JPanel panelAdmin;

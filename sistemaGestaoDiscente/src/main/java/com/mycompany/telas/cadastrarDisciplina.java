@@ -126,12 +126,16 @@ public class cadastrarDisciplina extends javax.swing.JFrame {
         String nome = txtName.getText();
         String codigo = txtCod.getText();
         
-       
-        Administrador.cadastroDisciplinaPorAdm(nome,codigo);
-        this.setVisible(false);
-        JOptionPane.showMessageDialog(null, "Cadastro completo!");
-        cadastrarDisciplina novaTela = new cadastrarDisciplina();
-        novaTela.setVisible(true);
+        try{
+            Administrador.cadastroDisciplinaPorAdm(nome,codigo);
+            this.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Cadastro completo!");
+            cadastrarDisciplina novaTela = new cadastrarDisciplina();
+            novaTela.setVisible(true);
+        }catch(ExceptionDisciplinaCadastrada ex){
+            JOptionPane.showMessageDialog(null, "Está disciplina já foi cadastrada anteriormente.");
+
+        }
        
         
     }//GEN-LAST:event_buttonRegisterActionPerformed

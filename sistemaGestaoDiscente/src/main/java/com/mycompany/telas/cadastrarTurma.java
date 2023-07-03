@@ -182,6 +182,8 @@ public class cadastrarTurma extends javax.swing.JFrame {
                 novaTela.setVisible(true);
             } catch (ExceptionFormaAvaliacao ex) {
                 JOptionPane.showMessageDialog(null, "Tipo de avaliação inválido");
+            } catch (ExceptionTurmaCadastrada ex) {
+                JOptionPane.showMessageDialog(null, "Turma já cadastrada anteriormente!");
             }
         }
         else if(rbMA.isSelected())
@@ -194,6 +196,8 @@ public class cadastrarTurma extends javax.swing.JFrame {
                 novaTela.setVisible(true);
             } catch (ExceptionFormaAvaliacao ex) {
                 JOptionPane.showMessageDialog(null, "Tipo de avaliação inválido");
+            } catch (ExceptionTurmaCadastrada ex) {
+                JOptionPane.showMessageDialog(null, "Turma já cadastrada anteriormente!");
             }
         }
         else if(rbMP.isSelected())
@@ -206,6 +210,8 @@ public class cadastrarTurma extends javax.swing.JFrame {
                 novaTela.setVisible(true);
             } catch (ExceptionFormaAvaliacao ex) {
                 JOptionPane.showMessageDialog(null, "Tipo de avaliação inválido");
+            } catch (ExceptionTurmaCadastrada ex) {
+                JOptionPane.showMessageDialog(null, "Turma já cadastrada anteriormente!");
             }
         }
        
