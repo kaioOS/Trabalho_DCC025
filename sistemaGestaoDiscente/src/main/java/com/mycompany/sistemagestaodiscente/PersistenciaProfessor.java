@@ -46,7 +46,7 @@ public class PersistenciaProfessor implements PersistenciaDados{
                         for (JsonElement element : array) {
                             JsonObject professorJson = element.getAsJsonObject();
                             Professor professor = new Professor();
-
+                            
                             // Desserializa os outros dados do professor do JSON
                             professor.setSiape(professorJson.get("siape").getAsString());
                             professor.setNome(professorJson.get("nome").getAsString());
@@ -85,6 +85,7 @@ public class PersistenciaProfessor implements PersistenciaDados{
 
     @Override
     public <Professor> void armazenarDados(List<Professor> objetos) {
+        
     try {
         File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/professores.json");
         FileWriter writer = new FileWriter(arquivo);

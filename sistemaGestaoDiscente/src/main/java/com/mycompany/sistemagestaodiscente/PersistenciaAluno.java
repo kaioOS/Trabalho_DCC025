@@ -20,15 +20,13 @@ import java.lang.reflect.Type;
 import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
-
 /**
  *
  * @author filipe
  */
-public class PersistenciaAluno  implements PersistenciaDados{
+public class PersistenciaAluno implements PersistenciaDados {
 
-
-        @Override
+    @Override
     public List<Aluno> carregarDados() {
         List<Aluno> alunos = new ArrayList<>();
 
@@ -56,15 +54,14 @@ public class PersistenciaAluno  implements PersistenciaDados{
                             aluno.setTelefone(alunoJson.get("telefone").getAsString());
                             aluno.setSenha(alunoJson.get("senha").getAsString());
                             aluno.setTipoUsuario(alunoJson.get("tipoUsuario").getAsInt());
-                            
-                            
 
                             // Desserializa o HashMap do aluno do JSON
                             if (alunoJson.has("hashMapJson")) {
                                 String hashMapJson = alunoJson.get("hashMapJson").getAsString();
 
                                 // Converte o JSON do HashMap de volta para um HashMap usando o GSON
-                                Type type = new TypeToken<HashMap<String, String>>(){}.getType();
+                                Type type = new TypeToken<HashMap<String, String>>() {
+                                }.getType();
                                 HashMap<String, String> hashMap = gson.fromJson(hashMapJson, type);
 
                                 // Adiciona o HashMap ao objeto Aluno
@@ -85,29 +82,23 @@ public class PersistenciaAluno  implements PersistenciaDados{
         return alunos;
     }
 
-
-    
     @Override
     public <Aluno> void armazenarDados(List<Aluno> objetos) {
-    try {
-        File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/alunos.json");
-        FileWriter writer = new FileWriter(arquivo);
+        try {
+            File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/alunos.json");
+            FileWriter writer = new FileWriter(arquivo);
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        gson.toJson(objetos, writer);
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            gson.toJson(objetos, writer);
 
-        writer.flush();
-        writer.close();
+            writer.flush();
+            writer.close();
 
-        System.out.println("Dados dos alunos armazenados com sucesso.");
+            System.out.println("Dados dos alunos armazenados com sucesso.");
 
-    } catch (IOException e) {
-        System.out.println("Erro ao armazenar os dados dos alunos: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Erro ao armazenar os dados dos alunos: " + e.getMessage());
+        }
     }
-}
 
-    
-    
-    
-    
 }

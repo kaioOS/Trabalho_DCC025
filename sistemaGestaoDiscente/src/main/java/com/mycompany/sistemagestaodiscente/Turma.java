@@ -20,12 +20,11 @@ Gustavo Silva Ribeiro (202165057AC)
  */
 
 public class Turma {
-    final String codigoTurma;  
+    private final String codigoTurma;  
     private Professor professor;
     private Disciplina disciplina;
     private List<Aluno> alunos;
     private HashMap <String,Integer> frequenciaAlunos;
-    private HashMap <String,Float> notaAlunos;
     private int formaAvaliacao;
     private Avaliacao notaProvas;
     
