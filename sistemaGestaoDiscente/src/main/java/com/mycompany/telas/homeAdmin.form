@@ -68,7 +68,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="AtribuirTA">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Atribuir Turma a Aluno "/>
+                <Property name="text" type="java.lang.String" value="Atribuir Aluno a Turma "/>
                 <Property name="actionCommand" type="java.lang.String" value="Atribuir Aluno a Turma"/>
               </Properties>
               <Events>
@@ -79,6 +79,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Atribuir Turma a Professor"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AtribuirTPActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

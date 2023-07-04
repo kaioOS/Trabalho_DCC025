@@ -103,7 +103,7 @@ public class homeAdmin extends javax.swing.JFrame {
 
         menuAtribAdmin.setText("Atribuir");
 
-        AtribuirTA.setText("Atribuir Turma a Aluno ");
+        AtribuirTA.setText("Atribuir Aluno a Turma ");
         AtribuirTA.setActionCommand("Atribuir Aluno a Turma");
         AtribuirTA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,6 +113,11 @@ public class homeAdmin extends javax.swing.JFrame {
         menuAtribAdmin.add(AtribuirTA);
 
         AtribuirTP.setText("Atribuir Turma a Professor");
+        AtribuirTP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AtribuirTPActionPerformed(evt);
+            }
+        });
         menuAtribAdmin.add(AtribuirTP);
 
         menuAdmin.add(menuAtribAdmin);
@@ -160,6 +165,11 @@ public class homeAdmin extends javax.swing.JFrame {
         cadastrarDisciplina cDisciplina = new cadastrarDisciplina();
         cDisciplina.setVisible(true);
     }//GEN-LAST:event_CadastroDiscActionPerformed
+
+    private void AtribuirTPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtribuirTPActionPerformed
+         atribuirTurmaProfessor aTProfessor = new atribuirTurmaProfessor();
+         aTProfessor.setVisible(true);
+    }//GEN-LAST:event_AtribuirTPActionPerformed
 
     /**
      * @param args the command line arguments

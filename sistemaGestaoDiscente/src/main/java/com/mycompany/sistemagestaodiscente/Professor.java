@@ -91,11 +91,18 @@ public class Professor extends Usuario{
         System.out.println("SIAPE: "+this.siape);
     }
     
-    public void adicionarTurma(Turma turma) {
-        if (turma != null) {
-        //this.turmasProfessor.put(turma.getDisciplina(), turma);
-        turma.setProfessor(this);
+    public void adicionarTurma(String codTurma) {
+        PersistenciaTurma Pturma = new PersistenciaTurma();
+        List<Turma> turmas = new ArrayList<>();
+        turmas = Pturma.carregarDados();
+        for(Turma i : turmas)
+        {
+            if(i.getCodigoTurma().equals(codTurma))
+            {
+                i.setProfessor(this);
+            }
         }
+        Pturma.armazenarDados(turmas);
     }
     
     /*public void imprimeTurmas() {

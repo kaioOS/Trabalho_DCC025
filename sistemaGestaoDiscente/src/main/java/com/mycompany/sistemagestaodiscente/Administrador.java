@@ -78,16 +78,27 @@ public class Administrador extends Usuario{
                 turmas = persistenciaTurma.carregarDados();
                 turmas.add(turma);
                 persistenciaTurma.armazenarDados(turmas);
+                disciplina.setNovaTurma(codigoTurma);
                 
             }
         }
-        
+        persistenciaDisciplina.armazenarDados(disciplinas);
     }    
         
         
     
-    public static void atribuiTurmaProfessor( Turma turma, Professor professor) throws ExceptionTurma {
-        professor.adicionarTurma(turma);
+    public static void atribuirTurmaProfessor( String turma, String siape) throws ExceptionTurma {
+        PersistenciaProfessor Pprofessores = new PersistenciaProfessor();
+        List <Professor> professores = new ArrayList<>();
+        professores = Pprofessores.carregarDados();
+        for(Professor i : professores)
+        {
+            if(i.getSiape().equals(siape))
+            {
+                Professor professor = i;
+                professor.adicionarTurma(turma);
+            }
+        }
         
     }
 }

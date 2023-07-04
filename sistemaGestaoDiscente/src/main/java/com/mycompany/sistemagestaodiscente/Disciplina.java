@@ -29,13 +29,18 @@ public class Disciplina{
         this.nomeDisciplina = nomeDisciplina;
     }
 
-
+    
     public String getCodigoDisciplina() {
         return codigoDisciplina;
+    }
+    public List<String> getDisciplinas()
+    {
+        return this.turmasCadastradas;
     }
     public void setNovaTurma(String codTurma)
     {
         this.turmasCadastradas.add(codTurma);
+        
     }
     
     public String getNomeDisciplina() {
