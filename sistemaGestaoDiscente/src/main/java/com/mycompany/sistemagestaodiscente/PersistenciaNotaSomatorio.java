@@ -81,7 +81,7 @@ public class PersistenciaNotaSomatorio implements PersistenciaDados {
         List<NotaSomatorio> notasSomatorio = new ArrayList<>();
 
         Gson gson = new Gson();
-        File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/alunos.json");
+        File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/notaSomatorio.json");
 
         if (arquivo.exists() && !arquivo.isDirectory()) {
             try {

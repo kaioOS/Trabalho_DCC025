@@ -82,7 +82,7 @@ public class PersistenciaNotaMediaComDescarte implements PersistenciaDados {
         List<NotaMediaComDescarte> notasDescarte = new ArrayList<>();
 
         Gson gson = new Gson();
-        File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/alunos.json");
+        File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/notaMediaDescarte.json");
 
         if (arquivo.exists() && !arquivo.isDirectory()) {
             try {

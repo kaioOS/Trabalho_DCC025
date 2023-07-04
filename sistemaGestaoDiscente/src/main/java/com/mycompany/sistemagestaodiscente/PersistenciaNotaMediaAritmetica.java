@@ -82,7 +82,7 @@ public class PersistenciaNotaMediaAritmetica implements PersistenciaDados {
         List<NotaMediaAritmetica> notasAritmetica = new ArrayList<>();
 
         Gson gson = new Gson();
-        File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/alunos.json");
+        File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/notaMediaAritmetica.json");
 
         if (arquivo.exists() && !arquivo.isDirectory()) {
             try {
