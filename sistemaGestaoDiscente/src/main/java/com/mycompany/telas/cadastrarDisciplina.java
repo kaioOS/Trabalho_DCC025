@@ -127,7 +127,7 @@ public class cadastrarDisciplina extends javax.swing.JFrame {
         String codigo = txtCod.getText();
         
         try{
-            Administrador.cadastroDisciplinaPorAdm(nome,codigo);
+            Administrador.cadastroDisciplinaPorAdm(codigo,nome);
             this.setVisible(false);
             JOptionPane.showMessageDialog(null, "Cadastro completo!");
             cadastrarDisciplina novaTela = new cadastrarDisciplina();
