@@ -22,7 +22,7 @@ Gustavo Silva Ribeiro (202165057AC)
  */
 public class Professor extends Usuario{
     private String siape;
-    private Map<Disciplina, Turma> turmasProfessor;
+    private Map<String, String> turmasProfessor;
     
     public Professor(){
         super();
@@ -32,7 +32,7 @@ public class Professor extends Usuario{
         Random random = new Random();
         this.siape = Integer.toString(random.nextInt(9000000) + 1000000); // Gera um número de 7 dígitos e passa para String
         validarSiape(this.siape);
-        //this.turmasProfessor = new HashMap<>();
+        this.turmasProfessor = new HashMap<>();
     }
 
    
@@ -45,12 +45,12 @@ public class Professor extends Usuario{
         this.siape = siape;
     }
     
-    public Map<Disciplina, Turma> getTurmasProfessor() {
+    public Map<String, String> getTurmasProfessor() {
         return turmasProfessor;
     }
 
 
-    public void setTurmasProfessor(Map<Disciplina, Turma> turmasProfessor) {
+    public void setTurmasProfessor(Map<String, String> turmasProfessor) {
         this.turmasProfessor = turmasProfessor;
     }
     

@@ -63,7 +63,7 @@ public class PersistenciaProfessor implements PersistenciaDados{
 
                                 // Converte o JSON do HashMap de volta para um HashMap usando o GSON
                                 Type type = new TypeToken<HashMap<String, String>>(){}.getType();
-                                HashMap<Disciplina, Turma> hashMap = gson.fromJson(hashMapJson, type);
+                                HashMap<String, String> hashMap = gson.fromJson(hashMapJson, type);
 
                                 // Adiciona o HashMap ao objeto Professor
                                 professor.setTurmasProfessor(hashMap);
