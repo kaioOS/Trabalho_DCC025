@@ -75,6 +75,11 @@ public class cadastrarTurma extends javax.swing.JFrame {
 
         buttonGroup1.add(rbS);
         rbS.setText("Somatório");
+        rbS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbSActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(rbMD);
         rbMD.setText("Média com descarte de menor nota");
@@ -169,7 +174,17 @@ public class cadastrarTurma extends javax.swing.JFrame {
         }
         else if(rbS.isSelected())
         {
-            
+            try {
+                Administrador.cadastroTurmaPorAdm(codigoTurma, disciplina, 4);
+                JOptionPane.showMessageDialog(null, "Cadastro completo!");
+                this.setVisible(false);
+                cadastrarTurma novaTela = new cadastrarTurma();
+                novaTela.setVisible(true);
+            } catch (ExceptionFormaAvaliacao ex) {
+                JOptionPane.showMessageDialog(null, "Tipo de avaliação inválido");
+            } catch (ExceptionTurmaCadastrada ex) {
+                JOptionPane.showMessageDialog(null, "Turma já cadastrada anteriormente!");
+            }
             
         }
         else if(rbMD.isSelected())
@@ -221,6 +236,10 @@ public class cadastrarTurma extends javax.swing.JFrame {
 
         this.setVisible(false);
     }//GEN-LAST:event_BackButtonActionPerformed
+
+    private void rbSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbSActionPerformed
 
     /**
      * @param args the command line arguments

@@ -50,6 +50,10 @@ public class Turma {
         {
             notaProvas = new NotaMediaComDescarte();      
         }
+        if(formaAvaliacao == 4)
+        {
+            notaProvas = new NotaSomatorio();      
+        }
       
     }
     
