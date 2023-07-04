@@ -84,8 +84,7 @@ public class Administrador extends Usuario{
         }
         persistenciaDisciplina.armazenarDados(disciplinas);
     }    
-        
-        
+                
     
     public static void atribuirTurmaProfessor( String turma, String siape) throws ExceptionTurma {
         PersistenciaProfessor Pprofessores = new PersistenciaProfessor();
@@ -95,8 +94,20 @@ public class Administrador extends Usuario{
         {
             if(i.getSiape().equals(siape))
             {
-                Professor professor = i;
-                professor.adicionarTurma(turma);
+                i.adicionarTurma(turma);
+            }
+        }
+        Pprofessores.armazenarDados(professores);
+    }
+    public static void atribuirAlunoTurma( String cTurma, String cDisciplina, String matricula) throws ExceptionTurma {
+        PersistenciaAluno Palunos = new PersistenciaAluno();
+        List <Aluno> alunos = new ArrayList<>();
+        alunos = Palunos.carregarDados();
+        for(Aluno i : alunos)
+        {
+            if(i.getMatricula().equals(matricula))
+            {
+                //i.adicionarTurma(turma);
             }
         }
         

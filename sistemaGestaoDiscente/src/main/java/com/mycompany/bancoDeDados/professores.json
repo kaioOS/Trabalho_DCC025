@@ -16,5 +16,14 @@
     "email": "teste2@gmail.com",
     "senha": "12345678",
     "tipoUsuario": 1
+  },
+  {
+    "siape": "4188710",
+    "nome": "Vamos Ver",
+    "CPF": "93201459038",
+    "telefone": "11222223333",
+    "email": "vv@gmail.com",
+    "senha": "12345678",
+    "tipoUsuario": 1
   }
 ]
