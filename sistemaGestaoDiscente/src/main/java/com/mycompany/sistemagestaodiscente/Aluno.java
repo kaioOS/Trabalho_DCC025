@@ -4,6 +4,7 @@
  */
 package com.mycompany.sistemagestaodiscente;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -108,10 +109,17 @@ public class Aluno extends Usuario {
         System.out.println("Matricula: "+this.matricula);
         
     }
-    public void adicionarTurma(Turma turma) throws ExceptionTurma {
-        if (turma != null) {
-            this.turmasAluno.put(turma.getCodigoDisciplinaCorresp(), turma.getCodigoDisciplinaCorresp());
-            turma.adicionarAluno(this);
+    public void adicionarTurma(String codTurma) throws ExceptionTurma {
+        PersistenciaTurma Pturma = new PersistenciaTurma();
+        List<Turma> turmas = new ArrayList<>();
+        turmas = Pturma.carregarDados();
+        for(Turma i : turmas)
+        {
+            if(i.getCodigoTurma().equals(codTurma))
+            {
+                i.adicionarAluno(this);
+            }
         }
+        Pturma.armazenarDados(turmas);
     }
 }

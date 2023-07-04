@@ -154,7 +154,8 @@ public class homeAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_CadastroTActionPerformed
 
     private void AtribuirTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtribuirTAActionPerformed
-        
+        atribuirAlunoTurma aAluno = new atribuirAlunoTurma();
+        aAluno.setVisible(true);
     }//GEN-LAST:event_AtribuirTAActionPerformed
 
     private void CadastroDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroDActionPerformed

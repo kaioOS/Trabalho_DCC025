@@ -36,8 +36,6 @@ public class atribuirAlunoTurma extends javax.swing.JFrame {
         labelLogoSGD1 = new javax.swing.JLabel();
         buttonRegister = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
-        labelPassword1 = new javax.swing.JLabel();
-        txtCD = new javax.swing.JTextField();
         labelPassword2 = new javax.swing.JLabel();
         txtCT = new javax.swing.JTextField();
 
@@ -64,8 +62,6 @@ public class atribuirAlunoTurma extends javax.swing.JFrame {
             }
         });
 
-        labelPassword1.setText("Código da Disciplina");
-
         labelPassword2.setText("Código da Turma");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -77,18 +73,15 @@ public class atribuirAlunoTurma extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelLogoSGD1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
+                        .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(labelUser)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(labelPassword1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(buttonRegister)
-                                    .addComponent(txtCD, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(buttonRegister)
+                                .addGap(109, 109, 109))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(labelPassword2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -108,15 +101,11 @@ public class atribuirAlunoTurma extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUser)
                     .addComponent(txtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelPassword1)
-                    .addComponent(txtCD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelPassword2)
                     .addComponent(txtCT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGap(74, 74, 74)
                 .addComponent(buttonRegister)
                 .addContainerGap())
         );
@@ -139,11 +128,11 @@ public class atribuirAlunoTurma extends javax.swing.JFrame {
 
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
         String matricula = txtMatricula.getText();
-        String cd = txtCD.getText();
+        
         String ct = txtCT.getText();
         
         try {
-            Administrador.atribuirAlunoTurma(ct, cd, matricula);
+            Administrador.atribuirAlunoTurma(ct, matricula);
             JOptionPane.showMessageDialog(null, "Atribuição completa");
             atribuirAlunoTurma novaTela = new atribuirAlunoTurma();
             novaTela.setVisible(true);
@@ -213,10 +202,8 @@ public class atribuirAlunoTurma extends javax.swing.JFrame {
     private javax.swing.JButton buttonRegister;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelLogoSGD1;
-    private javax.swing.JLabel labelPassword1;
     private javax.swing.JLabel labelPassword2;
     private javax.swing.JLabel labelUser;
-    private javax.swing.JTextField txtCD;
     private javax.swing.JTextField txtCT;
     private javax.swing.JTextField txtMatricula;
     // End of variables declaration//GEN-END:variables

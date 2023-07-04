@@ -50,8 +50,8 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="labelLogoSGD1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="labelUser" min="-2" max="-2" attributes="0"/>
@@ -59,12 +59,8 @@
                                   <Component id="txtMatricula" min="-2" pref="181" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="labelPassword1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="buttonRegister" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtCD" min="-2" pref="181" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="buttonRegister" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="labelPassword2" min="-2" max="-2" attributes="0"/>
@@ -93,17 +89,12 @@
                       <Component id="labelUser" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtMatricula" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="labelPassword1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtCD" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="labelPassword2" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="txtCT" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                   <Component id="buttonRegister" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -141,13 +132,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BackButtonActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="labelPassword1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="C&#xf3;digo da Disciplina"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtCD">
         </Component>
         <Component class="javax.swing.JLabel" name="labelPassword2">
           <Properties>

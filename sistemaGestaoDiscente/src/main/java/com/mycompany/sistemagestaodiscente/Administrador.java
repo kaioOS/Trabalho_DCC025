@@ -99,7 +99,7 @@ public class Administrador extends Usuario{
         }
         Pprofessores.armazenarDados(professores);
     }
-    public static void atribuirAlunoTurma( String cTurma, String cDisciplina, String matricula) throws ExceptionTurma {
+    public static void atribuirAlunoTurma( String cTurma, String matricula) throws ExceptionTurma {
         PersistenciaAluno Palunos = new PersistenciaAluno();
         List <Aluno> alunos = new ArrayList<>();
         alunos = Palunos.carregarDados();
@@ -110,6 +110,6 @@ public class Administrador extends Usuario{
                 //i.adicionarTurma(turma);
             }
         }
-        
+        Palunos.armazenarDados(alunos);       
     }
 }
