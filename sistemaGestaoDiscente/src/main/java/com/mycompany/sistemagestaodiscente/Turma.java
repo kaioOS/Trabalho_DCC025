@@ -13,7 +13,8 @@ import java.util.List;
  * @author filipe
  */
 /**
- * Kaio de Oliveira e Sousa(202165080AC) Filipe de Lima Namorato(202165035AB)
+ * Kaio de Oliveira e Sousa(202165080AC) 
+ * Filipe de Lima Namorato(202165035AB)
  * Gustavo Silva Ribeiro (202165057AC)
  */
 public class Turma {
@@ -57,6 +58,35 @@ public class Turma {
     public void setFrequencia(HashMap<String, Integer> frequenciaAlunos) {
         this.frequenciaAlunos = frequenciaAlunos;
     }
+    
+    public int getFrequenciaAluno(String matricula) {
+        if (this.frequenciaAlunos.isEmpty()) {
+            return -1;
+        }
+        return this.frequenciaAlunos.get(matricula);
+    }
+    
+    //atualiza frequencia do aluno
+    public void setFrequenciaAluno(String matricula, boolean presenca) {
+        for (Aluno aluno : alunos) {
+            if (aluno.getMatricula().equals(matricula)) {
+                if (this.frequenciaAlunos.containsKey(matricula)) {
+                    if (presenca) {
+                        this.frequenciaAlunos.put(matricula, this.frequenciaAlunos.get(matricula) + 1);
+                    }
+                } else {
+                    if (presenca) {
+                        this.frequenciaAlunos.put(matricula, 1);
+                    } else {
+                        this.frequenciaAlunos.put(matricula, 0);
+                    }
+                }
+                System.out.println("Frequencia lançada para o aluno " + aluno.getNome() + " na disciplina " + this.getCodigoDisciplinaCorresp());
+            } else {
+                System.out.println("Matricula nao encontrada!");
+            }
+        }
+    }
 
     public String getCodigoTurma() {
         return codigoTurma;
@@ -81,10 +111,7 @@ public class Turma {
     public int getFormaAvaliacao() {
         return formaAvaliacao;
     }
-    public void setSiapeProfessor(String siape){
-        this.siapeProfessor=siape;
-    }
-    
+
 
     public void setFormaAvaliacao(int formaAvaliacao) throws ExceptionFormaAvaliacao {
         validaFormaAvalicao(formaAvaliacao);
@@ -104,6 +131,11 @@ public class Turma {
     public String getSiapeProfessor() {
         return this.siapeProfessor;
     }
+    
+    public void setSiapeProfessor(String siape){
+        this.siapeProfessor=siape;
+    }
+    
 
     public void adicionarAluno(Aluno aluno) throws ExceptionTurma {
         if (this.disciplina.getCodigoDisciplina() != null) {
@@ -113,38 +145,11 @@ public class Turma {
         }
     }
 
-    public int getFrequenciaAluno(String matricula) {
-        if (this.frequenciaAlunos.isEmpty()) {
-            return -1;
-        }
-        return this.frequenciaAlunos.get(matricula);
-    }
 
     public void setAlunos(List<Aluno> alunos) {
         this.alunos = alunos;
     }
 
-    //atualiza frequencia do aluno
-    public void setFrequenciaAluno(String matricula, boolean presenca) {
-        for (Aluno aluno : alunos) {
-            if (aluno.getMatricula().equals(matricula)) {
-                if (this.frequenciaAlunos.containsKey(matricula)) {
-                    if (presenca) {
-                        this.frequenciaAlunos.put(matricula, this.frequenciaAlunos.get(matricula) + 1);
-                    }
-                } else {
-                    if (presenca) {
-                        this.frequenciaAlunos.put(matricula, 1);
-                    } else {
-                        this.frequenciaAlunos.put(matricula, 0);
-                    }
-                }
-                System.out.println("Frequencia lançada para o aluno " + aluno.getNome() + " na disciplina " + this.getCodigoDisciplinaCorresp());
-            } else {
-                System.out.println("Matricula nao encontrada!");
-            }
-        }
-    }
 
     public List<Float> getNotaAlunos(String matricula) {
         return this.notaProvas.getNotaAlunos().get(matricula);
@@ -165,15 +170,6 @@ public class Turma {
             }
         }
     }   
-
-    public void imprimirListaAlunos() {
-        System.out.println("Lista de Alunos da Disciplina " + this.disciplina.getCodigoDisciplina() + " Turma " + this.codigoTurma);
-
-        for (Aluno aluno : alunos) {
-            System.out.println("Nome: " + aluno.getNome());
-            System.out.println("Matrícula: " + aluno.getMatricula());
-        }
-    }
 
 
     public static void verificaTurma(String codigoTurma, Disciplina disciplina) throws ExceptionTurmaCadastrada {

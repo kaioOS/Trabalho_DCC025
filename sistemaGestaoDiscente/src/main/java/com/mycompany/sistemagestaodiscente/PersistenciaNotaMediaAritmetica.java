@@ -24,6 +24,11 @@ import java.util.Map;
  *
  * @author filipe
  */
+/**
+Kaio de Oliveira e Sousa(202165080AC)
+Filipe de Lima Namorato(202165035AB)
+Gustavo Silva Ribeiro (202165057AC) 
+ */
 public class PersistenciaNotaMediaAritmetica implements PersistenciaDados {
 
     @Override

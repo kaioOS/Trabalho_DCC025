@@ -25,6 +25,11 @@ import java.util.HashMap;
  *
  * @author filipe
  */
+/**
+Kaio de Oliveira e Sousa(202165080AC)
+Filipe de Lima Namorato(202165035AB)
+Gustavo Silva Ribeiro (202165057AC) 
+ */
 public class PersistenciaTurma implements PersistenciaDados {
 
     @Override
@@ -40,10 +45,8 @@ public class PersistenciaTurma implements PersistenciaDados {
             writer.flush();
             writer.close();
 
-            System.out.println("Dados dos alunos armazenados com sucesso.");
-
         } catch (IOException e) {
-            System.out.println("Erro ao armazenar os dados dos alunos: " + e.getMessage());
+            System.out.println("Erro ao armazenar os dados: " + e.getMessage());
         }
     }
 
@@ -52,7 +55,7 @@ public class PersistenciaTurma implements PersistenciaDados {
         List<Turma> turmas = new ArrayList<>();
 
         Gson gson = new Gson();
-        File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/alunos.json");
+        File arquivo = new File("./src/main/java/com/mycompany/bancoDeDados/turmas.json");
 
         if (arquivo.exists() && !arquivo.isDirectory()) {
             try {

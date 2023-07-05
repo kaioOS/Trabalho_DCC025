@@ -1,3 +1,9 @@
 [
-
+  {
+    "codigoDisciplina": "t1",
+    "nomeDisciplina": "t1",
+    "turmasCadastradas": [
+      "t2"
+    ]
+  }
 ]

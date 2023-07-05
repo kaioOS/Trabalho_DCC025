@@ -86,11 +86,7 @@ public class Professor extends Usuario{
         }
         
     }
-    public void imprimeProfessor(){
-        imprimeUsuario();
-        System.out.println("SIAPE: "+this.siape);
-    }
-    
+
     public void adicionarTurma(String codTurma) {
         PersistenciaTurma Pturma = new PersistenciaTurma();
         List<Turma> turmas = new ArrayList<>();
@@ -106,15 +102,6 @@ public class Professor extends Usuario{
         }
         
     }
-    
-    /*public void imprimeTurmas() {
-        for (Disciplina d : turmasProfessor.keySet()) {
-            Turma turma = turmasProfessor.get(d);
-            System.out.println("Disciplina: " + turma.getCodigoDisciplinaCorresp());
-            System.out.println("Turma: " + turma.getCodigoTurma());
-        }
-    }*/
-
     
     public void consultaTurma(Disciplina disciplina) {
         List<Turma> turmasEncontradas = new ArrayList<>();

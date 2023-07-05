@@ -244,14 +244,4 @@ public abstract class Usuario {
         }
     }
     //------------------------
-    
-    public void imprimeUsuario(){
-        System.out.println("Nome: "+this.nome);
-        System.out.println("CPF: "+this.CPF);
-        System.out.println("Telefone: "+this.telefone);
-        System.out.println("Email: "+this.email);
-        System.out.println("Senha: "+this.senha);
-        System.out.println("TipoUsuario: "+this.tipoUsuario);
-
-    }
 }

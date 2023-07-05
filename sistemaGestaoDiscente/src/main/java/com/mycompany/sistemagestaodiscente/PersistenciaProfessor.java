@@ -24,6 +24,11 @@ import java.util.HashMap;
  *
  * @author filipe
  */
+/**
+Kaio de Oliveira e Sousa(202165080AC)
+Filipe de Lima Namorato(202165035AB)
+Gustavo Silva Ribeiro (202165057AC) 
+ */
 public class PersistenciaProfessor implements PersistenciaDados{
     
     @Override
@@ -96,10 +101,9 @@ public class PersistenciaProfessor implements PersistenciaDados{
         writer.flush();
         writer.close();
 
-        System.out.println("Dados dos alunos armazenados com sucesso.");
 
     } catch (IOException e) {
-        System.out.println("Erro ao armazenar os dados dos alunos: " + e.getMessage());
+        System.out.println("Erro ao armazenar os dados: " + e.getMessage());
     }
 }
 

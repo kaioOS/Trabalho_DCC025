@@ -24,6 +24,11 @@ import java.io.IOException;
  *
  * @author filipe
  */
+/**
+Kaio de Oliveira e Sousa(202165080AC)
+Filipe de Lima Namorato(202165035AB)
+Gustavo Silva Ribeiro (202165057AC) 
+ */
 public class PersistenciaAluno implements PersistenciaDados {
 
     @Override
@@ -52,6 +57,7 @@ public class PersistenciaAluno implements PersistenciaDados {
                             aluno.setMatricula(alunoJson.get("matricula").getAsString());
                             aluno.setNome(alunoJson.get("nome").getAsString());
                             aluno.setCPF(alunoJson.get("CPF").getAsString());
+                            aluno.setEmail(alunoJson.get("email").getAsString());
                             aluno.setTelefone(alunoJson.get("telefone").getAsString());
                             aluno.setSenha(alunoJson.get("senha").getAsString());
                             aluno.setTipoUsuario(alunoJson.get("tipoUsuario").getAsInt());

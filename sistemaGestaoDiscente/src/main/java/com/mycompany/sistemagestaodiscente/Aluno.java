@@ -57,6 +57,7 @@ public class Aluno extends Usuario {
         }
         
     }
+    
     public String getMatricula() {
         return this.matricula;
     }
@@ -66,9 +67,9 @@ public class Aluno extends Usuario {
         this.matricula = matricula;
     }
     
-        public void setTurmaAluno(HashMap<String, String> turmasAluno) {
-            this.turmasAluno = turmasAluno;
-        }
+    public void setTurmaAluno(HashMap<String, String> turmasAluno) {
+        this.turmasAluno = turmasAluno;
+    }
     
     
     public void validarMatricula(String matricula) throws ExceptionMatricula {
@@ -103,11 +104,6 @@ public class Aluno extends Usuario {
                 throw new ExceptionMatricula();
             }
         }
-    }
-    public void imprimeAluno(){
-        imprimeUsuario();
-        System.out.println("Matricula: "+this.matricula);
-        
     }
     public void adicionarTurma(String codTurma) throws ExceptionTurma {
         PersistenciaTurma Pturma = new PersistenciaTurma();
