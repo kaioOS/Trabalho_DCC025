@@ -46,6 +46,7 @@ public class PersistenciaAluno implements PersistenciaDados {
                         for (JsonElement element : array) {
                             JsonObject alunoJson = element.getAsJsonObject();
                             Aluno aluno = new Aluno();
+                            HashMap<String, String> hashMap = null;
 
                             // Desserializa os outros dados do aluno do JSON
                             aluno.setMatricula(alunoJson.get("matricula").getAsString());
@@ -54,15 +55,15 @@ public class PersistenciaAluno implements PersistenciaDados {
                             aluno.setTelefone(alunoJson.get("telefone").getAsString());
                             aluno.setSenha(alunoJson.get("senha").getAsString());
                             aluno.setTipoUsuario(alunoJson.get("tipoUsuario").getAsInt());
-
+                            aluno.setTurmaAluno(hashMap);
                             // Desserializa o HashMap do aluno do JSON
-                            if (alunoJson.has("hashMapJson")) {
+                            if (alunoJson.has("hashMapJson") && !alunoJson.get("hashMapJson").isJsonNull()) {
                                 String hashMapJson = alunoJson.get("hashMapJson").getAsString();
 
                                 // Converte o JSON do HashMap de volta para um HashMap usando o GSON
                                 Type type = new TypeToken<HashMap<String, String>>() {
                                 }.getType();
-                                HashMap<String, String> hashMap = gson.fromJson(hashMapJson, type);
+                                hashMap = gson.fromJson(hashMapJson, type);
 
                                 // Adiciona o HashMap ao objeto Aluno
                                 aluno.setTurmaAluno(hashMap);
