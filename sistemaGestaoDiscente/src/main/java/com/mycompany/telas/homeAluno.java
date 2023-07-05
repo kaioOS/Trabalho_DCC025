@@ -28,6 +28,7 @@ public class homeAluno extends javax.swing.JFrame {
     private void initComponents() {
 
         panelAluno = new javax.swing.JPanel();
+        BackButton2 = new javax.swing.JButton();
         menuAluno = new javax.swing.JMenuBar();
         menuConsultAluno = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -36,15 +37,26 @@ public class homeAluno extends javax.swing.JFrame {
 
         panelAluno.setBackground(new java.awt.Color(255, 255, 255));
 
+        BackButton2.setText("Sair");
+        BackButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelAlunoLayout = new javax.swing.GroupLayout(panelAluno);
         panelAluno.setLayout(panelAlunoLayout);
         panelAlunoLayout.setHorizontalGroup(
             panelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAlunoLayout.createSequentialGroup()
+                .addGap(0, 328, Short.MAX_VALUE)
+                .addComponent(BackButton2))
         );
         panelAlunoLayout.setVerticalGroup(
             panelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGroup(panelAlunoLayout.createSequentialGroup()
+                .addComponent(BackButton2)
+                .addGap(0, 254, Short.MAX_VALUE))
         );
 
         menuConsultAluno.setText("Consultar");
@@ -69,6 +81,13 @@ public class homeAluno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BackButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButton2ActionPerformed
+
+        this.setVisible(false);
+        telaLogin login = new telaLogin();
+        login.setVisible(true);
+    }//GEN-LAST:event_BackButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -106,6 +125,7 @@ public class homeAluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackButton2;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuBar menuAluno;
     private javax.swing.JMenu menuConsultAluno;

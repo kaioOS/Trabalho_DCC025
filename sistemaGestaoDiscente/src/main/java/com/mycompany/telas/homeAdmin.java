@@ -32,6 +32,7 @@ public class homeAdmin extends javax.swing.JFrame {
 
         jComboBox1 = new javax.swing.JComboBox<>();
         panelAdmin = new javax.swing.JPanel();
+        BackButton2 = new javax.swing.JButton();
         menuAdmin = new javax.swing.JMenuBar();
         CadastroD = new javax.swing.JMenu();
         CadastroA = new javax.swing.JMenuItem();
@@ -49,15 +50,26 @@ public class homeAdmin extends javax.swing.JFrame {
 
         panelAdmin.setBackground(new java.awt.Color(255, 255, 255));
 
+        BackButton2.setText("Sair");
+        BackButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelAdminLayout = new javax.swing.GroupLayout(panelAdmin);
         panelAdmin.setLayout(panelAdminLayout);
         panelAdminLayout.setHorizontalGroup(
             panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 434, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAdminLayout.createSequentialGroup()
+                .addGap(0, 362, Short.MAX_VALUE)
+                .addComponent(BackButton2))
         );
         panelAdminLayout.setVerticalGroup(
             panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 318, Short.MAX_VALUE)
+            .addGroup(panelAdminLayout.createSequentialGroup()
+                .addComponent(BackButton2)
+                .addGap(0, 295, Short.MAX_VALUE))
         );
 
         CadastroD.setText("Cadastrar");
@@ -172,6 +184,13 @@ public class homeAdmin extends javax.swing.JFrame {
          aTProfessor.setVisible(true);
     }//GEN-LAST:event_AtribuirTPActionPerformed
 
+    private void BackButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButton2ActionPerformed
+
+        this.setVisible(false);
+        telaLogin login = new telaLogin();
+        login.setVisible(true);
+    }//GEN-LAST:event_BackButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -211,6 +230,9 @@ public class homeAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AtribuirTA;
     private javax.swing.JMenuItem AtribuirTP;
+    private javax.swing.JButton BackButton;
+    private javax.swing.JButton BackButton1;
+    private javax.swing.JButton BackButton2;
     private javax.swing.JMenuItem CadastroA;
     private javax.swing.JMenu CadastroD;
     private javax.swing.JMenuItem CadastroDisc;

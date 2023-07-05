@@ -150,6 +150,7 @@ public class telaLogin extends javax.swing.JFrame {
     private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
 
         String cpf = txtUser.getText();
+        cpf = cpf.replaceAll("[^0-9]", "");
         char[] Csenha = txtPassword.getPassword();
         String senha = new String(Csenha);
         if (!rbAluno.isSelected() && !rbProf.isSelected() && !rbAdm.isSelected()) {

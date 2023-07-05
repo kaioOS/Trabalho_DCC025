@@ -28,12 +28,13 @@ public class homeProfessor extends javax.swing.JFrame {
     private void initComponents() {
 
         panelProfessor = new javax.swing.JPanel();
+        BackButton2 = new javax.swing.JButton();
         menuProfessor = new javax.swing.JMenuBar();
         menuAtribProfessor = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         menuTurmaProfessor = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        LFreq = new javax.swing.JMenuItem();
+        LNota = new javax.swing.JMenuItem();
         menuConsultProfessor = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
 
@@ -41,15 +42,26 @@ public class homeProfessor extends javax.swing.JFrame {
 
         panelProfessor.setBackground(new java.awt.Color(255, 255, 255));
 
+        BackButton2.setText("Sair");
+        BackButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelProfessorLayout = new javax.swing.GroupLayout(panelProfessor);
         panelProfessor.setLayout(panelProfessorLayout);
         panelProfessorLayout.setHorizontalGroup(
             panelProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProfessorLayout.createSequentialGroup()
+                .addGap(0, 328, Short.MAX_VALUE)
+                .addComponent(BackButton2))
         );
         panelProfessorLayout.setVerticalGroup(
             panelProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGroup(panelProfessorLayout.createSequentialGroup()
+                .addComponent(BackButton2)
+                .addGap(0, 254, Short.MAX_VALUE))
         );
 
         menuAtribProfessor.setText("Atribuir");
@@ -65,17 +77,27 @@ public class homeProfessor extends javax.swing.JFrame {
         menuProfessor.add(menuAtribProfessor);
 
         menuTurmaProfessor.setText("Turma");
-
-        jMenuItem2.setText("Lançar frequência");
-        menuTurmaProfessor.add(jMenuItem2);
-
-        jMenuItem3.setText("Lançar notas");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        menuTurmaProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                menuTurmaProfessorActionPerformed(evt);
             }
         });
-        menuTurmaProfessor.add(jMenuItem3);
+
+        LFreq.setText("Lançar frequência");
+        LFreq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LFreqActionPerformed(evt);
+            }
+        });
+        menuTurmaProfessor.add(LFreq);
+
+        LNota.setText("Lançar notas");
+        LNota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LNotaActionPerformed(evt);
+            }
+        });
+        menuTurmaProfessor.add(LNota);
 
         menuProfessor.add(menuTurmaProfessor);
 
@@ -106,9 +128,26 @@ public class homeProfessor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    private void LNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LNotaActionPerformed
+        lancarNotaProfessor tela = new lancarNotaProfessor();
+        tela.setVisible(true);
+    }//GEN-LAST:event_LNotaActionPerformed
+
+    private void menuTurmaProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuTurmaProfessorActionPerformed
+                    
+    }//GEN-LAST:event_menuTurmaProfessorActionPerformed
+
+    private void LFreqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LFreqActionPerformed
+        lancarFreqProfessor tela = new lancarFreqProfessor();
+        tela.setVisible(true);
+    }//GEN-LAST:event_LFreqActionPerformed
+
+    private void BackButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButton2ActionPerformed
+
+        this.setVisible(false);
+        telaLogin login = new telaLogin();
+        login.setVisible(true);
+    }//GEN-LAST:event_BackButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,9 +185,10 @@ public class homeProfessor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackButton2;
+    private javax.swing.JMenuItem LFreq;
+    private javax.swing.JMenuItem LNota;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenu menuAtribProfessor;
     private javax.swing.JMenu menuConsultProfessor;

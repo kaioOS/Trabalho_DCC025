@@ -1,19 +1,20 @@
 [
   {
-    "matricula": "202331480375020",
-    "nome": "Teste Teste",
-    "CPF": "31480375020",
-    "telefone": "32984868348",
+    "matricula": "202317987762008",
+    "nome": "João da Silva",
+    "CPF": "17987762008",
+    "telefone": "32999998888",
+    "email": "joao@gmail.com",
     "senha": "12345678",
     "tipoUsuario": 2
   },
   {
-    "matricula": "202343526859094",
+    "matricula": "202346117986076",
     "turmasAluno": {},
-    "nome": "Teste Tes",
-    "CPF": "43526859094",
-    "telefone": "32984868348",
-    "email": "filipe@filipe.com",
+    "nome": "Maria Sobrenome",
+    "CPF": "46117986076",
+    "telefone": "99888887777",
+    "email": "maria@gmail.com",
     "senha": "12345678",
     "tipoUsuario": 2
   }

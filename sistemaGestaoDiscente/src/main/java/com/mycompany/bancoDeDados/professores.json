@@ -1,11 +1,11 @@
 [
   {
-    "siape": "8841007",
+    "siape": "8493342",
     "turmasProfessor": {},
-    "nome": "Professor Teste",
-    "CPF": "16147910078",
-    "telefone": "32999991560",
-    "email": "professor@teste.com",
+    "nome": "José Marcelo",
+    "CPF": "65664511028",
+    "telefone": "00888882222",
+    "email": "jose@gmail.com",
     "senha": "12345678",
     "tipoUsuario": 1
   }
