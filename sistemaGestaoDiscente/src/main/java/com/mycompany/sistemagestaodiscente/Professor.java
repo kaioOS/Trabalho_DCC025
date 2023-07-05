@@ -99,7 +99,7 @@ public class Professor extends Usuario{
         {
             if(i.getCodigoTurma().equals(codTurma))
             {
-                i.setProfessor(this);
+                i.setSiapeProfessor(this.getSiape());
                 Pturma.armazenarDados(turmas);
                 return;
             }
