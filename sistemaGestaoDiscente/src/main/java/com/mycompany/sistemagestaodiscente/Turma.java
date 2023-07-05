@@ -19,7 +19,7 @@ import java.util.List;
 public class Turma {
 
     private String codigoTurma;
-    private Professor professor;
+    private String siapeProfessor;
     private Disciplina disciplina;
     private List<Aluno> alunos;
     private HashMap<String, Integer> frequenciaAlunos;
@@ -73,10 +73,18 @@ public class Turma {
     public void setDisciplina(Disciplina disciplina) {
         this.disciplina = disciplina;
     }
+    
+    public void setCodigoDisciplina(String idDisciplina){
+        this.disciplina.setCodigoDisciplina(idDisciplina);
+    }
 
     public int getFormaAvaliacao() {
         return formaAvaliacao;
     }
+    public void setSiapeProfessor(String siape){
+        this.siapeProfessor=siape;
+    }
+    
 
     public void setFormaAvaliacao(int formaAvaliacao) throws ExceptionFormaAvaliacao {
         validaFormaAvalicao(formaAvaliacao);
@@ -94,11 +102,7 @@ public class Turma {
     }
 
     public String getSiapeProfessor() {
-        return professor.getSiape();
-    }
-
-    public void setProfessor(Professor professor) {
-        this.professor = professor;
+        return this.siapeProfessor;
     }
 
     public void adicionarAluno(Aluno aluno) throws ExceptionTurma {
@@ -160,17 +164,7 @@ public class Turma {
                 System.out.println("Matricula nao encontrada!");
             }
         }
-    }
-
-    public void imprimeTurma() {
-        System.out.println("Codigo turma: " + this.codigoTurma);
-        System.out.println("Codigo disciplina: " + this.disciplina.getCodigoDisciplina());
-        if (this.professor != null) {
-            System.out.println("SIAPE professor: " + this.professor.getSiape());
-        } else {
-            System.out.println("Professor nao cadastrado!");
-        }
-    }
+    }   
 
     public void imprimirListaAlunos() {
         System.out.println("Lista de Alunos da Disciplina " + this.disciplina.getCodigoDisciplina() + " Turma " + this.codigoTurma);
@@ -181,11 +175,6 @@ public class Turma {
         }
     }
 
-    public void imprimirProf() {
-        System.out.println("Professor da Disciplina " + this.disciplina.getCodigoDisciplina() + " Turma " + this.codigoTurma);
-        System.out.println("Nome: " + professor.getNome());
-        System.out.println("Matrícula: " + professor.getSiape());
-    }
 
     public static void verificaTurma(String codigoTurma, Disciplina disciplina) throws ExceptionTurmaCadastrada {
         PersistenciaTurma persistenciaTurma = new PersistenciaTurma();

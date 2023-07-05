@@ -55,7 +55,7 @@ public class PersistenciaAluno implements PersistenciaDados {
                             aluno.setTelefone(alunoJson.get("telefone").getAsString());
                             aluno.setSenha(alunoJson.get("senha").getAsString());
                             aluno.setTipoUsuario(alunoJson.get("tipoUsuario").getAsInt());
-                            aluno.setTurmaAluno(hashMap);
+                            aluno.setTurmaAluno(hashMap);   
                             // Desserializa o HashMap do aluno do JSON
                             if (alunoJson.has("hashMapJson") && !alunoJson.get("hashMapJson").isJsonNull()) {
                                 String hashMapJson = alunoJson.get("hashMapJson").getAsString();

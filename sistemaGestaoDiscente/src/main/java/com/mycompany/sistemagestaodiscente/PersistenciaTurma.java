@@ -70,8 +70,8 @@ public class PersistenciaTurma implements PersistenciaDados {
 
                             // Desserializa os outros dados da turma do JSON
                             turma.setCodigoTurma(turmaJson.get("codigoTurma").getAsString());
-                            turma.setProfessor(gson.fromJson(turmaJson.get("siapeProfessor"), Professor.class));
-                            turma.setDisciplina(gson.fromJson(turmaJson.get("codigoDisciplina"), Disciplina.class));
+                            turma.setSiapeProfessor(turmaJson.get("siapeProfessor").getAsString());
+                            turma.setCodigoDisciplina(turmaJson.get("codigoDisciplina").getAsString());
                             turma.setFormaAvaliacao(turmaJson.get("formaAvaliacao").getAsInt());
                             turma.defineFormaAvaliacao(turma.getFormaAvaliacao());
 

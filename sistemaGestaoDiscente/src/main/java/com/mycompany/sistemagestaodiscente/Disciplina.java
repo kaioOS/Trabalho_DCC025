@@ -29,6 +29,10 @@ public class Disciplina{
         this.nomeDisciplina = nomeDisciplina;
     }
 
+    public void setCodigoDisciplina(String idDisciplina) {
+        this.codigoDisciplina = idDisciplina;
+    }
+
     
     public String getCodigoDisciplina() {
         return codigoDisciplina;
