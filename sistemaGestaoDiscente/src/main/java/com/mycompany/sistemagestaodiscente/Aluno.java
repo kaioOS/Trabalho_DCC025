@@ -118,8 +118,10 @@ public class Aluno extends Usuario {
             if(i.getCodigoTurma().equals(codTurma))
             {
                 i.adicionarAluno(this);
+                Pturma.armazenarDados(turmas);
+                return;
             }
         }
-        Pturma.armazenarDados(turmas);
+        
     }
 }

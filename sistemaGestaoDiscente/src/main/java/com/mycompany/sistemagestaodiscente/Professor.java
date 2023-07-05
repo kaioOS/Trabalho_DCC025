@@ -100,9 +100,11 @@ public class Professor extends Usuario{
             if(i.getCodigoTurma().equals(codTurma))
             {
                 i.setProfessor(this);
+                Pturma.armazenarDados(turmas);
+                return;
             }
         }
-        Pturma.armazenarDados(turmas);
+        
     }
     
     /*public void imprimeTurmas() {

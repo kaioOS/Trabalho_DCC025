@@ -71,7 +71,7 @@ public class Administrador extends Usuario{
         for (Disciplina disciplina : disciplinas) {
             if(disciplina.getCodigoDisciplina().equals(codigoDisciplinaCorres))
             {
-                disciplina.setNovaTurma(codigoTurma);
+                //disciplina.setNovaTurma(codigoTurma);
                 Disciplina disciplinaCorres = disciplina;
                 Turma turma = new Turma(codigoTurma, disciplinaCorres, tipoAvaliacao);
                 List<Turma> turmas = new ArrayList<>();
@@ -79,10 +79,11 @@ public class Administrador extends Usuario{
                 turmas.add(turma);
                 persistenciaTurma.armazenarDados(turmas);
                 disciplina.setNovaTurma(codigoTurma);
-                
+                persistenciaDisciplina.armazenarDados(disciplinas);
+                return;
             }
         }
-        persistenciaDisciplina.armazenarDados(disciplinas);
+        
     }    
                 
     
@@ -95,6 +96,7 @@ public class Administrador extends Usuario{
             if(i.getSiape().equals(siape))
             {
                 i.adicionarTurma(turma);
+                System.out.println("Entrou");
             }
         }
         Pprofessores.armazenarDados(professores);
@@ -107,9 +109,11 @@ public class Administrador extends Usuario{
         {
             if(i.getMatricula().equals(matricula))
             {
-                //i.adicionarTurma(turma);
+                i.adicionarTurma(cTurma);
+                Palunos.armazenarDados(alunos); 
+                return;
             }
         }
-        Palunos.armazenarDados(alunos);       
+              
     }
 }
